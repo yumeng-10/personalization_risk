@@ -39,5 +39,5 @@ conda-meta/
 *.log
 
 # Local data outputs
-data/*.json
-data/*.jsonl
+# data/*.json
+# data/*.jsonl
