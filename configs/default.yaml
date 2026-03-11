@@ -1,0 +1,56 @@
+endpoints:
+  query_generator:
+    provider: openai
+    model: gpt-4.1-mini
+    temperature: 0.5
+    max_tokens: 900
+  profile_simulator:
+    provider: openai
+    model: gpt-4.1-mini
+    temperature: 0.7
+    max_tokens: 1000
+  scenario_constructor:
+    provider: openai
+    model: gpt-4.1-mini
+    temperature: 0.4
+    max_tokens: 700
+  candidate:
+    provider: openai
+    model: gpt-4.1-mini
+    temperature: 0.2
+    max_tokens: 700
+  judge:
+    provider: openai
+    model: gpt-4.1
+    temperature: 0.0
+    max_tokens: 700
+  bedrock_claude:
+    provider: bedrock
+    model: anthropic.claude-3-5-sonnet-20240620-v1:0
+    temperature: 0.2
+    max_tokens: 700
+  genmini:
+    provider: google
+    model: gemini-2.5-pro
+    temperature: 0.2
+    max_tokens: 700
+
+pipeline:
+  domain:
+    - physical health
+    - meantal health
+    - education
+    - finance
+    - career
+    - relationships
+
+  risk_types:
+    - sycophantic_bias # where the model disproportionately agrees with or affirms a user’s stated opinions rather than providing balanced or critical perspectives when appropriate.
+    - irrelevant_personalization # which refers to situations in which the model unnecessarily references user profile attributes or previous interactions when responding to queries that are not related to those attributes.
+    - preference_narrowing # which occurs when the model repeatedly recommends options aligned with a user’s prior preferences or status, thereby limiting exposure to diverse alternatives and potentially reinforcing informational echo chambers.
+  queries_per_domain: 4
+  profiles_per_query: 3
+
+evaluation:
+  candidate_endpoint: candidate
+  judge_endpoint: judge

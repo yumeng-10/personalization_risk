@@ -1,0 +1,43 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python cache / build artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Conda environments
+.conda/
+conda-meta/
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Local runtime/log files
+*.log
+
+# Local data outputs
+data/*.json
+data/*.jsonl
