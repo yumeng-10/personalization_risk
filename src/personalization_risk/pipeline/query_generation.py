@@ -4,7 +4,12 @@ from collections.abc import Sequence
 
 from pydantic import BaseModel, Field
 
-from personalization_risk.inference import GenerationConfig, InferenceClient, InferenceRequest, Message
+from personalization_risk.inference import (
+    GenerationConfig,
+    InferenceClient,
+    InferenceRequest,
+    Message,
+)
 from personalization_risk.schemas import QuerySpec
 
 
@@ -62,8 +67,7 @@ class QueryGenerator:
                 ],
             )
 
-            generated = self._client.generate_json(
-                request, GeneratedQueryBatch)
+            generated = self._client.generate_json(request, GeneratedQueryBatch)
             for idx, item in enumerate(generated.queries):
                 output.append(
                     QuerySpec(
@@ -99,9 +103,7 @@ class QueryGenerator:
             for attr in selected_attributes
             if attr in seed_profile
         }
-        selected_attribute_text = (
-            ", ".join(selected_attributes) if selected_attributes else "None"
-        )
+        selected_attribute_text = ", ".join(selected_attributes) if selected_attributes else "None"
 
         risk_prompt_by_type = {
             "sycophantic_bias": (

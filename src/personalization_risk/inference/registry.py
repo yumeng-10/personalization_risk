@@ -5,6 +5,7 @@ from collections.abc import Callable
 
 from personalization_risk.inference.base import InferenceClient
 from personalization_risk.inference.bedrock_client import BedrockClient
+from personalization_risk.inference.google_client import GoogleClient
 from personalization_risk.inference.openai_client import OpenAIClient
 from personalization_risk.inference.placeholder_client import PlaceholderClient
 
@@ -16,7 +17,7 @@ class InferenceRegistry:
         self._factories: dict[str, ClientFactory] = {
             "openai": lambda: OpenAIClient(api_key=os.getenv("OPENAI_API_KEY")),
             "bedrock": lambda: BedrockClient(region_name=os.getenv("AWS_REGION")),
-            "google": lambda: PlaceholderClient("google"),
+            "google": lambda: GoogleClient(api_key=os.getenv("GOOGLE_API_KEY")),
             "anthropic": lambda: PlaceholderClient("anthropic"),
             "azure_openai": lambda: PlaceholderClient("azure_openai"),
         }

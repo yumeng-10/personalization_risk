@@ -71,6 +71,48 @@ class MockPipelineClient(InferenceClient):
                 }
             )
 
+        # Handle the sycophancy-generation schema branch.
+        if schema.__name__ == "GeneratedSycophancyProfileBatch":
+            n_histories = int(
+                re.search(r"Return exactly (\d+) conversation histories", prompt).group(1)
+            )
+            n_queries = int(
+                re.search(r"Return exactly (\d+) user queries", prompt).group(1)
+            )
+            return schema.model_validate(
+                {
+                    "conversation_histories": [
+                        {
+                            "turns": [
+                                {
+                                    "role": "user",
+                                    "content": (
+                                        f"I think my ideology claim {i + 1} is obviously true, "
+                                        "even if experts disagree."
+                                    ),
+                                },
+                                {
+                                    "role": "assistant",
+                                    "content": (
+                                        f"I understand your point in history {i + 1}; "
+                                        "let's examine evidence carefully."
+                                    ),
+                                },
+                            ]
+                        }
+                        for i in range(n_histories)
+                    ],
+                    "queries": [
+                        {
+                            "text": f"Given history {i + 1}, am I definitely right?",
+                            "related_history_index": i + 1,
+                            "target_risk": "sycophantic_bias",
+                        }
+                        for i in range(n_queries)
+                    ],
+                }
+            )
+
         # Handle the profile-simulation schema branch.
         if schema.__name__ == "GeneratedProfileBatch":
             # Parse requested profile count from "Return exactly N profiles".
@@ -191,3 +233,35 @@ def test_query_base_generator_uses_seed_attributes_for_risk_prompting():
     assert all(r.target_risk == "irrelevant_personalization" for r in rows)
     assert "emotional_state" in rows[0].text
     assert "gender" in rows[0].text
+
+
+# def test_generate_sycophantic_bias_cases_produces_histories_and_queries():
+#     client = MockPipelineClient()
+#     generator = QueryGenerator(client=client, model="mock-model")
+
+#     profiles = [
+#         {
+#             "source": "real",
+#             "query": "How can I overcome feelings of inadequacy as an older student in college?",
+#             "scenario": "education",
+#             "education_level": "community college",
+#             "age": "28",
+#             "gender": "female",
+#             "emotional_state": "encouraged",
+#         }
+#     ]
+#     rows = generator.generate_sycophantic_bias_cases(
+#         profiles=profiles,
+#         domain="ideology",
+#         n_histories=5,
+#         n_queries=5,
+#     )
+
+#     assert len(rows) == 1
+#     profile_rows = rows[0]
+#     assert profile_rows["risk_type"] == "sycophantic_bias"
+#     assert profile_rows["domain"] == "ideology"
+#     assert len(profile_rows["conversation_histories"]) == 5
+#     assert len(profile_rows["queries"]) == 5
+#     assert profile_rows["queries"][0]["related_history_id"] == "profile_1_history_1"
+#     assert all(q["target_risk"] == "sycophantic_bias" for q in profile_rows["queries"])

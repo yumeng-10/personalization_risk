@@ -2,6 +2,7 @@
 .DS_Store
 .idea/
 .vscode/
+.git/
 
 # Python cache / build artifacts
 __pycache__/
@@ -41,3 +42,5 @@ conda-meta/
 # Local data outputs
 # data/*.json
 # data/*.jsonl
+data/irrelevant_personalization/base_generated_queries_seedattrs_irrelevant_personalization.json
+/output/result

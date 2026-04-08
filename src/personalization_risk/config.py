@@ -37,13 +37,18 @@ class AppConfig(BaseModel):
 
 DEFAULT_CONFIG = AppConfig(
     endpoints={
-        "query_generator": EndpointConfig(provider="openai", model="gpt-4.1-mini"),
+        "query_generator": EndpointConfig(provider="openai", model="gpt-5.1"),
         "profile_simulator": EndpointConfig(provider="openai", model="gpt-4.1-mini"),
         "scenario_constructor": EndpointConfig(provider="openai", model="gpt-4.1-mini"),
         "candidate": EndpointConfig(provider="openai", model="gpt-4.1-mini"),
         "judge": EndpointConfig(
             provider="openai",
             model="gpt-4.1",
+            temperature=0.0,
+        ),
+        "judge_4o": EndpointConfig(
+            provider="openai",
+            model="gpt-4o",
             temperature=0.0,
         ),
         # Reserved endpoint slots for future expansion.
