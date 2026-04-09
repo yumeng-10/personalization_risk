@@ -43,7 +43,7 @@ conda-meta/
 # data/*.json
 # data/*.jsonl
 /data/irrelevant_personalization/base_generated_queries_seedattrs_irrelevant_personalization.json
-/output/result
+# /output/result
 
 # Temporary files
 tmp*.*

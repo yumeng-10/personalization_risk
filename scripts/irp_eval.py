@@ -316,13 +316,15 @@ PYTHONPATH=src python scripts/irp_eval.py \
   
   PYTHONPATH=src python scripts/irp_eval.py \
   --config "" \
-  --dataset data/irrelevant_personalization/assembled_seed200_CSQA200_irrelevant_personalization.json \
+  --dataset data/irrelevant_personalization/assembled_seed200_gsm8k200_irrelevant_personalization.json \
   --candidate-model gemini-2.5-flash \
   --judge-model gpt-4o \
   --candidate-provider google \
   --judge-provider openai \
+  --start-index 0 \
+  --end-index 100 \
   --batch-size 50 \
   --max-workers 4 \
   --output-dir output/result \
-  --merged-out output/result/seed200_CSQA200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json
+  --merged-out output/result/seed200_gsm8k200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json
 """
