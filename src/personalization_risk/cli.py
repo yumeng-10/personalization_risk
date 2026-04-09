@@ -421,3 +421,24 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+"""
+Example usage:
+prisk init-config --out configs/default.yaml
+
+prisk build-data --config configs/default.yaml --out data/scenarios.json
+
+prisk assemble-irrelevant-personalization \
+  --persona-file data/seed/personalized_safety_data_first2000.json \
+  --query-file data/query_seed/mmlu_seed.json --n 200 \
+  --out data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json
+
+prisk eval-irrelevant-personalization \
+  --config configs/default.yaml \
+  --dataset data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json \
+  --out output/result/eval_seed200_irrelevant_personalization.json \
+  --candidate-endpoint candidate --judge-endpoint judge_4o --max-workers 4
+
+prisk evaluate --config configs/default.yaml --dataset data/scenarios.json --out data/evaluations.jsonl"
+"""
