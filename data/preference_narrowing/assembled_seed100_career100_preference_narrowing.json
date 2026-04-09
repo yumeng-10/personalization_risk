@@ -1,7 +1,7 @@
 {
-  "dataset_name": "preference_narrowing_seed200_mmlu200",
+  "dataset_name": "preference_narrowing_seed100_career100",
   "schema_version": "1.0",
-  "created_at_utc": "2026-04-09T02:21:45.511198+00:00",
+  "created_at_utc": "2026-04-09T02:53:13.754207+00:00",
   "risk_type": "preference_narrowing",
   "num_records": 100,
   "sources": {
@@ -10,9 +10,9 @@
   },
   "records": [
     {
-      "record_id": "irp_0001",
+      "record_id": "prn_0001",
       "persona_id": "persona_0001",
-      "query_id": "mmlu_0001",
+      "query_id": "career_0001",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -40,9 +40,9 @@
       }
     },
     {
-      "record_id": "irp_0002",
+      "record_id": "prn_0002",
       "persona_id": "persona_0002",
-      "query_id": "mmlu_0002",
+      "query_id": "career_0002",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -70,9 +70,9 @@
       }
     },
     {
-      "record_id": "irp_0003",
+      "record_id": "prn_0003",
       "persona_id": "persona_0003",
-      "query_id": "mmlu_0003",
+      "query_id": "career_0003",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -100,9 +100,9 @@
       }
     },
     {
-      "record_id": "irp_0004",
+      "record_id": "prn_0004",
       "persona_id": "persona_0004",
-      "query_id": "mmlu_0004",
+      "query_id": "career_0004",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -130,9 +130,9 @@
       }
     },
     {
-      "record_id": "irp_0005",
+      "record_id": "prn_0005",
       "persona_id": "persona_0005",
-      "query_id": "mmlu_0005",
+      "query_id": "career_0005",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -160,9 +160,9 @@
       }
     },
     {
-      "record_id": "irp_0006",
+      "record_id": "prn_0006",
       "persona_id": "persona_0006",
-      "query_id": "mmlu_0006",
+      "query_id": "career_0006",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -190,9 +190,9 @@
       }
     },
     {
-      "record_id": "irp_0007",
+      "record_id": "prn_0007",
       "persona_id": "persona_0007",
-      "query_id": "mmlu_0007",
+      "query_id": "career_0007",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -220,9 +220,9 @@
       }
     },
     {
-      "record_id": "irp_0008",
+      "record_id": "prn_0008",
       "persona_id": "persona_0008",
-      "query_id": "mmlu_0008",
+      "query_id": "career_0008",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -250,9 +250,9 @@
       }
     },
     {
-      "record_id": "irp_0009",
+      "record_id": "prn_0009",
       "persona_id": "persona_0009",
-      "query_id": "mmlu_0009",
+      "query_id": "career_0009",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -280,9 +280,9 @@
       }
     },
     {
-      "record_id": "irp_0010",
+      "record_id": "prn_0010",
       "persona_id": "persona_0010",
-      "query_id": "mmlu_0010",
+      "query_id": "career_0010",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -310,9 +310,9 @@
       }
     },
     {
-      "record_id": "irp_0011",
+      "record_id": "prn_0011",
       "persona_id": "persona_0011",
-      "query_id": "mmlu_0011",
+      "query_id": "career_0011",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -340,9 +340,9 @@
       }
     },
     {
-      "record_id": "irp_0012",
+      "record_id": "prn_0012",
       "persona_id": "persona_0012",
-      "query_id": "mmlu_0012",
+      "query_id": "career_0012",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -370,9 +370,9 @@
       }
     },
     {
-      "record_id": "irp_0013",
+      "record_id": "prn_0013",
       "persona_id": "persona_0013",
-      "query_id": "mmlu_0013",
+      "query_id": "career_0013",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -400,9 +400,9 @@
       }
     },
     {
-      "record_id": "irp_0014",
+      "record_id": "prn_0014",
       "persona_id": "persona_0014",
-      "query_id": "mmlu_0014",
+      "query_id": "career_0014",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -430,9 +430,9 @@
       }
     },
     {
-      "record_id": "irp_0015",
+      "record_id": "prn_0015",
       "persona_id": "persona_0015",
-      "query_id": "mmlu_0015",
+      "query_id": "career_0015",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -460,9 +460,9 @@
       }
     },
     {
-      "record_id": "irp_0016",
+      "record_id": "prn_0016",
       "persona_id": "persona_0016",
-      "query_id": "mmlu_0016",
+      "query_id": "career_0016",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -490,9 +490,9 @@
       }
     },
     {
-      "record_id": "irp_0017",
+      "record_id": "prn_0017",
       "persona_id": "persona_0017",
-      "query_id": "mmlu_0017",
+      "query_id": "career_0017",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -520,9 +520,9 @@
       }
     },
     {
-      "record_id": "irp_0018",
+      "record_id": "prn_0018",
       "persona_id": "persona_0018",
-      "query_id": "mmlu_0018",
+      "query_id": "career_0018",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -550,9 +550,9 @@
       }
     },
     {
-      "record_id": "irp_0019",
+      "record_id": "prn_0019",
       "persona_id": "persona_0019",
-      "query_id": "mmlu_0019",
+      "query_id": "career_0019",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -580,9 +580,9 @@
       }
     },
     {
-      "record_id": "irp_0020",
+      "record_id": "prn_0020",
       "persona_id": "persona_0020",
-      "query_id": "mmlu_0020",
+      "query_id": "career_0020",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -610,9 +610,9 @@
       }
     },
     {
-      "record_id": "irp_0021",
+      "record_id": "prn_0021",
       "persona_id": "persona_0021",
-      "query_id": "mmlu_0021",
+      "query_id": "career_0021",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -640,9 +640,9 @@
       }
     },
     {
-      "record_id": "irp_0022",
+      "record_id": "prn_0022",
       "persona_id": "persona_0022",
-      "query_id": "mmlu_0022",
+      "query_id": "career_0022",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -670,9 +670,9 @@
       }
     },
     {
-      "record_id": "irp_0023",
+      "record_id": "prn_0023",
       "persona_id": "persona_0023",
-      "query_id": "mmlu_0023",
+      "query_id": "career_0023",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -700,9 +700,9 @@
       }
     },
     {
-      "record_id": "irp_0024",
+      "record_id": "prn_0024",
       "persona_id": "persona_0024",
-      "query_id": "mmlu_0024",
+      "query_id": "career_0024",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -730,9 +730,9 @@
       }
     },
     {
-      "record_id": "irp_0025",
+      "record_id": "prn_0025",
       "persona_id": "persona_0025",
-      "query_id": "mmlu_0025",
+      "query_id": "career_0025",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -760,9 +760,9 @@
       }
     },
     {
-      "record_id": "irp_0026",
+      "record_id": "prn_0026",
       "persona_id": "persona_0026",
-      "query_id": "mmlu_0026",
+      "query_id": "career_0026",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -790,9 +790,9 @@
       }
     },
     {
-      "record_id": "irp_0027",
+      "record_id": "prn_0027",
       "persona_id": "persona_0027",
-      "query_id": "mmlu_0027",
+      "query_id": "career_0027",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -820,9 +820,9 @@
       }
     },
     {
-      "record_id": "irp_0028",
+      "record_id": "prn_0028",
       "persona_id": "persona_0028",
-      "query_id": "mmlu_0028",
+      "query_id": "career_0028",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -850,9 +850,9 @@
       }
     },
     {
-      "record_id": "irp_0029",
+      "record_id": "prn_0029",
       "persona_id": "persona_0029",
-      "query_id": "mmlu_0029",
+      "query_id": "career_0029",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -880,9 +880,9 @@
       }
     },
     {
-      "record_id": "irp_0030",
+      "record_id": "prn_0030",
       "persona_id": "persona_0030",
-      "query_id": "mmlu_0030",
+      "query_id": "career_0030",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -910,9 +910,9 @@
       }
     },
     {
-      "record_id": "irp_0031",
+      "record_id": "prn_0031",
       "persona_id": "persona_0031",
-      "query_id": "mmlu_0031",
+      "query_id": "career_0031",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -940,9 +940,9 @@
       }
     },
     {
-      "record_id": "irp_0032",
+      "record_id": "prn_0032",
       "persona_id": "persona_0032",
-      "query_id": "mmlu_0032",
+      "query_id": "career_0032",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -970,9 +970,9 @@
       }
     },
     {
-      "record_id": "irp_0033",
+      "record_id": "prn_0033",
       "persona_id": "persona_0033",
-      "query_id": "mmlu_0033",
+      "query_id": "career_0033",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1000,9 +1000,9 @@
       }
     },
     {
-      "record_id": "irp_0034",
+      "record_id": "prn_0034",
       "persona_id": "persona_0034",
-      "query_id": "mmlu_0034",
+      "query_id": "career_0034",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1030,9 +1030,9 @@
       }
     },
     {
-      "record_id": "irp_0035",
+      "record_id": "prn_0035",
       "persona_id": "persona_0035",
-      "query_id": "mmlu_0035",
+      "query_id": "career_0035",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1060,9 +1060,9 @@
       }
     },
     {
-      "record_id": "irp_0036",
+      "record_id": "prn_0036",
       "persona_id": "persona_0036",
-      "query_id": "mmlu_0036",
+      "query_id": "career_0036",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1090,9 +1090,9 @@
       }
     },
     {
-      "record_id": "irp_0037",
+      "record_id": "prn_0037",
       "persona_id": "persona_0037",
-      "query_id": "mmlu_0037",
+      "query_id": "career_0037",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1120,9 +1120,9 @@
       }
     },
     {
-      "record_id": "irp_0038",
+      "record_id": "prn_0038",
       "persona_id": "persona_0038",
-      "query_id": "mmlu_0038",
+      "query_id": "career_0038",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1150,9 +1150,9 @@
       }
     },
     {
-      "record_id": "irp_0039",
+      "record_id": "prn_0039",
       "persona_id": "persona_0039",
-      "query_id": "mmlu_0039",
+      "query_id": "career_0039",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1180,9 +1180,9 @@
       }
     },
     {
-      "record_id": "irp_0040",
+      "record_id": "prn_0040",
       "persona_id": "persona_0040",
-      "query_id": "mmlu_0040",
+      "query_id": "career_0040",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1210,9 +1210,9 @@
       }
     },
     {
-      "record_id": "irp_0041",
+      "record_id": "prn_0041",
       "persona_id": "persona_0041",
-      "query_id": "mmlu_0041",
+      "query_id": "career_0041",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1240,9 +1240,9 @@
       }
     },
     {
-      "record_id": "irp_0042",
+      "record_id": "prn_0042",
       "persona_id": "persona_0042",
-      "query_id": "mmlu_0042",
+      "query_id": "career_0042",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1270,9 +1270,9 @@
       }
     },
     {
-      "record_id": "irp_0043",
+      "record_id": "prn_0043",
       "persona_id": "persona_0043",
-      "query_id": "mmlu_0043",
+      "query_id": "career_0043",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1300,9 +1300,9 @@
       }
     },
     {
-      "record_id": "irp_0044",
+      "record_id": "prn_0044",
       "persona_id": "persona_0044",
-      "query_id": "mmlu_0044",
+      "query_id": "career_0044",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1330,9 +1330,9 @@
       }
     },
     {
-      "record_id": "irp_0045",
+      "record_id": "prn_0045",
       "persona_id": "persona_0045",
-      "query_id": "mmlu_0045",
+      "query_id": "career_0045",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1360,9 +1360,9 @@
       }
     },
     {
-      "record_id": "irp_0046",
+      "record_id": "prn_0046",
       "persona_id": "persona_0046",
-      "query_id": "mmlu_0046",
+      "query_id": "career_0046",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1390,9 +1390,9 @@
       }
     },
     {
-      "record_id": "irp_0047",
+      "record_id": "prn_0047",
       "persona_id": "persona_0047",
-      "query_id": "mmlu_0047",
+      "query_id": "career_0047",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1420,9 +1420,9 @@
       }
     },
     {
-      "record_id": "irp_0048",
+      "record_id": "prn_0048",
       "persona_id": "persona_0048",
-      "query_id": "mmlu_0048",
+      "query_id": "career_0048",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1450,9 +1450,9 @@
       }
     },
     {
-      "record_id": "irp_0049",
+      "record_id": "prn_0049",
       "persona_id": "persona_0049",
-      "query_id": "mmlu_0049",
+      "query_id": "career_0049",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1480,9 +1480,9 @@
       }
     },
     {
-      "record_id": "irp_0050",
+      "record_id": "prn_0050",
       "persona_id": "persona_0050",
-      "query_id": "mmlu_0050",
+      "query_id": "career_0050",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1510,9 +1510,9 @@
       }
     },
     {
-      "record_id": "irp_0051",
+      "record_id": "prn_0051",
       "persona_id": "persona_0051",
-      "query_id": "mmlu_0051",
+      "query_id": "career_0051",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1540,9 +1540,9 @@
       }
     },
     {
-      "record_id": "irp_0052",
+      "record_id": "prn_0052",
       "persona_id": "persona_0052",
-      "query_id": "mmlu_0052",
+      "query_id": "career_0052",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1570,9 +1570,9 @@
       }
     },
     {
-      "record_id": "irp_0053",
+      "record_id": "prn_0053",
       "persona_id": "persona_0053",
-      "query_id": "mmlu_0053",
+      "query_id": "career_0053",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1600,9 +1600,9 @@
       }
     },
     {
-      "record_id": "irp_0054",
+      "record_id": "prn_0054",
       "persona_id": "persona_0054",
-      "query_id": "mmlu_0054",
+      "query_id": "career_0054",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1630,9 +1630,9 @@
       }
     },
     {
-      "record_id": "irp_0055",
+      "record_id": "prn_0055",
       "persona_id": "persona_0055",
-      "query_id": "mmlu_0055",
+      "query_id": "career_0055",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1660,9 +1660,9 @@
       }
     },
     {
-      "record_id": "irp_0056",
+      "record_id": "prn_0056",
       "persona_id": "persona_0056",
-      "query_id": "mmlu_0056",
+      "query_id": "career_0056",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1690,9 +1690,9 @@
       }
     },
     {
-      "record_id": "irp_0057",
+      "record_id": "prn_0057",
       "persona_id": "persona_0057",
-      "query_id": "mmlu_0057",
+      "query_id": "career_0057",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1720,9 +1720,9 @@
       }
     },
     {
-      "record_id": "irp_0058",
+      "record_id": "prn_0058",
       "persona_id": "persona_0058",
-      "query_id": "mmlu_0058",
+      "query_id": "career_0058",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1750,9 +1750,9 @@
       }
     },
     {
-      "record_id": "irp_0059",
+      "record_id": "prn_0059",
       "persona_id": "persona_0059",
-      "query_id": "mmlu_0059",
+      "query_id": "career_0059",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1780,9 +1780,9 @@
       }
     },
     {
-      "record_id": "irp_0060",
+      "record_id": "prn_0060",
       "persona_id": "persona_0060",
-      "query_id": "mmlu_0060",
+      "query_id": "career_0060",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1810,9 +1810,9 @@
       }
     },
     {
-      "record_id": "irp_0061",
+      "record_id": "prn_0061",
       "persona_id": "persona_0061",
-      "query_id": "mmlu_0061",
+      "query_id": "career_0061",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1840,9 +1840,9 @@
       }
     },
     {
-      "record_id": "irp_0062",
+      "record_id": "prn_0062",
       "persona_id": "persona_0062",
-      "query_id": "mmlu_0062",
+      "query_id": "career_0062",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1870,9 +1870,9 @@
       }
     },
     {
-      "record_id": "irp_0063",
+      "record_id": "prn_0063",
       "persona_id": "persona_0063",
-      "query_id": "mmlu_0063",
+      "query_id": "career_0063",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1900,9 +1900,9 @@
       }
     },
     {
-      "record_id": "irp_0064",
+      "record_id": "prn_0064",
       "persona_id": "persona_0064",
-      "query_id": "mmlu_0064",
+      "query_id": "career_0064",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1930,9 +1930,9 @@
       }
     },
     {
-      "record_id": "irp_0065",
+      "record_id": "prn_0065",
       "persona_id": "persona_0065",
-      "query_id": "mmlu_0065",
+      "query_id": "career_0065",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1960,9 +1960,9 @@
       }
     },
     {
-      "record_id": "irp_0066",
+      "record_id": "prn_0066",
       "persona_id": "persona_0066",
-      "query_id": "mmlu_0066",
+      "query_id": "career_0066",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -1990,9 +1990,9 @@
       }
     },
     {
-      "record_id": "irp_0067",
+      "record_id": "prn_0067",
       "persona_id": "persona_0067",
-      "query_id": "mmlu_0067",
+      "query_id": "career_0067",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2020,9 +2020,9 @@
       }
     },
     {
-      "record_id": "irp_0068",
+      "record_id": "prn_0068",
       "persona_id": "persona_0068",
-      "query_id": "mmlu_0068",
+      "query_id": "career_0068",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2050,9 +2050,9 @@
       }
     },
     {
-      "record_id": "irp_0069",
+      "record_id": "prn_0069",
       "persona_id": "persona_0069",
-      "query_id": "mmlu_0069",
+      "query_id": "career_0069",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2080,9 +2080,9 @@
       }
     },
     {
-      "record_id": "irp_0070",
+      "record_id": "prn_0070",
       "persona_id": "persona_0070",
-      "query_id": "mmlu_0070",
+      "query_id": "career_0070",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2110,9 +2110,9 @@
       }
     },
     {
-      "record_id": "irp_0071",
+      "record_id": "prn_0071",
       "persona_id": "persona_0071",
-      "query_id": "mmlu_0071",
+      "query_id": "career_0071",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2140,9 +2140,9 @@
       }
     },
     {
-      "record_id": "irp_0072",
+      "record_id": "prn_0072",
       "persona_id": "persona_0072",
-      "query_id": "mmlu_0072",
+      "query_id": "career_0072",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2170,9 +2170,9 @@
       }
     },
     {
-      "record_id": "irp_0073",
+      "record_id": "prn_0073",
       "persona_id": "persona_0073",
-      "query_id": "mmlu_0073",
+      "query_id": "career_0073",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2200,9 +2200,9 @@
       }
     },
     {
-      "record_id": "irp_0074",
+      "record_id": "prn_0074",
       "persona_id": "persona_0074",
-      "query_id": "mmlu_0074",
+      "query_id": "career_0074",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2230,9 +2230,9 @@
       }
     },
     {
-      "record_id": "irp_0075",
+      "record_id": "prn_0075",
       "persona_id": "persona_0075",
-      "query_id": "mmlu_0075",
+      "query_id": "career_0075",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2260,9 +2260,9 @@
       }
     },
     {
-      "record_id": "irp_0076",
+      "record_id": "prn_0076",
       "persona_id": "persona_0076",
-      "query_id": "mmlu_0076",
+      "query_id": "career_0076",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2290,9 +2290,9 @@
       }
     },
     {
-      "record_id": "irp_0077",
+      "record_id": "prn_0077",
       "persona_id": "persona_0077",
-      "query_id": "mmlu_0077",
+      "query_id": "career_0077",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2320,9 +2320,9 @@
       }
     },
     {
-      "record_id": "irp_0078",
+      "record_id": "prn_0078",
       "persona_id": "persona_0078",
-      "query_id": "mmlu_0078",
+      "query_id": "career_0078",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2350,9 +2350,9 @@
       }
     },
     {
-      "record_id": "irp_0079",
+      "record_id": "prn_0079",
       "persona_id": "persona_0079",
-      "query_id": "mmlu_0079",
+      "query_id": "career_0079",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2380,9 +2380,9 @@
       }
     },
     {
-      "record_id": "irp_0080",
+      "record_id": "prn_0080",
       "persona_id": "persona_0080",
-      "query_id": "mmlu_0080",
+      "query_id": "career_0080",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2410,9 +2410,9 @@
       }
     },
     {
-      "record_id": "irp_0081",
+      "record_id": "prn_0081",
       "persona_id": "persona_0081",
-      "query_id": "mmlu_0081",
+      "query_id": "career_0081",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2440,9 +2440,9 @@
       }
     },
     {
-      "record_id": "irp_0082",
+      "record_id": "prn_0082",
       "persona_id": "persona_0082",
-      "query_id": "mmlu_0082",
+      "query_id": "career_0082",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2470,9 +2470,9 @@
       }
     },
     {
-      "record_id": "irp_0083",
+      "record_id": "prn_0083",
       "persona_id": "persona_0083",
-      "query_id": "mmlu_0083",
+      "query_id": "career_0083",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2500,9 +2500,9 @@
       }
     },
     {
-      "record_id": "irp_0084",
+      "record_id": "prn_0084",
       "persona_id": "persona_0084",
-      "query_id": "mmlu_0084",
+      "query_id": "career_0084",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2530,9 +2530,9 @@
       }
     },
     {
-      "record_id": "irp_0085",
+      "record_id": "prn_0085",
       "persona_id": "persona_0085",
-      "query_id": "mmlu_0085",
+      "query_id": "career_0085",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2560,9 +2560,9 @@
       }
     },
     {
-      "record_id": "irp_0086",
+      "record_id": "prn_0086",
       "persona_id": "persona_0086",
-      "query_id": "mmlu_0086",
+      "query_id": "career_0086",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2590,9 +2590,9 @@
       }
     },
     {
-      "record_id": "irp_0087",
+      "record_id": "prn_0087",
       "persona_id": "persona_0087",
-      "query_id": "mmlu_0087",
+      "query_id": "career_0087",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2620,9 +2620,9 @@
       }
     },
     {
-      "record_id": "irp_0088",
+      "record_id": "prn_0088",
       "persona_id": "persona_0088",
-      "query_id": "mmlu_0088",
+      "query_id": "career_0088",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2650,9 +2650,9 @@
       }
     },
     {
-      "record_id": "irp_0089",
+      "record_id": "prn_0089",
       "persona_id": "persona_0089",
-      "query_id": "mmlu_0089",
+      "query_id": "career_0089",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2680,9 +2680,9 @@
       }
     },
     {
-      "record_id": "irp_0090",
+      "record_id": "prn_0090",
       "persona_id": "persona_0090",
-      "query_id": "mmlu_0090",
+      "query_id": "career_0090",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2710,9 +2710,9 @@
       }
     },
     {
-      "record_id": "irp_0091",
+      "record_id": "prn_0091",
       "persona_id": "persona_0091",
-      "query_id": "mmlu_0091",
+      "query_id": "career_0091",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2740,9 +2740,9 @@
       }
     },
     {
-      "record_id": "irp_0092",
+      "record_id": "prn_0092",
       "persona_id": "persona_0092",
-      "query_id": "mmlu_0092",
+      "query_id": "career_0092",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2770,9 +2770,9 @@
       }
     },
     {
-      "record_id": "irp_0093",
+      "record_id": "prn_0093",
       "persona_id": "persona_0093",
-      "query_id": "mmlu_0093",
+      "query_id": "career_0093",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2800,9 +2800,9 @@
       }
     },
     {
-      "record_id": "irp_0094",
+      "record_id": "prn_0094",
       "persona_id": "persona_0094",
-      "query_id": "mmlu_0094",
+      "query_id": "career_0094",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2830,9 +2830,9 @@
       }
     },
     {
-      "record_id": "irp_0095",
+      "record_id": "prn_0095",
       "persona_id": "persona_0095",
-      "query_id": "mmlu_0095",
+      "query_id": "career_0095",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2860,9 +2860,9 @@
       }
     },
     {
-      "record_id": "irp_0096",
+      "record_id": "prn_0096",
       "persona_id": "persona_0096",
-      "query_id": "mmlu_0096",
+      "query_id": "career_0096",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2890,9 +2890,9 @@
       }
     },
     {
-      "record_id": "irp_0097",
+      "record_id": "prn_0097",
       "persona_id": "persona_0097",
-      "query_id": "mmlu_0097",
+      "query_id": "career_0097",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2920,9 +2920,9 @@
       }
     },
     {
-      "record_id": "irp_0098",
+      "record_id": "prn_0098",
       "persona_id": "persona_0098",
-      "query_id": "mmlu_0098",
+      "query_id": "career_0098",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2950,9 +2950,9 @@
       }
     },
     {
-      "record_id": "irp_0099",
+      "record_id": "prn_0099",
       "persona_id": "persona_0099",
-      "query_id": "mmlu_0099",
+      "query_id": "career_0099",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {
@@ -2980,9 +2980,9 @@
       }
     },
     {
-      "record_id": "irp_0100",
+      "record_id": "prn_0100",
       "persona_id": "persona_0100",
-      "query_id": "mmlu_0100",
+      "query_id": "career_0100",
       "target_risk": "preference_narrowing",
       "domain": "career",
       "persona": {

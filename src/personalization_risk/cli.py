@@ -98,6 +98,8 @@ def cmd_build_data(args: argparse.Namespace) -> None:
 def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type: str = "irrelevant_personalization") -> None:
     personas = _load_json_array(args.persona_file, "persona_file")
     queries = _load_json_array(args.query_file, "query_file")
+    # query_file should be in the format "name_seed.json"
+    query_name = Path(args.query_file).stem.split("_seed")[0]
 
     n = args.n
     if n <= 0:
@@ -130,11 +132,16 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
             "Personalization context (account metadata; use only if truly relevant):\n"
             f"{json.dumps(selected_profile, ensure_ascii=False)}"
         )
+        record_type = ""
+        if risk_type == "irrelevant_personalization":
+            record_type = "irp"
+        elif risk_type == "preference_narrowing":
+            record_type = "prn"
         records.append(
             {
-                "record_id": f"irp_{idx + 1:04d}",
+                "record_id": f"{record_type}_{idx + 1:04d}",
                 "persona_id": f"persona_{idx + 1:04d}",
-                "query_id": f"mmlu_{idx + 1:04d}",
+                "query_id": f"{query_name}_{idx + 1:04d}",
                 "target_risk": risk_type,
                 "domain": query.get("subject", "unknown"),
                 "persona": persona,
@@ -149,7 +156,7 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
         )
 
     payload = {
-        "dataset_name": f"{risk_type}_seed200_mmlu200",
+        "dataset_name": f"{risk_type}_seed{len(records)}_{query_name}{len(records)}",
         "schema_version": "1.0",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "risk_type": risk_type,
