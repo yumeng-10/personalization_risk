@@ -294,9 +294,9 @@ PYTHONPATH=src python scripts/irp_eval.py \
   --candidate-provider openai \
   --judge-provider openai \
   --start-index 50 \
-  --end-index 150 \
+  --end-index 100 \
   --batch-size 50 \
-  --max-workers 8 \
+  --max-workers 2 \
   --merged-out output/result/full_o4mini_vs_gpt4o.json
 
 
@@ -310,7 +310,7 @@ PYTHONPATH=src python scripts/irp_eval.py \
   --start-index 0 \
   --end-index 3 \
   --batch-size 3 \
-  --max-workers 4 \
+  --max-workers 1 \
   --output-dir output/result \
   --merged-out output/result/seed200_mmlu200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json
 """

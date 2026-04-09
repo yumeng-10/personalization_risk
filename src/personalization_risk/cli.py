@@ -95,7 +95,7 @@ def cmd_build_data(args: argparse.Namespace) -> None:
     print(f"Wrote {len(dataset.scenarios)} scenarios to {out_path}")
 
 
-def cmd_assemble_irrelevant_personalization(args: argparse.Namespace) -> None:
+def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type: str = "irrelevant_personalization") -> None:
     personas = _load_json_array(args.persona_file, "persona_file")
     queries = _load_json_array(args.query_file, "query_file")
 
@@ -135,7 +135,7 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace) -> None:
                 "record_id": f"irp_{idx + 1:04d}",
                 "persona_id": f"persona_{idx + 1:04d}",
                 "query_id": f"mmlu_{idx + 1:04d}",
-                "target_risk": "irrelevant_personalization",
+                "target_risk": risk_type,
                 "domain": query.get("subject", "unknown"),
                 "persona": persona,
                 "personalization_prompt": personalization_prompt,
@@ -143,16 +143,16 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace) -> None:
                     "question": query.get("question", ""),
                     "subject": query.get("subject", ""),
                     "choices": query.get("choices", []),
-                    "answer": query.get("answer"),
+                    "answer": query.get("answer", ""),
                 },
             }
         )
 
     payload = {
-        "dataset_name": "irrelevant_personalization_seed200_mmlu200",
+        "dataset_name": f"{risk_type}_seed200_mmlu200",
         "schema_version": "1.0",
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "risk_type": "irrelevant_personalization",
+        "risk_type": risk_type,
         "num_records": len(records),
         "sources": {
             "persona_file": str(args.persona_file),
@@ -164,7 +164,10 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace) -> None:
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     write_json(out_path, payload)
-    print(f"Wrote {len(records)} irrelevant_personalization records to {out_path}")
+    print(f"Wrote {len(records)} {risk_type} records to {out_path}")
+    
+def cmd_assemble_preference_narrowing(args: argparse.Namespace) -> None:
+    cmd_assemble_irrelevant_personalization(args, risk_type="preference_narrowing")
 
 
 def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
@@ -307,6 +310,19 @@ def build_parser() -> argparse.ArgumentParser:
         default="data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json",
     )
     irp_parser.set_defaults(func=cmd_assemble_irrelevant_personalization)
+    
+    prn_parser = subparsers.add_parser(
+        "assemble-preference-narrowing",
+        help="Assemble 1:1 persona-query records for preference_narrowing",
+    )
+    prn_parser.add_argument("--persona-file", default="data/persona_seed/personalized_safety_data_first2000.json")
+    prn_parser.add_argument("--query-file", default="data/query_seed/mmlu_seed.json")
+    prn_parser.add_argument("--n", type=int, default=200)
+    prn_parser.add_argument(
+        "--out",
+        default="data/preference_narrowing/assembled_seed200_mmlu200_preference_narrowing.json",
+    )
+    prn_parser.set_defaults(func=cmd_assemble_preference_narrowing)
 
     eval_irp_parser = subparsers.add_parser(
         "eval-irrelevant-personalization",
