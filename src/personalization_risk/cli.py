@@ -128,10 +128,8 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
             ]
             if field in persona
         }
-        personalization_prompt = (
-            "Personalization context (account metadata; use only if truly relevant):\n"
-            f"{json.dumps(selected_profile, ensure_ascii=False)}"
-        )
+        user_pofile = ", ".join(f"{k.replace('_', ' ')}: {v}" for k, v in selected_profile.items())
+        personalization_prompt = f"User profile: {user_pofile}.\n\nBased on the above user profile, answer the following user query: "
         record_type = ""
         if risk_type == "irrelevant_personalization":
             record_type = "irp"

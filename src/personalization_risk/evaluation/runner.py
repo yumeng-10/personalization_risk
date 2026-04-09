@@ -128,7 +128,6 @@ class EvaluationRunner:
                 )
             user_input = (
                 f"{personalization_prompt}\n\n"
-                "User question:\n"
                 f"{question}"
             )
             request = InferenceRequest(
@@ -166,6 +165,7 @@ class EvaluationRunner:
                 "judged_by": self._judge.model,
                 "question": question,
                 "personalization_prompt": personalization_prompt,
+                "user_input": user_input,
                 "candidate_response": candidate_response,
                 "judgment": judgment.model_dump(mode="python"),
             }
