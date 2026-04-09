@@ -307,10 +307,8 @@ PYTHONPATH=src python scripts/irp_eval.py \
   --judge-model gpt-4o \
   --candidate-provider google \
   --judge-provider openai \
-  --start-index 0 \
-  --end-index 3 \
-  --batch-size 3 \
-  --max-workers 1 \
+  --batch-size 50 \
+  --max-workers 4 \
   --output-dir output/result \
   --merged-out output/result/seed200_mmlu200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json
   
