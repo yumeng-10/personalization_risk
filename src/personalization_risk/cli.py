@@ -21,6 +21,19 @@ from personalization_risk.construction.history_simulator import HistorySimulator
 from personalization_risk.construction.runner import enrich_dataset_with_history
 
 
+PERSONALIZATION_FIELDS = [
+    "education_level",
+    "age",
+    "gender",
+    "marital_status",
+    "profession",
+    "economic_status",
+    "health_status",
+    "mental_health_status",
+    "emotional_state",
+]
+
+
 def _load_local_env(path: str | Path = ".env") -> None:
     """Load KEY=VALUE pairs from a local .env file into os.environ if missing."""
     env_path = Path(path)
@@ -137,6 +150,8 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
             record_type = "irp"
         elif risk_type == "preference_narrowing":
             record_type = "prn"
+        elif risk_type == "sycophantic_bias":
+            record_type = "sya"
         records.append(
             {
                 "record_id": f"{record_type}_{idx + 1:04d}",
@@ -198,7 +213,14 @@ def cmd_simulate_history(args: argparse.Namespace) -> None:
         batch_size=args.batch_size
     )
 
-def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
+def cmd_assemble_sycophantic_bias(args: argparse.Namespace) -> None:
+    cmd_assemble_irrelevant_personalization(args, risk_type="sycophantic_bias")
+
+
+def cmd_eval_personalization_records(
+    args: argparse.Namespace,
+    default_risk_type: str,
+) -> None:
     config = load_config(args.config)
 
     candidate_key = args.candidate_endpoint or "candidate"
@@ -210,6 +232,9 @@ def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
     records = payload.get("records", [])
     if not isinstance(records, list):
         raise ValueError(f"Expected 'records' as a list in dataset: {args.dataset}")
+    risk_type = payload.get("risk_type", default_risk_type)
+    if not isinstance(risk_type, str) or not risk_type.strip():
+        risk_type = default_risk_type
     if args.start_index < 0:
         raise ValueError("start-index must be >= 0")
     if args.num_records is not None and args.num_records <= 0:
@@ -231,29 +256,19 @@ def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
         judge=judge,
     )
 
-    personalization_fields = [
-        "education_level",
-        "age",
-        "gender",
-        "marital_status",
-        "profession",
-        "economic_status",
-        "health_status",
-        "mental_health_status",
-        "emotional_state",
-    ]
-    eval_rows = runner.run_irrelevant_personalization_records(
+    eval_rows = runner.run_personalization_risk_records(
         records=selected_records,
-        personalization_fields=personalization_fields,
+        personalization_fields=PERSONALIZATION_FIELDS,
+        default_risk_type=risk_type,
         max_workers=args.max_workers,
     )
 
     out_payload = {
         "source_dataset": str(args.dataset),
-        "risk_type": "irrelevant_personalization",
+        "risk_type": risk_type,
         "candidate_model": candidate_ep.model,
         "judge_model": judge_ep.model,
-        "personalization_fields": personalization_fields,
+        "personalization_fields": PERSONALIZATION_FIELDS,
         "start_index": args.start_index,
         "num_records_requested": args.num_records,
         "max_workers": args.max_workers,
@@ -267,6 +282,26 @@ def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
     print(
         f"Evaluated {len(eval_rows)} records with candidate={candidate_ep.model} "
         f"judge={judge_ep.model}. Results saved to {out_path}"
+    )
+
+def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
+    cmd_eval_personalization_records(
+        args,
+        default_risk_type="irrelevant_personalization",
+    )
+
+
+def cmd_eval_preference_narrowing(args: argparse.Namespace) -> None:
+    cmd_eval_personalization_records(
+        args,
+        default_risk_type="preference_narrowing",
+    )
+
+
+def cmd_eval_sycophantic_bias(args: argparse.Namespace) -> None:
+    cmd_eval_personalization_records(
+        args,
+        default_risk_type="sycophantic_bias",
     )
 
 
@@ -381,6 +416,19 @@ def build_parser() -> argparse.ArgumentParser:
     
     sim_hist_parser.set_defaults(func=cmd_simulate_history)
 
+    syb_parser = subparsers.add_parser(
+        "assemble-sycophantic-bias",
+        help="Assemble 1:1 persona-query records for sycophantic_bias",
+    )
+    syb_parser.add_argument("--persona-file", default="data/persona_seed/personalized_safety_data_first2000.json")
+    syb_parser.add_argument("--query-file", default="data/query_seed/mmlu_seed.json")
+    syb_parser.add_argument("--n", type=int, default=200)
+    syb_parser.add_argument(
+        "--out",
+        default="data/sycophancy/assembled_seed200_mmlu200_sycophantic_bias.json",
+    )
+    syb_parser.set_defaults(func=cmd_assemble_sycophantic_bias)
+
     eval_irp_parser = subparsers.add_parser(
         "eval-irrelevant-personalization",
         help="Run candidate + judge evaluation on assembled irrelevant_personalization records",
@@ -400,6 +448,46 @@ def build_parser() -> argparse.ArgumentParser:
     eval_irp_parser.add_argument("--num-records", type=int)
     eval_irp_parser.add_argument("--max-workers", type=int, default=1)
     eval_irp_parser.set_defaults(func=cmd_eval_irrelevant_personalization)
+
+    eval_prn_parser = subparsers.add_parser(
+        "eval-preference-narrowing",
+        help="Run candidate + judge evaluation on assembled preference_narrowing records",
+    )
+    eval_prn_parser.add_argument("--config", default="configs/default.yaml")
+    eval_prn_parser.add_argument(
+        "--dataset",
+        default="data/preference_narrowing/assembled_seed200_mmlu200_preference_narrowing.json",
+    )
+    eval_prn_parser.add_argument(
+        "--out",
+        default="output/result/eval_seed200_preference_narrowing.json",
+    )
+    eval_prn_parser.add_argument("--candidate-endpoint", default="candidate")
+    eval_prn_parser.add_argument("--judge-endpoint", default="judge_4o")
+    eval_prn_parser.add_argument("--start-index", type=int, default=0)
+    eval_prn_parser.add_argument("--num-records", type=int)
+    eval_prn_parser.add_argument("--max-workers", type=int, default=1)
+    eval_prn_parser.set_defaults(func=cmd_eval_preference_narrowing)
+
+    eval_syb_parser = subparsers.add_parser(
+        "eval-sycophantic-bias",
+        help="Run candidate + judge evaluation on assembled sycophantic_bias records",
+    )
+    eval_syb_parser.add_argument("--config", default="configs/default.yaml")
+    eval_syb_parser.add_argument(
+        "--dataset",
+        default="data/sycophancy/assembled_seed200_mmlu200_sycophantic_bias.json",
+    )
+    eval_syb_parser.add_argument(
+        "--out",
+        default="output/result/eval_seed200_sycophantic_bias.json",
+    )
+    eval_syb_parser.add_argument("--candidate-endpoint", default="candidate")
+    eval_syb_parser.add_argument("--judge-endpoint", default="judge_4o")
+    eval_syb_parser.add_argument("--start-index", type=int, default=0)
+    eval_syb_parser.add_argument("--num-records", type=int)
+    eval_syb_parser.add_argument("--max-workers", type=int, default=1)
+    eval_syb_parser.set_defaults(func=cmd_eval_sycophantic_bias)
 
     eval_parser = subparsers.add_parser("evaluate", help="Run candidate model and evaluate with LLM judge")
     eval_parser.add_argument("--config", default="configs/default.yaml")
