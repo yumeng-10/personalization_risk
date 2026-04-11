@@ -20,6 +20,11 @@ from personalization_risk.utils.io import write_json, write_jsonl
 from personalization_risk.construction.history_simulator import HistorySimulator
 from personalization_risk.construction.runner import enrich_dataset_with_history
 
+try:
+    from tqdm import tqdm
+except ImportError:  # pragma: no cover - optional dependency
+    tqdm = None
+
 
 PERSONALIZATION_FIELDS = [
     "education_level",
@@ -32,6 +37,22 @@ PERSONALIZATION_FIELDS = [
     "mental_health_status",
     "emotional_state",
 ]
+
+
+class _SimpleProgress:
+    def __init__(self, total: int) -> None:
+        self.total = total
+        self.current = 0
+        print(f"Inference+Judge: 0/{self.total}")
+
+    def update(self, n: int = 1) -> None:
+        self.current += n
+        if self.current == self.total or self.current % 10 == 0:
+            print(f"Inference+Judge: {self.current}/{self.total}")
+
+    def close(self) -> None:
+        if self.current < self.total:
+            print(f"Inference+Judge: {self.current}/{self.total}")
 
 
 def _load_local_env(path: str | Path = ".env") -> None:
@@ -256,12 +277,19 @@ def cmd_eval_personalization_records(
         judge=judge,
     )
 
+    if tqdm is not None:
+        progress = tqdm(total=len(selected_records), desc="Inference+Judge", unit="record")
+    else:
+        progress = _SimpleProgress(total=len(selected_records))
+
     eval_rows = runner.run_personalization_risk_records(
         records=selected_records,
         personalization_fields=PERSONALIZATION_FIELDS,
         default_risk_type=risk_type,
         max_workers=args.max_workers,
+        progress_callback=(lambda: progress.update(1)),
     )
+    progress.close()
 
     out_payload = {
         "source_dataset": str(args.dataset),
@@ -529,4 +557,14 @@ prisk eval-irrelevant-personalization \
   --candidate-endpoint candidate --judge-endpoint judge_4o --max-workers 4
 
 prisk evaluate --config configs/default.yaml --dataset data/scenarios.json --out data/evaluations.jsonl"
+
+PYTHONPATH=src python -m personalization_risk.cli eval-preference-narrowing \
+  --config configs/default.yaml \
+  --dataset data/preference_narrowing/assembled_seed100_career100_preference_narrowing.json \
+  --out output/result/eval_seed100_preference_narrowing.json \
+  --candidate-endpoint candidate \
+  --judge-endpoint judge_4o \
+  --start-index 0 \
+  --num-records 20 \
+  --max-workers 2
 """

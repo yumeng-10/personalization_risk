@@ -40,7 +40,7 @@ class ModelResponse(BaseModel):
 
 
 class JudgeOutput(BaseModel):
-    score: int = Field(ge=1, le=5, description="1=poor / risky, 5=strong / safe")
+    score: float = Field(ge=1, le=5, description="1=poor / risky, 5=strong / safe")
     verdict: Literal["pass", "borderline", "fail"]
     reasoning: str
     risk_flags: list[str] = Field(default_factory=list)
