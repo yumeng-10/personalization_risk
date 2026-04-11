@@ -17,6 +17,8 @@ from personalization_risk.pipeline import (
 )
 from personalization_risk.schemas import ScenarioDataset
 from personalization_risk.utils.io import write_json, write_jsonl
+from personalization_risk.construction.history_simulator import HistorySimulator
+from personalization_risk.construction.runner import enrich_dataset_with_history
 
 
 def _load_local_env(path: str | Path = ".env") -> None:
@@ -174,6 +176,27 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
 def cmd_assemble_preference_narrowing(args: argparse.Namespace) -> None:
     cmd_assemble_irrelevant_personalization(args, risk_type="preference_narrowing")
 
+def cmd_simulate_history(args: argparse.Namespace) -> None:
+    config = load_config(args.config)
+    simulator_client, simulator_ep = _resolve_endpoint(config, args.simulator_endpoint)
+
+    simulator = HistorySimulator(
+        client=simulator_client,
+        model=simulator_ep.model,
+        temperature=simulator_ep.temperature,
+    )
+
+    enrich_dataset_with_history(
+        input_filepath=args.dataset,
+        output_filepath=args.out,
+        simulator=simulator,
+        num_conversations=args.num_convs,
+        turns_per_conv=args.turns_per_conv,
+        start_index=args.start_index,
+        end_index=args.end_index,
+        max_workers=args.max_workers,
+        batch_size=args.batch_size
+    )
 
 def cmd_eval_irrelevant_personalization(args: argparse.Namespace) -> None:
     config = load_config(args.config)
@@ -328,6 +351,35 @@ def build_parser() -> argparse.ArgumentParser:
         default="data/preference_narrowing/assembled_seed200_mmlu200_preference_narrowing.json",
     )
     prn_parser.set_defaults(func=cmd_assemble_preference_narrowing)
+    
+    sim_hist_parser = subparsers.add_parser(
+        "simulate-history",
+        help="Add simulated historical conversations to an assembled dataset",
+    )
+    sim_hist_parser.add_argument("--config", default="configs/default.yaml")
+    sim_hist_parser.add_argument(
+        "--dataset", 
+        required=True, 
+        help="Path to assembled dataset (e.g., data/irrelevant_personalization/...)"
+    )
+    sim_hist_parser.add_argument(
+        "--out", 
+        required=True, 
+        help="Path to save the enriched dataset"
+    )
+    sim_hist_parser.add_argument(
+        "--simulator-endpoint", 
+        default="history_simulator", 
+        help="Endpoint key from your config YAML (e.g., profile_simulator, judge_4o)"
+    )
+    sim_hist_parser.add_argument("--num-convs", type=int, default=3, help="Number of historical conversations per record")
+    sim_hist_parser.add_argument("--turns-per-conv", type=int, default=6, help="Number of turns per conversation")
+    sim_hist_parser.add_argument("--start-index", type=int, default=0, help="Start index for processing")
+    sim_hist_parser.add_argument("--end-index", type=int, default=None, help="End index for processing")
+    sim_hist_parser.add_argument("--max-workers", type=int, default=1, help="Max concurrent workers")
+    sim_hist_parser.add_argument("--batch-size", type=int, default=10, help="Save to JSON every N successful completions")
+    
+    sim_hist_parser.set_defaults(func=cmd_simulate_history)
 
     eval_irp_parser = subparsers.add_parser(
         "eval-irrelevant-personalization",
