@@ -506,7 +506,7 @@ def route_retrieval(
     """
     request = InferenceRequest(
         model=router_model,
-        config=GenerationConfig(temperature=0.0, max_tokens=250, as_json=True),
+        config=GenerationConfig(temperature=0.0, max_tokens=250, as_json=True, thinking_budget=0),
         messages=[
             Message(
                 role="system",
