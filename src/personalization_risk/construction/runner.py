@@ -33,8 +33,11 @@ def enrich_dataset_with_history(
         logger.info(f"Loading fresh dataset from {input_filepath}")
         with open(input_filepath, "r", encoding="utf-8") as f:
             dataset = json.load(f)
-            
-    records = dataset.get("records", [])
+    try:
+        records = dataset.get("records", [])
+    except AttributeError:
+        records = dataset if isinstance(dataset, list) else []
+        
     if not records:
         logger.warning("No records found in the dataset.")
         return
@@ -67,8 +70,15 @@ def enrich_dataset_with_history(
 
     def process_single_record(record: dict):
         """Thread-safe record processing logic"""
-        persona = record.get("persona", {})
-        query = record.get("query", {})
+        if "persona" in record and "query" in record:
+            persona = record.get("persona", {})
+            query = record.get("query", {})
+        else:
+            persona = record
+            query = None
+        # remove query, scenario from persona if they exist to avoid leakage into history generation
+        persona.pop("query", None)
+        persona.pop("scenario", None)
         try:
             history = simulator.generate(
                 persona=persona,
