@@ -56,8 +56,17 @@ class GoogleClient(InferenceClient):
         if not candidates:
             return ""
         parts = candidates[0].get("content", {}).get("parts", [])
-        texts = [p.get("text", "") for p in parts if isinstance(p, dict)]
+        texts = [p.get("text", "") for p in parts if isinstance(p, dict) and not p.get("thought")]
         return "\n".join(t for t in texts if t)
+
+    @staticmethod
+    def _extract_thinking(payload: dict[str, Any]) -> str | None:
+        candidates = payload.get("candidates", [])
+        if not candidates:
+            return None
+        parts = candidates[0].get("content", {}).get("parts", [])
+        thoughts = [p.get("text", "") for p in parts if isinstance(p, dict) and p.get("thought")]
+        return "\n".join(t for t in thoughts if t) or None
 
     @retry(wait=wait_exponential(multiplier=1, min=1, max=20), stop=stop_after_attempt(3))
     def generate(self, request_obj: InferenceRequest) -> InferenceResponse:
@@ -82,6 +91,11 @@ class GoogleClient(InferenceClient):
             }
         if request_obj.config.as_json:
             payload["generationConfig"]["responseMimeType"] = "application/json"
+        if request_obj.config.thinking_budget is not None:
+            payload["generationConfig"]["thinkingConfig"] = {
+                "thinkingBudget": request_obj.config.thinking_budget,
+                "includeThoughts": True,
+            }
 
         req = request.Request(
             url=endpoint,
@@ -101,10 +115,12 @@ class GoogleClient(InferenceClient):
 
         response_payload = json.loads(raw_body)
         text = self._extract_text(response_payload)
+        thinking_text = self._extract_thinking(response_payload)
 
         return InferenceResponse(
             provider=self.provider_name,
             model=request_obj.model,
             text=text,
             raw=response_payload,
+            thinking_text=thinking_text,
         )

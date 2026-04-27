@@ -17,6 +17,8 @@ class GenerationConfig(BaseModel):
     max_tokens: int = 800
     top_p: float = 1.0
     as_json: bool = False
+    # None = API default; 0 = disable thinking; >0 = cap at N tokens
+    thinking_budget: int | None = None
 
 
 class InferenceRequest(BaseModel):
@@ -30,6 +32,7 @@ class InferenceResponse(BaseModel):
     model: str
     text: str
     raw: dict[str, Any] = Field(default_factory=dict)
+    thinking_text: str | None = None
 
 
 class InferenceClient(ABC):

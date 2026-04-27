@@ -556,6 +556,14 @@ prisk eval-irrelevant-personalization \
   --out output/result/eval_seed200_irrelevant_personalization.json \
   --candidate-endpoint candidate --judge-endpoint judge_4o --max-workers 4
 
+test again
+prisk eval-irrelevant-personalization \
+  --config configs/default.yaml \
+  --dataset data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json \
+  --out output/result/eval_seed200_irrelevant_personalization.json \
+  --candidate-endpoint candidate --judge-endpoint judge_4o --max-workers 4
+  
+
 prisk evaluate --config configs/default.yaml --dataset data/scenarios.json --out data/evaluations.jsonl"
 
 PYTHONPATH=src python -m personalization_risk.cli eval-preference-narrowing \
