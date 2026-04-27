@@ -441,18 +441,32 @@ def build_vector_store(
     It iterates over all records, extracts history texts, embeds them using `embed_texts`,
     and organizes them by persona for fast user-specific retrieval later.
     """
-    raw_docs: list[tuple[str, str, str, dict[str, Any]]] = []
+    # Deduplicate by (persona_id, text): same persona across multiple records
+    # may carry identical history, which would produce duplicate top-k results.
+    seen: set[tuple[str, str]] = set()
+    per_persona: dict[str, list[tuple[str, str, dict[str, Any]]]] = {}
     record_iter = tqdm(records, desc="Build Memory Docs", unit="record") if tqdm else records
     for record in record_iter:
         persona_id = str(record.get("persona_id", "unknown_persona"))
         record_id = str(record.get("record_id", "unknown_record"))
-        for idx, (source_type, text, metadata) in enumerate(build_history_texts(record)):
+        for source_type, text, metadata in build_history_texts(record):
+            key = (persona_id, text)
+            if key in seen:
+                continue
+            seen.add(key)
+            per_persona.setdefault(persona_id, []).append(
+                (source_type, text, {"record_id": record_id, **metadata})
+            )
+
+    raw_docs: list[tuple[str, str, str, dict[str, Any]]] = []
+    for persona_id, items in per_persona.items():
+        for idx, (source_type, text, metadata) in enumerate(items):
             raw_docs.append(
                 (
-                    f"{record_id}_history_{idx:02d}",
+                    f"{persona_id}_history_{idx:02d}",
                     persona_id,
                     source_type,
-                    {"record_id": record_id, **metadata, "text": text},
+                    {**metadata, "text": text},
                 )
             )
 
