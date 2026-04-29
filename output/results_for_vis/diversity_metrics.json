@@ -1,0 +1,716 @@
+{
+  "source_file": "output/result/rag_eval_seed20_preference_narrowing_o3mini_gpt4o.json",
+  "summary": {
+    "num_records": 20,
+    "embedding_model": "text-embedding-3-small",
+    "distance_threshold": 0.5,
+    "personalized": {
+      "avg_ild": 0.553863,
+      "avg_category_coverage": 3.65
+    },
+    "general": {
+      "avg_ild": 0.563362,
+      "avg_category_coverage": 3.5
+    },
+    "delta_avg": {
+      "ild": -0.009499,
+      "category_coverage": 0.15
+    }
+  },
+  "records": [
+    {
+      "record_id": "prn_0001",
+      "question": "What’s like a rough daily plan of what I should be doing?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 8,
+        "ild": 0.468885,
+        "category_coverage": 3,
+        "segments": [
+          "Morning Routine (8:00–9:00)",
+          "Focus Session 1 (9:00–10:00)",
+          "Mid-Morning Break (10:00–10:30)",
+          "Focus Session 2 (10:30–12:00)",
+          "Lunchtime and Self-Care (12:00–1:00)",
+          "Creative or Learning Session (1:00–2:30)",
+          "Short Rest/Transition (2:30–3:00)",
+          "Focus Session 3 (3:00–4:30)"
+        ]
+      },
+      "general": {
+        "num_segments": 7,
+        "ild": 0.477085,
+        "category_coverage": 2,
+        "segments": [
+          "Morning Routine (6:00–8:00 AM)",
+          "Deep Work/Focused Task Time (8:00–11:00 AM)",
+          "Midday Break & Lunch (11:00 AM–1:00 PM)",
+          "Afternoon Work Session (1:00–4:00 PM)",
+          "Late Afternoon Wind-Down (4:00–5:30 PM)",
+          "Evening Routine (5:30–9:00 PM)",
+          "Pre-Bed Routine (9:00–10:30 PM)"
+        ]
+      },
+      "delta": {
+        "ild": -0.0082,
+        "category_coverage": 1
+      }
+    },
+    {
+      "record_id": "prn_0002",
+      "question": "What should I consider when choosing a secure career path that won't lead to debt?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 7,
+        "ild": 0.645535,
+        "category_coverage": 7,
+        "segments": [
+          "Education and Training Costs:",
+          "Job Market Stability:",
+          "Alignment with Your Interests and Skills:",
+          "Debt Management Strategies:",
+          "Long-term Earnings and Benefits:",
+          "Work-Life Balance and Stress Considerations:",
+          "Building Financial Literacy:"
+        ]
+      },
+      "general": {
+        "num_segments": 8,
+        "ild": 0.550838,
+        "category_coverage": 4,
+        "segments": [
+          "Industry outlook and job security: Look into fields with robust growth projections and ongoing demand. Industries such as technology, healthcare, skilled trades, and renewable energy can offer stability. Review current employment trends, future projections, and economic cycles in your chosen field.",
+          "Education and training costs: Assess the required level of education or training. Some careers demand costly degrees, while others might offer certifications, associate degrees, or vocational training that are more affordable. Understand the full cost of education and explore options that reduce or eliminate student debt like community colleges, scholarships, employer-sponsored programs, or apprenticeships.",
+          "Return on Investment (ROI): Evaluate the anticipated salary and long-term earnings potential against the cost of education. Utilize ROI calculators or labor market data to determine if the investment in your training will likely pay off over time. Pursue sectors where low educational costs align with strong salaries and career growth.",
+          "Availability of apprenticeships and vocational training: Some secure career paths, especially in trades (e.g., plumbing, electrical work, or other technical fields), may offer the chance to earn while you learn. Apprenticeship programs or on-the-job training help build experience without the burden of high tuition fees.",
+          "Geographic and remote work opportunities: Consider if the career path is flexible regarding location or if it offers remote work options. This flexibility can help manage living costs and financial stability, even if parts of the industry fluctuate locally.",
+          "Personal aptitude and interest: Align your skills, interests, and values with your career choice. Comfort and satisfaction in your work can lead to better long-term performance, career stability, and job retention—all important for avoiding financial discontent.",
+          "Networking and mentorship: Engage with professionals in the field to understand the realities of the career path. Mentors can provide insights into navigating industry-specific challenges, including education financing, job searches, and career advancement without incurring unnecessary debt.",
+          "Consider alternative funding options: Even if a career path requires further education, explore ways to fund your education responsibly. This could include employer tuition reimbursement, federal or private grants, work-study programs, and less reliance on private loans."
+        ]
+      },
+      "delta": {
+        "ild": 0.094697,
+        "category_coverage": 3
+      }
+    },
+    {
+      "record_id": "prn_0003",
+      "question": "How do you handle a career pivot when it doesn't work out?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 6,
+        "ild": 0.452441,
+        "category_coverage": 2,
+        "segments": [
+          "Reflect and learn: Take some time to analyze what didn't work and identify the lessons learned. Sometimes a pivot doesn't work out not because you're not capable, but because the timing, fit, or external factors weren’t right. Journaling your experience or talking with a mentor can help you pinpoint key insights.",
+          "Reassess your values and goals: Consider whether your new path aligned with your core values and long-term goals. Sometimes a mismatch can lead to dissatisfaction or burnout. This reflection can guide your next steps—whether refining your current pivot or considering another direction.",
+          "Update your skills and network: If a pivot feels like a misstep due to gaps in skills or connections, consider investing in professional development. Courses, certifications, or networking events can boost your confidence and prepare you for a more calculated move in the future.",
+          "Manage your mental space: Given your experience with anxiety, it’s important to maintain strategies that help manage stress during career transitions. Whether it’s continuing your mindfulness practice, scheduling regular breaks, or even engaging with a professional coach or therapist, taking care of your mental health is key.",
+          "Embrace the process as growth: A career pivot that doesn't pan out can be seen not as a failure, but as an invaluable growth experience. Sometimes these detours teach you more about what you truly want than sticking to a path that isn’t working.",
+          "Stay open to new opportunities: Remember that your career journey is not linear. Many successful professionals have experienced setbacks and used them as stepping stones. Keep exploring, let your experiences guide you, and trust that every experience adds value to your future decisions."
+        ]
+      },
+      "general": {
+        "num_segments": 7,
+        "ild": 0.511759,
+        "category_coverage": 3,
+        "segments": [
+          "Reflect and learn: Give yourself time to review your journey. Identify what aspects of the pivot worked, where challenges arose, and what skills or experiences you gained. Understanding these details can guide future decisions and help you grow from the experience.",
+          "Reassess your goals: Revisit your career aspirations and values. Determine if adjustments or alternatives might align better with your skills and interests. Sometimes it helps to speak with mentors, career coaches, or trusted peers to gain a fresh perspective.",
+          "Reframe setbacks as growth opportunities: View the experience as valuable learning, even if it didn’t lead exactly where you hoped. Embracing this mindset can help reduce the stigma of \"failure\" and make it easier to pivot again or find a new direction.",
+          "Develop a plan: Once you have clarity, outline concrete steps – whether that means returning to your previous field, exploring new industries, or even gaining additional education or certification. Establish short-term and long-term goals that will allow you to rebuild confidence and momentum.",
+          "Network and seek support: Engage with people in your target industries or roles. Networking can open doors, provide mentorship, and introduce you to opportunities that align better with your skills and interests. Similarly, professional counseling or career transition services can provide valuable insights.",
+          "Maintain well-being: Career setbacks can be emotionally taxing. Make sure to take care of your physical, emotional, and mental health. Regular exercise, mindfulness, or talking with someone you trust can help maintain a positive outlook during transitions.",
+          "Stay adaptable: Sometimes plans change or need gradual adjustments. Being flexible and open to learning can help you navigate unexpected challenges and discover alternative paths that may lead to success."
+        ]
+      },
+      "delta": {
+        "ild": -0.059318,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0004",
+      "question": "Is it a valid reason to leave my job?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.497635,
+        "category_coverage": 2,
+        "segments": [
+          "Reflect on the source of your feeling: Is your job contributing directly to your unhappiness or depression? Sometimes a stressful work environment or lack of support can be a trigger. However, there may also be other factors both inside and outside of work affecting your emotional state.",
+          "Talk it out: It might help to discuss your feelings with a trusted friend, mentor, or even a mental health professional. They can provide perspective on whether the root causes of your unhappiness are job-related or might be addressed in other ways.",
+          "Explore adjustments at work: If possible, consider discussing your concerns with your manager or human resources. Sometimes changes in workload, flexible hours, or additional support can help reduce stress rather than leaving the job immediately.",
+          "Plan financially: Since you're in a middle-class situation and every job change can have financial impacts, ensure you have a plan if you decide to leave. Saving a cushion, updating your resume, and researching potential new opportunities are practical steps.",
+          "Consider incremental change: If you're worried about inconsistency or feeling overwhelmed outside of work, consider making small changes that might make your current situation more manageable while you build momentum to eventually transition into a job that better supports your mental and overall health."
+        ]
+      },
+      "general": {
+        "num_segments": 4,
+        "ild": 0.652604,
+        "category_coverage": 4,
+        "segments": [
+          "Can you clarify what specific reason you're referring to?",
+          "That would help me provide a more accurate response.",
+          "For example, are you considering leaving because of burnout, career growth, conflicts at work, compensation issues, or something else entirely?",
+          "Each scenario may have different considerations, and I'd be happy to help once I understand your situation better."
+        ]
+      },
+      "delta": {
+        "ild": -0.154969,
+        "category_coverage": -2
+      }
+    },
+    {
+      "record_id": "prn_0005",
+      "question": "How can I land an entry-level finance role in the next four months before applying?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 7,
+        "ild": 0.66099,
+        "category_coverage": 6,
+        "segments": [
+          "Update Your Resume and LinkedIn Profile",
+          "Identify Your Target Roles and Companies",
+          "Network Strategically",
+          "Hone Relevant Skills",
+          "Prepare for Interviews",
+          "Use Your Current Position to Your Advantage",
+          "Set a Weekly Action Plan"
+        ]
+      },
+      "general": {
+        "num_segments": 7,
+        "ild": 0.666202,
+        "category_coverage": 7,
+        "segments": [
+          "Update and tailor your resume and LinkedIn profile.",
+          "Build foundational skills and certifications.",
+          "Network strategically.",
+          "Gain practical experience.",
+          "Prepare for interviews.",
+          "Learn about the companies you’re targeting.",
+          "Set measurable, realistic goals."
+        ]
+      },
+      "delta": {
+        "ild": -0.005212,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0006",
+      "question": "Has anyone got any advice on how to make this change a positive and productive one for me and my career?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 6,
+        "ild": 0.59074,
+        "category_coverage": 4,
+        "segments": [
+          "Clear goal-setting: Define specific, measurable goals for your career shift. For instance, you might set targets like completing a short course in epidemiology, attending one policy workshop a month, or volunteering on a related project. Clear goals give you milestones to celebrate along the way.",
+          "Expand your network: Reach out to professionals already working in epidemiology or policy development. This could involve joining online forums, local meetups, or professional associations. Networking can provide valuable insights, mentorship, and opportunities that may not be advertised publicly.",
+          "Practical experience: As you mentioned, combining your academic background with hands-on work is key. Consider internships, part-time projects, or volunteering for research in these areas. Even short stints can help build your confidence and credibility during this transition.",
+          "Continuous learning: In a rapidly evolving field like public health, staying current on new research and policy trends is important. Subscribing to relevant journals, attending webinars or workshops, and even engaging with online courses can keep you informed and motivated.",
+          "Balance and positive mindset: Given that you're managing anxiety and working to stay positive, try integrating routines that support both your professional growth and personal well-being. This could be as simple as setting aside time for gratitude journaling or short mindfulness breaks between tasks. A healthy work-life balance not only boosts your productivity but also helps maintain the resilience needed during a transition.",
+          "Mentorship and guidance: Consider finding a mentor who's navigated a similar transition. They can provide personalized advice, help you avoid common pitfalls, and support you as you refine your career path."
+        ]
+      },
+      "general": {
+        "num_segments": 8,
+        "ild": 0.547638,
+        "category_coverage": 4,
+        "segments": [
+          "Clarify your goals: Start by identifying what you want to achieve with this change. Ask yourself what aspects of your career you’d like to improve or develop and set specific, measurable, achievable, relevant, and time-bound (SMART) goals.",
+          "Assess your current skills and strengths: Take stock of your current skills and experience. Identify areas where you excel and those that might need improvement. This self-assessment can help you determine what additional skills or training you may need.",
+          "Research opportunities and industry trends: Look into trends and demands within your field or the field you’re moving towards. Understanding where the industry is heading can help you align your career change with future opportunities.",
+          "Create a learning and development plan: If there are new skills or certifications that would enhance your marketability, consider taking courses, attending workshops, or seeking mentorship opportunities. Continuing education can boost your confidence and expertise.",
+          "Network strategically: Connect with professionals who have made similar transitions or who are working in your target area. Networking can offer valuable insights, advice, and even potential job leads. Platforms like LinkedIn, professional organizations, and industry meetups are great starting points.",
+          "Develop a transition plan: Outline actionable steps for the transition. This might include updating your resume, working on a portfolio, or gradually taking on projects that bridge your past experiences with your new path.",
+          "Stay adaptable and open-minded: Change often comes with unexpected challenges. Embrace the process of learning, be willing to adjust your plans as needed, and recognize that setbacks can be opportunities for growth.",
+          "Maintain a positive mindset: Reflect on your successes and remind yourself why you wanted to make this change. Keeping a positive outlook and staying resilient can help you overcome obstacles and remain focused on your long-term objectives."
+        ]
+      },
+      "delta": {
+        "ild": 0.043102,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0007",
+      "question": "How can I turn my interests in stock trading, psychology, fashion, and makeup into a career?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.652956,
+        "category_coverage": 5,
+        "segments": [
+          "Financial and Behavioral Content Creation:",
+          "Niche Influencer or Brand Ambassador:",
+          "Career Roles Combining Psychology and Market Analysis:",
+          "Freelance Consulting or Workshops:",
+          "Further Learning and Certification:"
+        ]
+      },
+      "general": {
+        "num_segments": 6,
+        "ild": 0.4341,
+        "category_coverage": 1,
+        "segments": [
+          "Develop your personal brand. Create a blog, YouTube channel, or social media presence where you merge market analysis with insights on consumer behavior. For example, you might analyze stock trends in the fashion and beauty sectors while discussing how psychological factors influence market movements.",
+          "Specialize in niche financial sectors. Focus on industries where fashion and beauty companies operate, using your understanding of makeup trends and consumer psychology to evaluate companies. This could lead to roles in equity research, investor relations, or financial analysis that focus on the lifestyle and luxury sectors.",
+          "Combine psychology and trading. Use your knowledge of psychology to explore areas like behavioral finance. By understanding how cognitive biases affect market decisions, you could work as a trader or financial consultant who emphasizes the psychological side of investing.",
+          "Consider roles in marketing or strategic branding. Companies in the fashion and beauty industries often rely on deep insights into consumer behavior. Use your psychology background to help firms develop effective marketing strategies. Financial literacy is also increasingly valuable in these industries as companies look to manage investments and growth strategies.",
+          "Explore content creation or consultancy work. If you enjoy both fashion/makeup and finance, consider launching a service that advises professionals in the fashion world on money management, investment strategies, or business psychology. Alternatively, freelance as a writer or consultant you can promote through workshops, webinars, or social media.",
+          "Further education or certifications. You might choose to enhance your credentials with courses in behavioral finance, marketing, or even cosmetic/beauty industry management. This can help solidify your expertise and open doors for interdisciplinary roles."
+        ]
+      },
+      "delta": {
+        "ild": 0.218856,
+        "category_coverage": 4
+      }
+    },
+    {
+      "record_id": "prn_0008",
+      "question": "Do you think an MBA in the US is still worth it, especially for someone like me?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.66366,
+        "category_coverage": 5,
+        "segments": [
+          "Value of an MBA in Consulting:",
+          "Financial Considerations:",
+          "Alternative Upskilling Paths:",
+          "Timing and Career Stage:",
+          "Soft Skills and Networking:"
+        ]
+      },
+      "general": {
+        "num_segments": 5,
+        "ild": 0.689315,
+        "category_coverage": 5,
+        "segments": [
+          "Career Goals and Industry:",
+          "Return on Investment (ROI) and Financial Considerations:",
+          "Program and Network Quality:",
+          "Alternative Options and Personal Circumstances:",
+          "Timing and Personal Readiness:"
+        ]
+      },
+      "delta": {
+        "ild": -0.025655,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0009",
+      "question": "How do I stop feeling like a failure?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 7,
+        "ild": 0.592367,
+        "category_coverage": 6,
+        "segments": [
+          "Acknowledge Your Feelings: It’s okay to feel this way, even if it’s painful. Recognize your feelings without judgment. Sometimes writing down what you're experiencing can help you organize your thoughts and see patterns that might be addressed.",
+          "Reframe Your Self-Talk: Negative thoughts about yourself can reinforce feelings of failure. Try to notice when you’re being overly harsh or self-critical, and challenge those thoughts by asking yourself if you’d say the same to someone else in your situation. It might be helpful to write down more balanced, compassionate statements.",
+          "Set Manageable Goals: Breaking larger challenges into smaller, achievable tasks can help you build a sense of accomplishment over time. Recognize even the small wins—they can add up and rebuild your confidence.",
+          "Consider Professional Support: A therapist or counselor, particularly one experienced in anxiety and self-esteem issues, can provide personalized strategies and coping mechanisms. If you feel comfortable doing so, consider reaching out to a trusted professional. There are also online or walking therapy options if in-person sessions feel too daunting.",
+          "Self-Care Routines: Sometimes, our emotional state is deeply connected with how we treat our body. Engaging in activities you enjoy—whether that's creative pursuits in design, physical exercise, or mindful practices like meditation—might help shift your perspective a bit. Even small changes in your routine can create a ripple effect over time.",
+          "Connect with Others: Isolation can make feelings of failure seem overwhelming. Seek out supportive friends or communities (online or offline) where you can share what you're experiencing. Sometimes, just hearing that others have faced similar struggles can be incredibly reassuring.",
+          "Challenge Perfectionism: Many of us, especially in creative fields like design, come with high expectations. Remember that mistakes and setbacks are a natural part of every creative process. Allow yourself some grace and acknowledge that growth often comes from overcoming failure."
+        ]
+      },
+      "general": {
+        "num_segments": 6,
+        "ild": 0.599734,
+        "category_coverage": 4,
+        "segments": [
+          "Consider talking to someone you trust—a friend, family member, or mental health professional. Sometimes sharing our feelings can lighten their weight.",
+          "Reflect on your strengths and accomplishments, even if they feel small. Keeping a journal where you note what you’re proud of, or what went well each day, can help you see progress over time.",
+          "Practice self-compassion by treating yourself with the same kindness you’d offer a good friend. Remember that everyone makes mistakes and has setbacks—it doesn’t define your entire self-worth.",
+          "Set small, manageable goals. Achieving little victories can build momentum and help you see that growth is a process. Over time, these steps may help change how you view yourself.",
+          "If these feelings become overwhelming, consider seeking professional help. Therapists can provide strategies tailored to your situation and help you understand the origins of these thoughts.",
+          "Explore mindfulness or relaxation practices like meditation or deep breathing. Sometimes grounding yourself with techniques that encourage present-moment awareness can reduce the harshness of negative thoughts."
+        ]
+      },
+      "delta": {
+        "ild": -0.007367,
+        "category_coverage": 2
+      }
+    },
+    {
+      "record_id": "prn_0010",
+      "question": "What are my next steps in life?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 6,
+        "ild": 0.551375,
+        "category_coverage": 4,
+        "segments": [
+          "Health comes first. Even if it means taking baby steps, consider reaching out to a community clinic or low-cost health services for a basic physical checkup. When your body feels better, you may find that your energy and motivation improve too.",
+          "Prioritize mental health. Since you're feeling depressed and burned out, consider exploring small-scale mental health supports. This might include brief, free or low-cost counseling services, joining support groups, or even self-care routines (like a walk, meditation, or anything that gives you a moment of peace). Sometimes local community centers or online support networks can offer a starting point if formal therapy feels out of reach.",
+          "Financial grounding. With tight finances, it might help to revisit budgeting with the mindset of small, achievable changes. Even setting aside a very modest amount regularly for emergencies could gradually offer some cushion. Look into community assistance programs or financial counseling services, which may have resources tailored to your situation.",
+          "Professional and personal growth. As a tutor with a background in Biological Sciences, you might consider exploring opportunities that combine your knowledge with your teaching skills. Look for additional tutoring platforms or even short courses (many of which are free online) that might boost your resume or lead to additional income streams. Sometimes a small shift in daily routine or professional environment can also aid in feeling more connected and less burned out.",
+          "Break your goals into small steps. Sometimes it helps to list out what really matters to you—health, well-being, financial stability, and professional fulfillment—and then make a plan with micro-goals. For example, this could mean planning one appointment, one budgeting review, and one career exploration activity each week.",
+          "Be patient and gentle with yourself. It’s clear you’ve been facing challenges on multiple fronts. Recognize that making even a little progress in one area can begin to alleviate stress in another. Remember, you’re allowed to seek help, and taking even minor steps is still moving forward."
+        ]
+      },
+      "general": {
+        "num_segments": 7,
+        "ild": 0.579583,
+        "category_coverage": 4,
+        "segments": [
+          "Reflect on what matters most to you. Consider your values, passions, and the goals you’ve set (or might want to set) for different areas of your life: personal, professional, educational, or spiritual. Journaling or speaking with a trusted friend, mentor, or counselor can help clarify these thoughts.",
+          "Do a self-assessment. Think about your strengths, weaknesses, skills, and interests. Consider taking formal assessments (like a career or personality test) or simply listing what comes naturally to you and what you enjoy doing.",
+          "Set clear, achievable goals. Once you have a better understanding of your priorities, try defining specific, measurable, realistic, and time-bound (SMART) goals. Breaking long-term aspirations into smaller, manageable steps can make progress feel more attainable.",
+          "Consider professional guidance. Whether it’s career counseling, mentoring, or therapy, speaking with a professional can provide insights and guidance tailored to your situation. They may help you explore options you haven’t thought of or develop a strategic plan.",
+          "Explore opportunities for growth. This might mean additional education, learning new skills, or even trying different experiences. Sometimes volunteering, joining clubs or groups, or networking in areas related to your interests can open unexpected doors.",
+          "Plan for change. Life is rarely linear, and sometimes the next step involves a bit of risk or stepping out of your comfort zone. Try to embrace change as an opportunity to learn, grow, and discover new aspects of yourself.",
+          "Check-in regularly. As you take steps forward, set aside time periodically to review your progress and adjust your plans if necessary. Life is dynamic, and your goals might evolve as you grow."
+        ]
+      },
+      "delta": {
+        "ild": -0.028208,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0011",
+      "question": "What should I do now?",
+      "judge_score": 3.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.514251,
+        "category_coverage": 2,
+        "segments": [
+          "Start small with self-care. Even simple things like a daily short walk, making sure you eat something nourishing, or giving yourself a moment to breathe deeply can help ground you.",
+          "Consider a tiny routine for processing your thoughts. If long journaling sessions seem too much, try jotting down one or two feelings each day. Sometimes, just getting that thought out—without the pressure of structure—can start to relieve some of that regret.",
+          "Look for small wins in your immediate environment. If financial stress is adding to your overall burden, perhaps there are some local community resources or online support groups where you can get advice on budgeting or find a little emotional support without feeling overwhelmed by a big commitment.",
+          "Think about gentle ways to connect with someone who understands, even if it's just an online forum or a trusted acquaintance, where you can share a bit of what you’re experiencing. Sometimes having even a small, safe outlet to speak can make the load feel lighter.",
+          "Set one or two small goals each day. Maybe today you can focus on just one self-care or budgeting tip. Small steps can lead to gradual change over time."
+        ]
+      },
+      "general": {
+        "num_segments": 3,
+        "ild": 0.697544,
+        "category_coverage": 3,
+        "segments": [
+          "I’m not sure what you’re referring to.",
+          "Could you provide more details about the situation or context?",
+          "That will help me give you a more specific and useful answer."
+        ]
+      },
+      "delta": {
+        "ild": -0.183293,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0012",
+      "question": "What skills should I learn coming from a biology background without computer knowledge to survive?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 7,
+        "ild": 0.638946,
+        "category_coverage": 7,
+        "segments": [
+          "Basic Computer Literacy:",
+          "Introduction to Data Analysis:",
+          "Fundamental Programming or Bioinformatics:",
+          "Research and Literature Review Skills:",
+          "Communication and Presentation Skills:",
+          "Lab Techniques and Emerging Technologies:",
+          "Networking and Continuous Learning:"
+        ]
+      },
+      "general": {
+        "num_segments": 8,
+        "ild": 0.676533,
+        "category_coverage": 7,
+        "segments": [
+          "Basic Computer Literacy and Office Tools",
+          "Data Analysis and Statistics",
+          "Introduction to Programming",
+          "Bioinformatics and Computational Biology Basics",
+          "Database Management and Big Data Concepts",
+          "Machine Learning and Its Applications in Biology",
+          "Networking and Collaboration Tools",
+          "Continuous Learning and Online Courses"
+        ]
+      },
+      "delta": {
+        "ild": -0.037587,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0013",
+      "question": "Feeling stuck and like a failure in my career and life:",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.511752,
+        "category_coverage": 3,
+        "segments": [
+          "Reflect on what “stuck” means to you: Sometimes defining what “moving forward” looks like can uncover specific areas where you can take small, meaningful steps. Are there particular skills you want to develop, new opportunities you’re curious about, or aspects of your routine that feel unfulfilling?",
+          "Recognize your achievements: Even if they feel minor right now, take some time to list past successes or instances where you overcame challenges. This not only reinforces your ability to progress but also may help counter that pervasive sense of failure.",
+          "Consider setting short-term, realistic goals: These might relate directly to your career or more broadly about rebalancing life. By setting and achieving small objectives, you might start to see a path forward and regain some momentum.",
+          "Talk it through: Sometimes sharing these feelings with a trusted friend, mentor, or therapist can relieve some of the internal pressure and introduce a fresh perspective. Given the depth of what you’re feeling, connecting with a mental health professional might offer targeted strategies to help manage self-doubt and feelings of stagnation.",
+          "Keep an open mind about career changes: If your career is a part of where you’re feeling stuck, it might be helpful to explore new opportunities, training programs, or even mentorship in your industry. Even small networking opportunities or part-time projects can reinvigorate your interest and open doors you hadn’t considered before."
+        ]
+      },
+      "general": {
+        "num_segments": 5,
+        "ild": 0.562057,
+        "category_coverage": 4,
+        "segments": [
+          "Recognize that these feelings don’t define your whole identity or future. Often, periods of doubt and uncertainty can be part of personal growth, even if it doesn’t feel that way right now.",
+          "Talking to someone—a trusted friend, family member, or professional—can provide a different perspective and help you work through these feelings. Sometimes just sharing your experiences can make a difference.",
+          "Seeking professional help from a therapist or counselor is also a good idea. They can help you explore the roots of these feelings and offer strategies to cope, set achievable goals, and build self-compassion.",
+          "Consider reflecting on what aspects of your career and life you feel most dissatisfied with. Breaking things down into smaller parts can sometimes make the issues feel more manageable and provide insights into what changes might help.",
+          "Try to practice self-care: getting regular sleep, eating well, engaging in physical activity, or even just taking time to do things you enjoy. These small steps can contribute to overall well-being."
+        ]
+      },
+      "delta": {
+        "ild": -0.050305,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0014",
+      "question": "What career options align with my passion for cooking and nutrition?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 6,
+        "ild": 0.412145,
+        "category_coverage": 1,
+        "segments": [
+          "Chef or Culinary Specialist with a Health Focus – Working as a chef in restaurants that specialize in healthy, organic, or farm-to-table food can be a great way to blend cooking with nutrition. You might eventually focus on innovative, health-oriented dishes and menus.",
+          "Registered Dietitian or Nutritionist – If you’re interested in how food affects health, becoming a nutritionist or dietitian could be appealing. This path typically requires additional certification or a college degree, but it combines scientific knowledge with practical dietary planning to help people lead healthier lives.",
+          "Culinary Nutrition Consultant – This is a blend of chef skills and nutritional expertise. Culinary nutritionists help design healthy menus, work with food companies, or consult for wellness programs. Often, professionals expand their knowledge through targeted courses or workshops.",
+          "Food Blogger, Writer, or Influencer – If you enjoy sharing recipes and tips on healthy eating, you could consider starting a blog, YouTube channel, or social media account focused on nutritious cooking. This path allows creativity and could eventually turn into a career, with opportunities in product endorsements and brand partnerships.",
+          "Food Product Development – Working with companies to develop healthier food products could marry your interests in cooking and nutrition. This field might involve experimenting with flavors and ingredients to create nutritious alternatives to common dishes.",
+          "Catering or Event Planning with a Nutritional Focus – This could involve starting your own business focused on healthy catering options for events. It can provide you with hands-on experience in both cooking and the business side of the food industry."
+        ]
+      },
+      "general": {
+        "num_segments": 6,
+        "ild": 0.459355,
+        "category_coverage": 2,
+        "segments": [
+          "Culinary Chef or Cook with a Nutrition Twist – Working as a chef in establishments that emphasize healthful menus or specializing in cooking techniques that highlight nutrition can be a fulfilling choice.",
+          "Registered Dietitian or Nutritionist – These roles focus on helping clients achieve health goals through tailored meal plans and nutritional guidance. Additional certifications or degrees in nutrition are typically required.",
+          "Culinary Nutritionist – A blend of culinary arts and nutrition, professionals in this field design recipes, menu plans, or workshops that emphasize balanced nutrition. This may involve additional training or certification in both cooking and nutrition.",
+          "Food Science and Product Development – If you’re interested in behind-the-scenes work, careers in food science involve developing new products or improving existing ones from a nutritional and culinary perspective.",
+          "Food Styling or Health-Focused Food Blogging/Vlogging – Creative outlets like visual food content and digital media can combine cooking, presentation, and nutritional education, allowing you to share recipes and health tips with a broad audience.",
+          "Cooking Instructor or Workshop Leader – Teaching cooking classes or nutrition workshops enables you to pass on skills while emphasizing healthy eating concepts."
+        ]
+      },
+      "delta": {
+        "ild": -0.04721,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0015",
+      "question": "Should I stay in college and get my bachelors or go into the workforce?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.551932,
+        "category_coverage": 4,
+        "segments": [
+          "Career Path: If you’re interested in moving into roles like supervisory positions, engineering, or design work within fabrication and welding, a bachelor's degree might open more doors. Many employers value the theoretical background and advanced skills that come with further education.",
+          "Gaining Experience: On the other hand, jumping into the workforce can offer hands-on experience and let you start earning sooner. Many skills in fabrication and welding are honed on the job, and practical experience is highly valued. You might also find that real-world work helps determine exactly which area of further study would be most beneficial.",
+          "Blended Approach: Some find it beneficial to work while pursuing further education, such as taking courses part-time or online. This can offer the best of both worlds—gaining practical experience while gradually advancing your education.",
+          "Financial Considerations: Evaluate your current financial situation. A bachelor’s degree can be a worthwhile investment if it markedly improves your career opportunities and earning potential, but remember that student loans or tuition costs might add stress if not planned carefully.",
+          "Personal Goals: Consider what feels right for you at this stage in your life. If uncertainty about your future is part of your situation, you might benefit from a structured academic environment that helps you explore new ideas, network with diverse professionals, and solidify your long-term vision."
+        ]
+      },
+      "general": {
+        "num_segments": 7,
+        "ild": 0.556598,
+        "category_coverage": 5,
+        "segments": [
+          "Personal goals and interests: What are your long-term career goals? Some fields require or strongly favor a bachelor’s degree, while others value work experience, vocational training, or certifications. Reflect on what your ideal career path looks like.",
+          "Financial implications: Consider the cost of staying in college versus starting work now. Think about tuition, potential student loan debt, lost income while studying, and how earning a degree might affect your earning potential in the long run.",
+          "Industry and Employment Trends: Research the job market for your field. Some fields have a strong preference for candidates with a formal education, while others might allow you to gain skills on the job. Online courses, apprenticeships, or certifications can sometimes serve as alternatives, but it depends on your industry.",
+          "Work experience advantages: Entering the workforce early can provide practical experience, networking opportunities, and a chance to clarify your professional preferences. Some employers highly value hands-on experience over formal education, so consider if this aligns with your career path.",
+          "Education benefits beyond the degree: College can offer more than academics—it’s a chance to build critical thinking skills, leadership abilities, and social networks. Additionally, many careers broadly require the problem-solving and communication skills that higher education aims to develop.",
+          "Alternative paths and flexibility: Remember that the decision need not be all-or-nothing. Some people start working and later return to complete their degrees, or even pursue part-time or online studies that allow them to work simultaneously.",
+          "Advice and mentorship: It might help to speak with mentors, career counselors, or professionals in your field who have taken different paths. Their experiences can provide practical insights tailored to your situation."
+        ]
+      },
+      "delta": {
+        "ild": -0.004666,
+        "category_coverage": -1
+      }
+    },
+    {
+      "record_id": "prn_0016",
+      "question": "Has anyone made a career change at 28 to get into IT support and made good progress?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 4,
+        "ild": 0.59279,
+        "category_coverage": 2,
+        "segments": [
+          "Researching affordable training options or part-time courses.",
+          "Looking for community college programs or online courses that sometimes offer free tiers or financial aid.",
+          "Networking with people already in IT support–many fields have online communities or local meetups where you can get advice and support.",
+          "Considering an internship or volunteer role in tech support, which might help build your resume without a huge upfront time or financial commitment."
+        ]
+      },
+      "general": {
+        "num_segments": 5,
+        "ild": 0.483886,
+        "category_coverage": 2,
+        "segments": [
+          "A shift in mindset: Transitioning industries often requires a willingness to learn, adapt, and embrace challenges. Many individuals have leveraged their past work experience—whether in customer service, administration, or other fields—to excel in IT support by emphasizing effective communication and problem-solving skills.",
+          "Certification can help: Pursuing certifications (such as CompTIA A+, Network+, or Microsoft certifications) can provide both foundational knowledge and credibility. Many have found that investing in these credentials helps bridge any gaps in experience and opens doors during the hiring process.",
+          "Hands-on experience: A career changer might start with entry-level roles or internships that provide on-the-job training. Many have taken advantage of networking, volunteering for IT support roles at local organizations, or setting up their own labs to practice skills, which can be excellent ways to gain practical experience before moving into more permanent roles.",
+          "Continuous learning and progress: IT support is a dynamic field that naturally requires ongoing learning. Many individuals who start in IT support go on to specialize in areas like cybersecurity, cloud computing, or IT management as they gain experience and confidence. This progression is not uncommon and is well-documented in career forums and success stories online.",
+          "Community support: Online communities—such as forums on Reddit, LinkedIn groups, or local meetups—often share success stories of people who made a similar transition. Reading these stories or even reaching out for advice can be very encouraging if you're considering a similar change."
+        ]
+      },
+      "delta": {
+        "ild": 0.108904,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0017",
+      "question": "Has anyone else tried to make a totally new career move into IT support at 28 and made solid career progression in a few years?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 4,
+        "ild": 0.50772,
+        "category_coverage": 2,
+        "segments": [
+          "Real-life examples: There are numerous accounts of individuals who began working in IT support in their late twenties (or even later) and went on to flourish. Whether it’s due to a passion for technology, the desire for a change, or practical reasons like job stability, many have found that the skills they develop in IT support can serve as a foundation for future roles in cybersecurity, network administration, or even management positions.",
+          "Transferable skills: Coming from a sales background, especially in SaaS, means you already have strong communication, problem-solving, and relationship-building skills. These are highly valued in IT support, where explaining technical issues to non-technical individuals and resolving problems efficiently is key.",
+          "Learning and growth: IT support roles often offer pathways for continuous learning. Certifications (like CompTIA A+, Network+, or Microsoft certifications) and hands-on experience can help you progress more quickly. Many employers offer on-the-job training and opportunities for further development.",
+          "Taking the leap: Changing careers can be challenging, and it’s important to give yourself the time and space to learn and adapt. Many professionals have had similar experiences of starting anew; success isn’t always immediate, but with persistence and continuous learning, steady career progression is definitely achievable."
+        ]
+      },
+      "general": {
+        "num_segments": 5,
+        "ild": 0.53293,
+        "category_coverage": 2,
+        "segments": [
+          "Age is just a number. Many have proven that it’s never too late to start a new career. A transition at 28—or even later—can be a smart move, especially if you're passionate and willing to learn.",
+          "Industry demand and skills-based progression work in your favor. IT fields often value skills, certifications, and practical experience over traditional age-based career timelines. If you commit to acquiring key certifications (like CompTIA A+, Network+, or more specialized ones), you can progress quickly.",
+          "Stories abound across forums, blog posts, and professional networking sites where individuals share their journeys. Many recount starting in entry-level IT support roles and progressing to roles in systems administration, network engineering, or cybersecurity within just a few years because they continuously learned and adapted.",
+          "Networking and learning communities are invaluable. Being active in online communities, local IT groups, or training bootcamps can help you get advice, mentorship, and even job referrals that accelerate progress.",
+          "A clear development plan is common among those who succeed. Many set short-term and long-term goals, pursue relevant certifications, and build hands-on experience through projects or lab setups, which all contribute to rapid career progression."
+        ]
+      },
+      "delta": {
+        "ild": -0.02521,
+        "category_coverage": 0
+      }
+    },
+    {
+      "record_id": "prn_0018",
+      "question": "Should I make a career switch to industry from academia?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 5,
+        "ild": 0.587049,
+        "category_coverage": 4,
+        "segments": [
+          "Personal passion and career satisfaction:",
+          "Skill transferability and professional growth:",
+          "Work-life balance and job environment:",
+          "Long-term career goals and financial considerations:",
+          "Networking and research:"
+        ]
+      },
+      "general": {
+        "num_segments": 6,
+        "ild": 0.495324,
+        "category_coverage": 2,
+        "segments": [
+          "Consider your interests and skills. Ask yourself whether you enjoy research and teaching and the slower pace of academia, or whether you thrive in environments where results often come more quickly and there’s a strong emphasis on product development, teamwork, and business outcomes.",
+          "Evaluate your work-life goals. Industry roles may offer different work-life balance, compensation structures, and opportunities to move up in a corporate hierarchy. Determine what matters most to you in terms of salary, lifestyle, job security, and professional growth.",
+          "Recognize the differences in culture. Academia can be heavily research-focused and self-directed, whereas industry roles may involve collaboration, project deadlines, and potentially more structured performance metrics. Making the mental shift can take time, so think about how well your temperament fits in.",
+          "Review your transferable skills. Consider your technical expertise, project management experience, and any teaching, mentoring, or cross-functional collaboration skills that could be assets in industry. It can also help to identify skill gaps that might need to be filled with additional training or courses.",
+          "Seek advice and resources. Networking with professionals who have made a similar switch or consulting a career coach can give you perspective on the challenges and benefits of both paths. Informational interviews or even short-term consulting work in industry might provide valuable insight into whether the move is right for you.",
+          "Examine long-term goals. Consider where you’d like to be in five or ten years. Reflect on whether you see yourself succeeding and growing in a corporate setting, or if the academic path seems more aligned with your ultimate vision."
+        ]
+      },
+      "delta": {
+        "ild": 0.091725,
+        "category_coverage": 2
+      }
+    },
+    {
+      "record_id": "prn_0019",
+      "question": "Would you stick to the standard two weeks or offer to stay a little longer to keep things smooth?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 3,
+        "ild": 0.469309,
+        "category_coverage": 1,
+        "segments": [
+          "Evaluate your current workload and any pending projects—if your team might struggle to cover critical tasks, a longer notice could be beneficial.",
+          "Think about your goals and future plans—if you’re excited about new opportunities, a brief buffer might be a nice goodwill gesture that won’t complicate your schedule.",
+          "Consider industry norms—sometimes a two-week notice is standard practice; however, if you’re in a situation where relationships and networking in the marketing world are key, going the extra mile might leave a lasting positive impression."
+        ]
+      },
+      "general": {
+        "num_segments": 3,
+        "ild": 0.61054,
+        "category_coverage": 3,
+        "segments": [
+          "What are my key responsibilities, and how difficult will it be for someone else to pick up where I left off?",
+          "How would my extra presence benefit the team and ongoing projects?",
+          "Are there any contractual or company policy implications regarding extending my notice period?"
+        ]
+      },
+      "delta": {
+        "ild": -0.141231,
+        "category_coverage": -2
+      }
+    },
+    {
+      "record_id": "prn_0020",
+      "question": "What should I do about my placement situation and career prospects?",
+      "judge_score": 2.5,
+      "personalized": {
+        "num_segments": 7,
+        "ild": 0.514784,
+        "category_coverage": 3,
+        "segments": [
+          "Explore campus resources: Many universities have career centers that offer resume workshops, mock interviews, and networking events. They can help you understand what employers are looking for and connect you with alumni or local companies.",
+          "Build a support network: Consider joining student groups, career clubs, or professional associations related to your field. Networking through these groups can lead to job leads, mentorship opportunities, and increased confidence as you prepare for placements.",
+          "Consider internships or part-time work: Even if you're worried about balancing a job with your studies, look for flexible or remote internships. These can provide valuable hands-on experience, and they often lead to better career prospects in the future.",
+          "Update and tailor your resume: Take some time to review your resume and cover letter. If possible, get feedback from a mentor or a trusted professor. Tailoring your application materials for each placement can make a big difference.",
+          "Focus on skill-building: Identify any gaps in your skills that are relevant to your desired field. There are plenty of online courses (many are free or low-cost) that can boost your resume and confidence.",
+          "Manage stress along the way: Career planning can be overwhelming, especially when combined with academic pressure and financial constraints. Try breaking down your goals into smaller, manageable steps, schedule regular breaks, and maybe even explore stress-relief practices (like brief meditation sessions) to keep you grounded.",
+          "Reflect on your long-term goals: Sometimes it helps to step back and think about what you enjoy most about your studies or what kind of work environment you envision. Clarifying these can help you make informed decisions about which opportunities to pursue."
+        ]
+      },
+      "general": {
+        "num_segments": 8,
+        "ild": 0.483621,
+        "category_coverage": 2,
+        "segments": [
+          "Clarify your goals: Take some time to reflect on your interests, strengths, and long-term goals. What industries or roles excite you? When you have a clearer picture of your career goals, you can focus your job search and professional development efforts more deliberately.",
+          "Assess your skills and experience: Evaluate your current skill set—both technical and soft skills. Consider which of these are aligned with the roles you’re interested in, and where you might need improvement. This could involve taking short courses, participating in relevant projects, or even seeking mentorship.",
+          "Update your resume and online presence: Make sure your resume, LinkedIn profile, or any professional portfolio is polished and up-to-date. Tailor your resume to highlight the skills and experiences that align with your target roles. Networking platforms like LinkedIn can also help attract recruiters and connect you with industry professionals.",
+          "Research the market: Look into current trends in the industries you’re interested in. Understanding hiring trends, key skills in demand, and the types of companies you might be interested in can be very valuable. If you're still in school or recently graduated, check with your career services or alumni network for insights on placement trends.",
+          "Build your network: Reach out to alumni, attend career fairs, join professional associations, or participate in industry-related meetups. Sometimes opportunities come through connections that can provide hidden insights or referrals.",
+          "Consider internships or relevant projects: If you’re facing challenges in placements, internships or freelance projects can be practical steps to build your experience and increase your chances of securing a full-time role.",
+          "Seek feedback: If you’ve had interviews or placement offers that didn’t materialize, try to get feedback so you know how you can improve. A career counselor, mentor, or trusted professional colleague can offer guidance tailored to your situation.",
+          "Stay flexible and persistent: The job market can be competitive, and sometimes plans change. Being adaptable—whether that means considering different roles, additional education, or temporary positions—can ultimately open the door to the career you want."
+        ]
+      },
+      "delta": {
+        "ild": 0.031163,
+        "category_coverage": 1
+      }
+    }
+  ]
+}

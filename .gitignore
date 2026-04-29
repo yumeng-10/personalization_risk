@@ -48,3 +48,4 @@ conda-meta/
 # Temporary files
 tmp*.*
 /scripts/download_data.py
+/temp

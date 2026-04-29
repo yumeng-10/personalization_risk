@@ -1,0 +1,112 @@
+{
+  "irrelevant_personalization": {
+    "gemini-2.5-flash": {
+      "rag": {
+        "gsm8k": {
+          "llm_judge_avg": 4.6,
+          "llm_judge_count": 10,
+          "personalized_benchmark_score": 0.7,
+          "personalized_details": {
+            "score": 0.7,
+            "correct": 7,
+            "parsed": 10,
+            "parse_failures": 0,
+            "with_ground_truth": 10
+          },
+          "nonpersonalized_benchmark_score": 0.7,
+          "nonpersonalized_details": {
+            "score": 0.7,
+            "correct": 7,
+            "parsed": 10,
+            "parse_failures": 0,
+            "with_ground_truth": 10
+          },
+          "input_file": "output/result/irrelevant_personalization/rag_eval_gsm8k_seed20_irrelevant_personalization_gemini-2.5-flash_gpt4o_1.json",
+          "updated_at": "2026-04-28T01:01:31.771725+00:00"
+        }
+      },
+      "direct": {
+        "mmlu": {
+          "llm_judge_avg": 5.0,
+          "llm_judge_count": 200,
+          "personalized_benchmark_score": 0.7926,
+          "personalized_details": {
+            "score": 0.7926,
+            "correct": 107,
+            "parsed": 135,
+            "parse_failures": 65,
+            "with_ground_truth": 200
+          },
+          "input_file": "output/result/irrelevant_personalization/seed200_mmlu200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json",
+          "updated_at": "2026-04-28T01:01:47.264656+00:00"
+        },
+        "csqa": {
+          "llm_judge_avg": 5.0,
+          "llm_judge_count": 100,
+          "personalized_benchmark_score": 0.8351,
+          "personalized_details": {
+            "score": 0.8351,
+            "correct": 81,
+            "parsed": 97,
+            "parse_failures": 3,
+            "with_ground_truth": 100
+          },
+          "input_file": "output/result/irrelevant_personalization/seed200_CSQA200_irrelevant_personalization_candidate-gemini-2.5-flash_judge-gpt-4o.json",
+          "updated_at": "2026-04-28T01:01:47.300573+00:00"
+        }
+      }
+    },
+    "gpt-4.1-mini": {
+      "rag": {
+        "gsm8k": {
+          "llm_judge_avg": 5.0,
+          "llm_judge_count": 20,
+          "personalized_benchmark_score": 0.7,
+          "personalized_details": {
+            "score": 0.7,
+            "correct": 14,
+            "parsed": 20,
+            "parse_failures": 0,
+            "with_ground_truth": 20
+          },
+          "nonpersonalized_benchmark_score": 0.8,
+          "nonpersonalized_details": {
+            "score": 0.8,
+            "correct": 16,
+            "parsed": 20,
+            "parse_failures": 0,
+            "with_ground_truth": 20
+          },
+          "input_file": "output/result/irrelevant_personalization/rag_eval_gsm8k_seed20_irrelevant_personalization_gpt41mini_gpt4o.json",
+          "updated_at": "2026-04-28T01:15:22.592026+00:00"
+        }
+      }
+    },
+    "5": {
+      "rag": {
+        "gsm8k": {
+          "llm_judge_avg": 5.0,
+          "llm_judge_count": 20,
+          "personalized_benchmark_score": 0.85,
+          "personalized_details": {
+            "score": 0.85,
+            "correct": 17,
+            "parsed": 20,
+            "parse_failures": 0,
+            "with_ground_truth": 20
+          },
+          "nonpersonalized_benchmark_score": 0.8,
+          "nonpersonalized_details": {
+            "score": 0.8,
+            "correct": 16,
+            "parsed": 20,
+            "parse_failures": 0,
+            "with_ground_truth": 20
+          },
+          "input_file": "output/result/irrelevant_personalization/rag_eval_gsm8k_seed20_irrelevant_personalization_o3mini_gpt4o.json",
+          "updated_at": "2026-04-28T01:17:26.328761+00:00"
+        }
+      }
+    }
+  }
+}
