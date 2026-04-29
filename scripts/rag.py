@@ -789,10 +789,24 @@ def run(args: argparse.Namespace) -> None:
         embedding_model=args.embedding_model,
     )
 
-    progress = tqdm(total=len(selected_records), desc="RAG Eval", unit="record") if tqdm else _SimpleProgress(len(selected_records))
+    # Load existing results for resume support
     results: list[dict[str, Any]] = []
+    done_record_ids: set = set()
+    if args.out.exists():
+        try:
+            existing = json.loads(args.out.read_text())
+            results = existing.get("results", [])
+            done_record_ids = {r["record_id"] for r in results if r.get("record_id") is not None}
+            print(f"Resuming: found {len(results)} existing results, skipping those record_ids.")
+        except Exception:
+            pass
 
-    for record in selected_records:
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+
+    remaining_records = [r for r in selected_records if r.get("record_id") not in done_record_ids]
+    progress = tqdm(total=len(remaining_records), desc="RAG Eval", unit="record") if tqdm else _SimpleProgress(len(remaining_records))
+
+    for record in remaining_records:
         persona_id = str(record.get("persona_id", "unknown_persona"))
         query_obj = record.get("query", {})
         question = str(query_obj.get("question", "")).strip() 
@@ -865,25 +879,23 @@ def run(args: argparse.Namespace) -> None:
                 "judgment": judgment,
             }
         )
+        out_payload = {
+            "source_dataset": str(args.dataset),
+            "risk_type": payload.get("risk_type", "unknown"),
+            "start_index": args.start_index,
+            "limit": args.limit,
+            "num_records": len(results),
+            "router_model": args.router_model,
+            "candidate_model": args.candidate_model,
+            "judge_model": args.judge_model,
+            "embedding_model": args.embedding_model,
+            "top_k": args.top_k,
+            "results": results,
+        }
+        write_json(args.out, out_payload)
         progress.update(1)
 
     progress.close()
-
-    out_payload = {
-        "source_dataset": str(args.dataset),
-        "risk_type": payload.get("risk_type", "unknown"),
-        "start_index": args.start_index,
-        "limit": args.limit,
-        "num_records": len(results),
-        "router_model": args.router_model,
-        "candidate_model": args.candidate_model,
-        "judge_model": args.judge_model,
-        "embedding_model": args.embedding_model,
-        "top_k": args.top_k,
-        "results": results,
-    }
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    write_json(args.out, out_payload)
     print(f"Wrote {len(results)} evaluated records to {args.out}")
 
 
@@ -926,7 +938,7 @@ python scripts/rag.py \
   --router-model gemini-2.5-flash \
   --thinking-budget 256 \
   --start-index 0 \
-  --limit 20 \
+  --limit 22 \
   --top-k 3 \
-  --out output/result/rag_eval_seed20_preference_narrowing_gemini-2.5-flash_gpt4o_1.json 
+  --out output/result/preference_narrowing/rag_eval_seed20_preference_narrowing_gemini-2.5-flash_gpt4o_1.json 
 """
