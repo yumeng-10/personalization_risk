@@ -4,7 +4,7 @@ across the 20 personas, extract every distinct bullet-point topic, deduplicate t
 and store the result as universal_answer_set on every record sharing that query.
 
 Usage:
-    python scripts/summarize_narrowing_answer.py \
+    python scripts/preference_narrowing/answer_set_construction.py \
         --input  output/result/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_sorted.json \
         --output output/result/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_with_anwerset.json \
         --model  gpt-4o

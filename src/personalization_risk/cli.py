@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from copy import deepcopy
 import csv
 import json
 import os
@@ -37,6 +38,7 @@ PERSONALIZATION_FIELDS = [
     "health_status",
     "mental_health_status",
     "emotional_state",
+    "preference",
 ]
 
 
@@ -223,21 +225,19 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
         ]
 
     for record_idx, (persona_idx, query_idx) in enumerate(pair_indices, start=1):
-        persona = selected_personas[persona_idx]
+        persona = deepcopy(selected_personas[persona_idx])
         query = selected_queries[query_idx]
+        persona["preference"] = query.get("preference", "")
+        new_conversation = {
+            "focal_attribute": "preference",
+            "turns": query.get("memory", []),
+            "turn_count": len(query.get("memory", []))
+        }
+        persona["historical_conversations"]["conversations"].append(new_conversation)
+        persona["historical_conversations"]["conversation_count"] = len(persona["historical_conversations"]["conversations"])
         selected_profile = {
             field: persona.get(field)
-            for field in [
-                "education_level",
-                "age",
-                "gender",
-                "marital_status",
-                "profession",
-                "economic_status",
-                "health_status",
-                "mental_health_status",
-                "emotional_state",
-            ]
+            for field in PERSONALIZATION_FIELDS
             if field in persona
         }
         user_pofile = ", ".join(f"{k.replace('_', ' ')}: {v}" for k, v in selected_profile.items())
@@ -252,11 +252,11 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
                 "persona": persona,
                 "personalization_prompt": personalization_prompt,
                 "query": {
-                    "question": query.get("question", ""),
+                    "question": query.get("query", ""),
                     "subject": query.get("subject", ""),
                     "choices": query.get("choices", []),
                     "answer": query.get("answer", ""),
-                },
+                }
             }
         )
 
@@ -658,6 +658,11 @@ prisk assemble-irrelevant-personalization \
   --query-file data/query_seed/mmlu_seed.json --n 200 \
   --out data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json
 
+  prisk assemble-sycophantic-bias \
+  --persona-file data/sycophantic_bias/syco_profile_cross_20_persona.json \
+  --query-file data/query_seed/mmlu_seed.json --n 200 \
+  --out data/sycophantic_bias/assembled_seed200_mmlu200_sycophantic_bias.json
+
 prisk eval-irrelevant-personalization \
   --config configs/default.yaml \
   --dataset data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json \
@@ -691,12 +696,12 @@ PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-n 20 \
   --query-n 10 \
   --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias.json
-  
+
 PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-file data/persona_seed/enriched_balanced_profiles.json \
-  --query-file data/sycophantic_bias/sycophantic_query.csv \
+  --query-file data/sycophantic_bias/sycophancy_pairs.json \
   --pairing-mode cartesian \
   --persona-n 20 \
-  --query-n 10 \
-  --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias_new.json
+  --query-n 20 \
+  --out data/sycophantic_bias/assembled_seed20x20_sycophantic_bias_v2.json
 """
