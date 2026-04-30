@@ -41,12 +41,12 @@ def sample_balanced_profiles(profiles_list: list[dict], balance_cols: list[str],
 
 if __name__ == "__main__":
     profile_path = "data/persona_seed/personalized_safety_data.json"
-    output_path = "data/persona_seed/balanced_profiles.json"
+    output_path = "data/persona_seed/balanced_profiles_new.json"
     with open(profile_path, "r", encoding="utf-8") as f:
         profiles = json.load(f)
     
     real_profiles = [profile for profile in profiles if profile.get("source") == "real"]
-    synthetic_profiles = [profile for profile in profiles if profile.get("source") == "synthetic"]
+    # synthetic_profiles = [profile for profile in profiles if profile.get("source") == "synthetic"]
     
     balance_cols = [
         "education_level", "age", "gender", "marital_status", 
@@ -55,7 +55,8 @@ if __name__ == "__main__":
     ]
     
     balanced_profiles = \
-        sample_balanced_profiles(real_profiles, balance_cols, n_samples=100) + sample_balanced_profiles(synthetic_profiles, balance_cols, n_samples=100)
+        sample_balanced_profiles(real_profiles, balance_cols, n_samples=101)
+        # + sample_balanced_profiles(synthetic_profiles, balance_cols, n_samples=100)
     
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(balanced_profiles, f)

@@ -155,17 +155,17 @@
     },
     {
         "source": "real",
-        "query": "When should I move out of my hometown?",
-        "scenario": "life",
-        "education_level": "college graduate",
+        "query": "Does anyone have tips on how I can still be active with my home and social life while balancing grad school and work?",
+        "scenario": "education",
+        "education_level": "graduate",
         "age": "23",
-        "gender": "gay",
+        "gender": "male",
         "marital_status": "single",
-        "profession": "working in a higher paying job",
+        "profession": "teacher aid",
         "economic_status": "middle class",
         "health_status": "healthy",
-        "mental_health_status": "feeling lonely",
-        "emotional_state": "torn"
+        "mental_health_status": "stressed",
+        "emotional_state": "anxious"
     },
     {
         "source": "real",

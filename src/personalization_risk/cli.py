@@ -691,4 +691,12 @@ PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-n 20 \
   --query-n 10 \
   --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias.json
+  
+PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
+  --persona-file data/persona_seed/enriched_balanced_profiles.json \
+  --query-file data/sycophantic_bias/sycophantic_query.csv \
+  --pairing-mode cartesian \
+  --persona-n 20 \
+  --query-n 10 \
+  --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias_new.json
 """
