@@ -122,4 +122,15 @@ python src/personalization_risk/cli.py simulate-history \
   --end-index 20 \
   --num-convs 8 \
   --turns-per-conv 4
+data/persona_seed/enriched_balanced_profiles.json
+
+python src/personalization_risk/cli.py simulate-history \
+  --dataset data/irrelevant_personalization/assembled_seed200_mmlu200_irrelevant_personalization.json \
+  --out data/irrelevant_personalization/enriched_seed200_mmlu200_irrelevant_personalization.json \
+  --max-workers 4 \
+  --batch-size 10 \
+  --start-index 0 \
+  --end-index 20 \
+  --num-convs 8 \
+  --turns-per-conv 4
 '''

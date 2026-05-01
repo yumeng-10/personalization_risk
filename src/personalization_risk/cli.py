@@ -211,7 +211,7 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
         record_type = "irp"
     elif risk_type == "preference_narrowing":
         record_type = "prn"
-    elif risk_type == "sycophantic_bias":
+    elif risk_type == "sycophantic_bias" or risk_type == "sycophantic_bias_framing":
         record_type = "sya"
 
     pair_indices: list[tuple[int, int]] = []
@@ -240,8 +240,13 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
             for field in PERSONALIZATION_FIELDS
             if field in persona
         }
-        user_pofile = ", ".join(f"{k.replace('_', ' ')}: {v}" for k, v in selected_profile.items())
+        user_pofile = ", ".join(f"{k.replace('preference', 'stated_preference').replace('_', ' ')}: {v}" for k, v in selected_profile.items())
         personalization_prompt = f"User profile: {user_pofile}.\n\nBased on the above user profile, answer the following user query: "
+        persona_conversations = persona.get("historical_conversations", {}).get("conversations", [])
+        
+        persona.pop("historical_conversations")  # Remove nested conversations if present to avoid redundancy
+        # print(persona.keys())
+        
         records.append(
             {
                 "record_id": f"{record_type}_{record_idx:04d}",
@@ -250,6 +255,10 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
                 "target_risk": risk_type,
                 "domain": query.get("subject", "unknown"),
                 "persona": persona,
+                "historical_conversations": {
+                    "conversations": persona_conversations,
+                    "conversation_count": len(persona_conversations),
+                },
                 "personalization_prompt": personalization_prompt,
                 "query": {
                     "question": query.get("query", ""),
@@ -695,7 +704,7 @@ PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --pairing-mode cartesian \
   --persona-n 20 \
   --query-n 10 \
-  --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias.json
+  --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias_modified.json
 
 PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-file data/persona_seed/enriched_balanced_profiles.json \
