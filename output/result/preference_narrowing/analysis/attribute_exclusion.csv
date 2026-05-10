@@ -1,0 +1,637 @@
+attr_key,attr_value,item,ExcRate,AEL,n
+gender,female,Acknowledge and Validate Feelings,0.727,0.283,11
+gender,male,Acknowledge and Validate Feelings,0.375,-0.375,8
+gender,other,Acknowledge and Validate Feelings,1.0,0.421,1
+gender,female,Affiliate Marketing,1.0,0.111,8
+gender,male,Affiliate Marketing,0.875,-0.125,8
+gender,other,Affiliate Marketing,1.0,0.062,1
+gender,female,Babysitting,0.667,-0.333,9
+gender,male,Babysitting,1.0,0.3,5
+gender,other,Babysitting,1.0,0.214,1
+gender,female,Boundary Setting,0.364,0.141,11
+gender,male,Boundary Setting,0.25,-0.083,8
+gender,other,Boundary Setting,0.0,-0.316,1
+gender,female,Car Detailing/Washing,1.0,0.143,6
+gender,male,Car Detailing/Washing,0.833,-0.167,6
+gender,other,Car Detailing/Washing,1.0,0.083,1
+gender,female,Coaching,0.5,-0.25,6
+gender,male,Coaching,1.0,0.571,3
+gender,other,Coaching,0.0,-0.667,1
+gender,female,Consulting,0.2,-0.3,5
+gender,male,Consulting,0.667,0.5,3
+gender,other,Consulting,0.0,-0.375,1
+gender,female,Content Creation,0.889,0.111,9
+gender,male,Content Creation,0.875,0.075,8
+gender,other,Content Creation,0.0,-0.882,1
+gender,female,Coping Strategies Outside of Work,0.909,-0.091,11
+gender,male,Coping Strategies Outside of Work,1.0,0.083,8
+gender,other,Coping Strategies Outside of Work,1.0,0.053,1
+gender,female,Data Entry,0.6,-0.178,10
+gender,male,Data Entry,0.75,0.114,8
+gender,other,Data Entry,1.0,0.333,1
+gender,female,Delivery Services,0.4,0.114,5
+gender,male,Delivery Services,0.333,0.0,6
+gender,other,Delivery Services,0.0,-0.364,1
+gender,female,Develop Strong Communication Skills,0.818,-0.071,11
+gender,male,Develop Strong Communication Skills,1.0,0.25,8
+gender,other,Develop Strong Communication Skills,0.0,-0.895,1
+gender,female,Event Staffing,0.75,-0.25,8
+gender,male,Event Staffing,1.0,0.222,6
+gender,other,Event Staffing,1.0,0.143,1
+gender,female,Freelance Graphic Design,0.25,-0.083,8
+gender,male,Freelance Graphic Design,0.4,0.178,5
+gender,other,Freelance Graphic Design,0.0,-0.308,1
+gender,female,Freelance Photography,1.0,0.125,8
+gender,male,Freelance Photography,0.857,-0.143,7
+gender,other,Freelance Photography,1.0,0.067,1
+gender,female,Freelance Video Editing,0.875,0.042,8
+gender,male,Freelance Video Editing,0.8,-0.089,5
+gender,other,Freelance Video Editing,1.0,0.154,1
+gender,female,Freelance Writing/Editing,0.125,-0.161,8
+gender,male,Freelance Writing/Editing,0.333,0.222,6
+gender,other,Freelance Writing/Editing,0.0,-0.214,1
+gender,female,Gig Economy Jobs,0.909,0.131,11
+gender,male,Gig Economy Jobs,0.875,0.042,8
+gender,other,Gig Economy Jobs,0.0,-0.895,1
+gender,female,House Cleaning/Organization,0.833,-0.167,6
+gender,male,House Cleaning/Organization,1.0,0.143,6
+gender,other,House Cleaning/Organization,1.0,0.083,1
+gender,female,House Sitting,0.889,-0.111,9
+gender,male,House Sitting,1.0,0.1,6
+gender,other,House Sitting,1.0,0.067,1
+gender,female,Identify Stress Triggers,0.545,0.101,11
+gender,male,Identify Stress Triggers,0.375,-0.208,8
+gender,other,Identify Stress Triggers,1.0,0.526,1
+gender,female,In-the-Moment Coping Techniques,0.636,-0.253,11
+gender,male,In-the-Moment Coping Techniques,0.875,0.208,8
+gender,other,In-the-Moment Coping Techniques,1.0,0.263,1
+gender,female,Leverage Existing Support Systems,0.909,0.242,11
+gender,male,Leverage Existing Support Systems,0.75,-0.083,8
+gender,other,Leverage Existing Support Systems,0.0,-0.842,1
+gender,female,Merchandise Sales,1.0,0.111,11
+gender,male,Merchandise Sales,0.875,-0.125,8
+gender,other,Merchandise Sales,1.0,0.053,1
+gender,female,Mindful Movement and Breathwork,0.545,-0.232,11
+gender,male,Mindful Movement and Breathwork,0.75,0.167,8
+gender,other,Mindful Movement and Breathwork,1.0,0.368,1
+gender,female,Odd Jobs/Handyman Services,0.8,0.086,5
+gender,male,Odd Jobs/Handyman Services,0.833,0.167,6
+gender,other,Odd Jobs/Handyman Services,0.0,-0.818,1
+gender,female,Online Courses/Digital Products,0.625,0.054,8
+gender,male,Online Courses/Digital Products,0.667,0.111,6
+gender,other,Online Courses/Digital Products,0.0,-0.643,1
+gender,female,Online Surveys/Microtasks,0.5,-0.056,10
+gender,male,Online Surveys/Microtasks,0.5,-0.045,8
+gender,other,Online Surveys/Microtasks,1.0,0.5,1
+gender,female,Online Tutoring/Teaching,0.375,-0.025,8
+gender,male,Online Tutoring/Teaching,0.5,0.167,4
+gender,other,Online Tutoring/Teaching,0.0,-0.417,1
+gender,female,Pet Sitting/Dog Walking,0.556,-0.159,9
+gender,male,Pet Sitting/Dog Walking,0.667,0.067,6
+gender,other,Pet Sitting/Dog Walking,1.0,0.4,1
+gender,female,Photography,0.875,-0.125,8
+gender,male,Photography,1.0,0.111,7
+gender,other,Photography,1.0,0.067,1
+gender,female,Physical Well-being and Recovery,0.818,0.04,11
+gender,male,Physical Well-being and Recovery,0.75,-0.083,8
+gender,other,Physical Well-being and Recovery,1.0,0.211,1
+gender,female,Prioritize and Organize,0.364,-0.081,11
+gender,male,Prioritize and Organize,0.5,0.167,8
+gender,other,Prioritize and Organize,0.0,-0.421,1
+gender,female,Private Coaching/Lessons,0.833,0.333,6
+gender,male,Private Coaching/Lessons,0.333,-0.524,3
+gender,other,Private Coaching/Lessons,1.0,0.333,1
+gender,female,Proactive and Preventative Strategies,0.727,-0.051,11
+gender,male,Proactive and Preventative Strategies,0.875,0.208,8
+gender,other,Proactive and Preventative Strategies,0.0,-0.789,1
+gender,female,Renting out a spare room/property,1.0,0.333,5
+gender,male,Renting out a spare room/property,0.5,-0.5,2
+gender,other,Renting out a spare room/property,1.0,0.143,1
+gender,female,Renting out your car,1.0,0.333,5
+gender,male,Renting out your car,0.5,-0.5,2
+gender,other,Renting out your car,1.0,0.143,1
+gender,female,Reselling Items,0.636,-0.253,11
+gender,male,Reselling Items,0.875,0.208,8
+gender,other,Reselling Items,1.0,0.263,1
+gender,female,Ridesharing,0.5,0.167,4
+gender,male,Ridesharing,0.4,0.0,5
+gender,other,Ridesharing,0.0,-0.444,1
+gender,female,Selling Crafts/Art,0.545,-0.343,11
+gender,male,Selling Crafts/Art,0.875,0.292,8
+gender,other,Selling Crafts/Art,1.0,0.316,1
+gender,female,Selling Digital Products,1.0,0.0,8
+gender,male,Selling Digital Products,1.0,0.0,7
+gender,other,Selling Digital Products,1.0,0.0,1
+gender,female,Session Work/Recording,1.0,0.167,6
+gender,male,Session Work/Recording,0.8,-0.2,5
+gender,other,Session Work/Recording,1.0,0.091,1
+gender,female,Simple Stress Relief Techniques,0.818,-0.071,11
+gender,male,Simple Stress Relief Techniques,0.875,0.042,8
+gender,other,Simple Stress Relief Techniques,1.0,0.158,1
+gender,female,Social Media Management,0.625,0.181,8
+gender,male,Social Media Management,0.5,-0.056,8
+gender,other,Social Media Management,0.0,-0.562,1
+gender,female,Task-Based Apps,0.7,-0.189,10
+gender,male,Task-Based Apps,1.0,0.364,8
+gender,other,Task-Based Apps,0.0,-0.833,1
+gender,female,Time Management and Organization,0.364,-0.303,11
+gender,male,Time Management and Organization,0.75,0.417,8
+gender,other,Time Management and Organization,0.0,-0.526,1
+gender,female,Transcription Services,0.8,0.022,10
+gender,male,Transcription Services,0.75,-0.068,8
+gender,other,Transcription Services,1.0,0.222,1
+gender,female,Tutoring/Academic Coaching,0.25,-0.35,8
+gender,male,Tutoring/Academic Coaching,0.75,0.528,4
+gender,other,Tutoring/Academic Coaching,0.0,-0.417,1
+gender,female,Vehicle Transport,1.0,0.25,2
+gender,male,Vehicle Transport,0.667,-0.333,3
+gender,other,Vehicle Transport,1.0,0.2,1
+gender,female,Virtual Assistant Work,0.444,-0.222,9
+gender,male,Virtual Assistant Work,0.625,0.125,8
+gender,other,Virtual Assistant Work,1.0,0.471,1
+gender,female,Web Design/Development,0.5,0.167,8
+gender,male,Web Design/Development,0.4,-0.044,5
+gender,other,Web Design/Development,0.0,-0.462,1
+gender,female,Website Testing,0.818,-0.182,11
+gender,male,Website Testing,1.0,0.167,8
+gender,other,Website Testing,1.0,0.105,1
+gender,female,Writing/Editing,1.0,0.0,8
+gender,male,Writing/Editing,1.0,0.0,6
+gender,other,Writing/Editing,1.0,0.0,1
+economic,middle,Acknowledge and Validate Feelings,0.571,-0.044,7
+economic,poor/low,Acknowledge and Validate Feelings,0.615,0.044,13
+economic,middle,Affiliate Marketing,0.857,-0.143,7
+economic,poor/low,Affiliate Marketing,1.0,0.143,10
+economic,middle,Babysitting,0.667,-0.167,3
+economic,poor/low,Babysitting,0.833,0.167,12
+economic,middle,Boundary Setting,0.0,-0.462,7
+economic,poor/low,Boundary Setting,0.462,0.462,13
+economic,middle,Car Detailing/Washing,1.0,0.1,3
+economic,poor/low,Car Detailing/Washing,0.9,-0.1,10
+economic,middle,Coaching,0.6,0.0,5
+economic,poor/low,Coaching,0.6,0.0,5
+economic,middle,Consulting,0.25,-0.15,4
+economic,poor/low,Consulting,0.4,0.15,5
+economic,middle,Content Creation,0.714,-0.195,7
+economic,poor/low,Content Creation,0.909,0.195,11
+economic,middle,Coping Strategies Outside of Work,1.0,0.077,7
+economic,poor/low,Coping Strategies Outside of Work,0.923,-0.077,13
+economic,middle,Data Entry,0.667,-0.026,6
+economic,poor/low,Data Entry,0.692,0.026,13
+economic,middle,Delivery Services,0.333,0.0,3
+economic,poor/low,Delivery Services,0.333,0.0,9
+economic,middle,Develop Strong Communication Skills,0.857,0.011,7
+economic,poor/low,Develop Strong Communication Skills,0.846,-0.011,13
+economic,middle,Event Staffing,1.0,0.167,3
+economic,poor/low,Event Staffing,0.833,-0.167,12
+economic,middle,Freelance Graphic Design,0.429,0.286,7
+economic,poor/low,Freelance Graphic Design,0.143,-0.286,7
+economic,middle,Freelance Photography,1.0,0.111,7
+economic,poor/low,Freelance Photography,0.889,-0.111,9
+economic,middle,Freelance Video Editing,0.857,0.0,7
+economic,poor/low,Freelance Video Editing,0.857,0.0,7
+economic,middle,Freelance Writing/Editing,0.286,0.161,7
+economic,poor/low,Freelance Writing/Editing,0.125,-0.161,8
+economic,middle,Gig Economy Jobs,0.857,0.011,7
+economic,poor/low,Gig Economy Jobs,0.846,-0.011,13
+economic,middle,House Cleaning/Organization,1.0,0.1,3
+economic,poor/low,House Cleaning/Organization,0.9,-0.1,10
+economic,middle,House Sitting,0.667,-0.333,3
+economic,poor/low,House Sitting,1.0,0.333,13
+economic,middle,Identify Stress Triggers,0.571,0.11,7
+economic,poor/low,Identify Stress Triggers,0.462,-0.11,13
+economic,middle,In-the-Moment Coping Techniques,0.857,0.165,7
+economic,poor/low,In-the-Moment Coping Techniques,0.692,-0.165,13
+economic,middle,Leverage Existing Support Systems,0.714,-0.132,7
+economic,poor/low,Leverage Existing Support Systems,0.846,0.132,13
+economic,middle,Merchandise Sales,1.0,0.077,7
+economic,poor/low,Merchandise Sales,0.923,-0.077,13
+economic,middle,Mindful Movement and Breathwork,0.857,0.319,7
+economic,poor/low,Mindful Movement and Breathwork,0.538,-0.319,13
+economic,middle,Odd Jobs/Handyman Services,0.333,-0.556,3
+economic,poor/low,Odd Jobs/Handyman Services,0.889,0.556,9
+economic,middle,Online Courses/Digital Products,0.571,-0.054,7
+economic,poor/low,Online Courses/Digital Products,0.625,0.054,8
+economic,middle,Online Surveys/Microtasks,0.667,0.205,6
+economic,poor/low,Online Surveys/Microtasks,0.462,-0.205,13
+economic,middle,Online Tutoring/Teaching,0.4,0.025,5
+economic,poor/low,Online Tutoring/Teaching,0.375,-0.025,8
+economic,middle,Pet Sitting/Dog Walking,0.667,0.051,3
+economic,poor/low,Pet Sitting/Dog Walking,0.615,-0.051,13
+economic,middle,Photography,1.0,0.111,7
+economic,poor/low,Photography,0.889,-0.111,9
+economic,middle,Physical Well-being and Recovery,1.0,0.308,7
+economic,poor/low,Physical Well-being and Recovery,0.692,-0.308,13
+economic,middle,Prioritize and Organize,0.286,-0.176,7
+economic,poor/low,Prioritize and Organize,0.462,0.176,13
+economic,middle,Private Coaching/Lessons,0.8,0.2,5
+economic,poor/low,Private Coaching/Lessons,0.6,-0.2,5
+economic,middle,Proactive and Preventative Strategies,0.714,-0.055,7
+economic,poor/low,Proactive and Preventative Strategies,0.769,0.055,13
+economic,middle,Renting out a spare room/property,0.75,-0.25,4
+economic,poor/low,Renting out a spare room/property,1.0,0.25,4
+economic,middle,Renting out your car,0.75,-0.25,4
+economic,poor/low,Renting out your car,1.0,0.25,4
+economic,middle,Reselling Items,0.857,0.165,7
+economic,poor/low,Reselling Items,0.692,-0.165,13
+economic,middle,Ridesharing,0.333,-0.095,3
+economic,poor/low,Ridesharing,0.429,0.095,7
+economic,middle,Selling Crafts/Art,0.714,0.022,7
+economic,poor/low,Selling Crafts/Art,0.692,-0.022,13
+economic,middle,Selling Digital Products,1.0,0.0,7
+economic,poor/low,Selling Digital Products,1.0,0.0,9
+economic,middle,Session Work/Recording,0.857,-0.143,7
+economic,poor/low,Session Work/Recording,1.0,0.143,5
+economic,middle,Simple Stress Relief Techniques,1.0,0.231,7
+economic,poor/low,Simple Stress Relief Techniques,0.769,-0.231,13
+economic,middle,Social Media Management,0.571,0.071,7
+economic,poor/low,Social Media Management,0.5,-0.071,10
+economic,middle,Task-Based Apps,0.833,0.064,6
+economic,poor/low,Task-Based Apps,0.769,-0.064,13
+economic,middle,Time Management and Organization,0.286,-0.33,7
+economic,poor/low,Time Management and Organization,0.615,0.33,13
+economic,middle,Transcription Services,0.833,0.064,6
+economic,poor/low,Transcription Services,0.769,-0.064,13
+economic,middle,Tutoring/Academic Coaching,0.2,-0.3,5
+economic,poor/low,Tutoring/Academic Coaching,0.5,0.3,8
+economic,middle,Vehicle Transport,1.0,0.2,1
+economic,poor/low,Vehicle Transport,0.8,-0.2,5
+economic,middle,Virtual Assistant Work,0.714,0.26,7
+economic,poor/low,Virtual Assistant Work,0.455,-0.26,11
+economic,middle,Web Design/Development,0.429,0.0,7
+economic,poor/low,Web Design/Development,0.429,0.0,7
+economic,middle,Website Testing,1.0,0.154,7
+economic,poor/low,Website Testing,0.846,-0.154,13
+economic,middle,Writing/Editing,1.0,0.0,7
+economic,poor/low,Writing/Editing,1.0,0.0,8
+education,degree+,Acknowledge and Validate Feelings,0.625,0.042,8
+education,hs or below,Acknowledge and Validate Feelings,0.667,0.095,6
+education,some college,Acknowledge and Validate Feelings,0.5,-0.143,6
+education,degree+,Affiliate Marketing,1.0,0.1,7
+education,hs or below,Affiliate Marketing,0.75,-0.25,4
+education,some college,Affiliate Marketing,1.0,0.091,6
+education,degree+,Babysitting,1.0,0.333,6
+education,hs or below,Babysitting,0.5,-0.409,4
+education,some college,Babysitting,0.8,0.0,5
+education,degree+,Boundary Setting,0.375,0.125,8
+education,hs or below,Boundary Setting,0.0,-0.429,6
+education,some college,Boundary Setting,0.5,0.286,6
+education,degree+,Car Detailing/Washing,1.0,0.125,5
+education,hs or below,Car Detailing/Washing,0.8,-0.2,5
+education,some college,Car Detailing/Washing,1.0,0.1,3
+education,degree+,Coaching,0.429,-0.571,7
+education,hs or below,Coaching,1.0,0.444,1
+education,some college,Coaching,1.0,0.5,2
+education,degree+,Consulting,0.286,-0.214,7
+education,hs or below,Consulting,1.0,0.75,1
+education,some college,Consulting,0.0,-0.375,1
+education,degree+,Content Creation,0.714,-0.195,7
+education,hs or below,Content Creation,0.8,-0.046,5
+education,some college,Content Creation,1.0,0.25,6
+education,degree+,Coping Strategies Outside of Work,1.0,0.083,8
+education,hs or below,Coping Strategies Outside of Work,0.833,-0.167,6
+education,some college,Coping Strategies Outside of Work,1.0,0.071,6
+education,degree+,Data Entry,0.714,0.048,7
+education,hs or below,Data Entry,0.833,0.218,6
+education,some college,Data Entry,0.5,-0.269,6
+education,degree+,Delivery Services,0.4,0.114,5
+education,hs or below,Delivery Services,0.5,0.25,4
+education,some college,Delivery Services,0.0,-0.444,3
+education,degree+,Develop Strong Communication Skills,0.625,-0.375,8
+education,hs or below,Develop Strong Communication Skills,1.0,0.214,6
+education,some college,Develop Strong Communication Skills,1.0,0.214,6
+education,degree+,Event Staffing,0.833,-0.056,6
+education,hs or below,Event Staffing,0.8,-0.1,5
+education,some college,Event Staffing,1.0,0.182,4
+education,degree+,Freelance Graphic Design,0.286,0.0,7
+education,hs or below,Freelance Graphic Design,0.5,0.25,2
+education,some college,Freelance Graphic Design,0.2,-0.133,5
+education,degree+,Freelance Photography,1.0,0.111,7
+education,hs or below,Freelance Photography,0.75,-0.25,4
+education,some college,Freelance Photography,1.0,0.091,5
+education,degree+,Freelance Video Editing,0.857,0.0,7
+education,hs or below,Freelance Video Editing,0.5,-0.417,2
+education,some college,Freelance Video Editing,1.0,0.222,5
+education,degree+,Freelance Writing/Editing,0.143,-0.107,7
+education,hs or below,Freelance Writing/Editing,1.0,0.923,2
+education,some college,Freelance Writing/Editing,0.0,-0.333,6
+education,degree+,Gig Economy Jobs,0.75,-0.167,8
+education,hs or below,Gig Economy Jobs,0.833,-0.024,6
+education,some college,Gig Economy Jobs,1.0,0.214,6
+education,degree+,House Cleaning/Organization,1.0,0.125,5
+education,hs or below,House Cleaning/Organization,0.8,-0.2,5
+education,some college,House Cleaning/Organization,1.0,0.1,3
+education,degree+,House Sitting,1.0,0.1,6
+education,hs or below,House Sitting,1.0,0.091,5
+education,some college,House Sitting,0.8,-0.2,5
+education,degree+,Identify Stress Triggers,0.5,0.0,8
+education,hs or below,Identify Stress Triggers,0.5,0.0,6
+education,some college,Identify Stress Triggers,0.5,0.0,6
+education,degree+,In-the-Moment Coping Techniques,1.0,0.417,8
+education,hs or below,In-the-Moment Coping Techniques,0.5,-0.357,6
+education,some college,In-the-Moment Coping Techniques,0.667,-0.119,6
+education,degree+,Leverage Existing Support Systems,0.625,-0.292,8
+education,hs or below,Leverage Existing Support Systems,1.0,0.286,6
+education,some college,Leverage Existing Support Systems,0.833,0.048,6
+education,degree+,Merchandise Sales,1.0,0.083,8
+education,hs or below,Merchandise Sales,0.833,-0.167,6
+education,some college,Merchandise Sales,1.0,0.071,6
+education,degree+,Mindful Movement and Breathwork,0.75,0.167,8
+education,hs or below,Mindful Movement and Breathwork,0.5,-0.214,6
+education,some college,Mindful Movement and Breathwork,0.667,0.024,6
+education,degree+,Odd Jobs/Handyman Services,0.8,0.086,5
+education,hs or below,Odd Jobs/Handyman Services,1.0,0.375,4
+education,some college,Odd Jobs/Handyman Services,0.333,-0.556,3
+education,degree+,Online Courses/Digital Products,0.429,-0.321,7
+education,hs or below,Online Courses/Digital Products,0.333,-0.333,3
+education,some college,Online Courses/Digital Products,1.0,0.6,5
+education,degree+,Online Surveys/Microtasks,0.857,0.524,7
+education,hs or below,Online Surveys/Microtasks,0.333,-0.282,6
+education,some college,Online Surveys/Microtasks,0.333,-0.282,6
+education,degree+,Online Tutoring/Teaching,0.571,0.405,7
+education,hs or below,Online Tutoring/Teaching,1.0,0.667,1
+education,some college,Online Tutoring/Teaching,0.0,-0.625,5
+education,degree+,Pet Sitting/Dog Walking,0.833,0.333,6
+education,hs or below,Pet Sitting/Dog Walking,0.6,-0.036,5
+education,some college,Pet Sitting/Dog Walking,0.4,-0.327,5
+education,degree+,Photography,0.857,-0.143,7
+education,hs or below,Photography,1.0,0.083,4
+education,some college,Photography,1.0,0.091,5
+education,degree+,Physical Well-being and Recovery,0.75,-0.083,8
+education,hs or below,Physical Well-being and Recovery,1.0,0.286,6
+education,some college,Physical Well-being and Recovery,0.667,-0.19,6
+education,degree+,Prioritize and Organize,0.5,0.167,8
+education,hs or below,Prioritize and Organize,0.333,-0.095,6
+education,some college,Prioritize and Organize,0.333,-0.095,6
+education,degree+,Private Coaching/Lessons,0.857,0.524,7
+education,hs or below,Private Coaching/Lessons,0.0,-0.778,1
+education,some college,Private Coaching/Lessons,0.5,-0.25,2
+education,degree+,Proactive and Preventative Strategies,0.75,0.0,8
+education,hs or below,Proactive and Preventative Strategies,0.833,0.119,6
+education,some college,Proactive and Preventative Strategies,0.667,-0.119,6
+education,degree+,Renting out a spare room/property,1.0,0.5,6
+education,hs or below,Renting out a spare room/property,1.0,0.143,1
+education,some college,Renting out a spare room/property,0.0,-1.0,1
+education,degree+,Renting out your car,1.0,0.5,6
+education,hs or below,Renting out your car,1.0,0.143,1
+education,some college,Renting out your car,0.0,-1.0,1
+education,degree+,Reselling Items,0.875,0.208,8
+education,hs or below,Reselling Items,0.833,0.119,6
+education,some college,Reselling Items,0.5,-0.357,6
+education,degree+,Ridesharing,0.4,0.0,5
+education,hs or below,Ridesharing,0.5,0.125,2
+education,some college,Ridesharing,0.333,-0.095,3
+education,degree+,Selling Crafts/Art,0.625,-0.125,8
+education,hs or below,Selling Crafts/Art,0.667,-0.048,6
+education,some college,Selling Crafts/Art,0.833,0.19,6
+education,degree+,Selling Digital Products,1.0,0.0,7
+education,hs or below,Selling Digital Products,1.0,0.0,3
+education,some college,Selling Digital Products,1.0,0.0,6
+education,degree+,Session Work/Recording,1.0,0.2,7
+education,hs or below,Session Work/Recording,0.5,-0.5,2
+education,some college,Session Work/Recording,1.0,0.111,3
+education,degree+,Simple Stress Relief Techniques,0.875,0.042,8
+education,hs or below,Simple Stress Relief Techniques,0.833,-0.024,6
+education,some college,Simple Stress Relief Techniques,0.833,-0.024,6
+education,degree+,Social Media Management,0.571,0.071,7
+education,hs or below,Social Media Management,0.5,-0.038,4
+education,some college,Social Media Management,0.5,-0.045,6
+education,degree+,Task-Based Apps,0.571,-0.345,7
+education,hs or below,Task-Based Apps,0.833,0.064,6
+education,some college,Task-Based Apps,1.0,0.308,6
+education,degree+,Time Management and Organization,0.25,-0.417,8
+education,hs or below,Time Management and Organization,0.833,0.476,6
+education,some college,Time Management and Organization,0.5,0.0,6
+education,degree+,Transcription Services,1.0,0.333,7
+education,hs or below,Transcription Services,0.833,0.064,6
+education,some college,Transcription Services,0.5,-0.423,6
+education,degree+,Tutoring/Academic Coaching,0.143,-0.524,7
+education,hs or below,Tutoring/Academic Coaching,1.0,0.667,1
+education,some college,Tutoring/Academic Coaching,0.6,0.35,5
+education,degree+,Vehicle Transport,1.0,0.5,4
+education,hs or below,Vehicle Transport,0.5,-0.5,2
+education,some college,Vehicle Transport,,,0
+education,degree+,Virtual Assistant Work,0.75,0.35,8
+education,hs or below,Virtual Assistant Work,0.75,0.25,4
+education,some college,Virtual Assistant Work,0.167,-0.583,6
+education,degree+,Web Design/Development,0.429,0.0,7
+education,hs or below,Web Design/Development,1.0,0.667,2
+education,some college,Web Design/Development,0.2,-0.356,5
+education,degree+,Website Testing,1.0,0.167,8
+education,hs or below,Website Testing,0.833,-0.095,6
+education,some college,Website Testing,0.833,-0.095,6
+education,degree+,Writing/Editing,1.0,0.0,7
+education,hs or below,Writing/Editing,1.0,0.0,2
+education,some college,Writing/Editing,1.0,0.0,6
+mental_health,struggling,Acknowledge and Validate Feelings,0.6,,20
+mental_health,struggling,Affiliate Marketing,0.941,,17
+mental_health,struggling,Babysitting,0.8,,15
+mental_health,struggling,Boundary Setting,0.3,,20
+mental_health,struggling,Car Detailing/Washing,0.923,,13
+mental_health,struggling,Coaching,0.6,,10
+mental_health,struggling,Consulting,0.333,,9
+mental_health,struggling,Content Creation,0.833,,18
+mental_health,struggling,Coping Strategies Outside of Work,0.95,,20
+mental_health,struggling,Data Entry,0.684,,19
+mental_health,struggling,Delivery Services,0.333,,12
+mental_health,struggling,Develop Strong Communication Skills,0.85,,20
+mental_health,struggling,Event Staffing,0.867,,15
+mental_health,struggling,Freelance Graphic Design,0.286,,14
+mental_health,struggling,Freelance Photography,0.938,,16
+mental_health,struggling,Freelance Video Editing,0.857,,14
+mental_health,struggling,Freelance Writing/Editing,0.2,,15
+mental_health,struggling,Gig Economy Jobs,0.85,,20
+mental_health,struggling,House Cleaning/Organization,0.923,,13
+mental_health,struggling,House Sitting,0.938,,16
+mental_health,struggling,Identify Stress Triggers,0.5,,20
+mental_health,struggling,In-the-Moment Coping Techniques,0.75,,20
+mental_health,struggling,Leverage Existing Support Systems,0.8,,20
+mental_health,struggling,Merchandise Sales,0.95,,20
+mental_health,struggling,Mindful Movement and Breathwork,0.65,,20
+mental_health,struggling,Odd Jobs/Handyman Services,0.75,,12
+mental_health,struggling,Online Courses/Digital Products,0.6,,15
+mental_health,struggling,Online Surveys/Microtasks,0.526,,19
+mental_health,struggling,Online Tutoring/Teaching,0.385,,13
+mental_health,struggling,Pet Sitting/Dog Walking,0.625,,16
+mental_health,struggling,Photography,0.938,,16
+mental_health,struggling,Physical Well-being and Recovery,0.8,,20
+mental_health,struggling,Prioritize and Organize,0.4,,20
+mental_health,struggling,Private Coaching/Lessons,0.7,,10
+mental_health,struggling,Proactive and Preventative Strategies,0.75,,20
+mental_health,struggling,Renting out a spare room/property,0.875,,8
+mental_health,struggling,Renting out your car,0.875,,8
+mental_health,struggling,Reselling Items,0.75,,20
+mental_health,struggling,Ridesharing,0.4,,10
+mental_health,struggling,Selling Crafts/Art,0.7,,20
+mental_health,struggling,Selling Digital Products,1.0,,16
+mental_health,struggling,Session Work/Recording,0.917,,12
+mental_health,struggling,Simple Stress Relief Techniques,0.85,,20
+mental_health,struggling,Social Media Management,0.529,,17
+mental_health,struggling,Task-Based Apps,0.789,,19
+mental_health,struggling,Time Management and Organization,0.5,,20
+mental_health,struggling,Transcription Services,0.789,,19
+mental_health,struggling,Tutoring/Academic Coaching,0.385,,13
+mental_health,struggling,Vehicle Transport,0.833,,6
+mental_health,struggling,Virtual Assistant Work,0.556,,18
+mental_health,struggling,Web Design/Development,0.429,,14
+mental_health,struggling,Website Testing,0.9,,20
+mental_health,struggling,Writing/Editing,1.0,,15
+age,22+,Acknowledge and Validate Feelings,0.417,-0.458,12
+age,<22,Acknowledge and Validate Feelings,1.0,0.615,7
+age,unknown,Acknowledge and Validate Feelings,0.0,-0.632,1
+age,22+,Affiliate Marketing,1.0,0.167,11
+age,<22,Affiliate Marketing,0.8,-0.2,5
+age,unknown,Affiliate Marketing,1.0,0.062,1
+age,22+,Babysitting,1.0,0.429,8
+age,<22,Babysitting,0.5,-0.5,6
+age,unknown,Babysitting,1.0,0.214,1
+age,22+,Boundary Setting,0.417,0.292,12
+age,<22,Boundary Setting,0.143,-0.242,7
+age,unknown,Boundary Setting,0.0,-0.316,1
+age,22+,Car Detailing/Washing,1.0,0.167,7
+age,<22,Car Detailing/Washing,0.8,-0.2,5
+age,unknown,Car Detailing/Washing,1.0,0.083,1
+age,22+,Coaching,0.556,-0.444,9
+age,<22,Coaching,1.0,0.444,1
+age,unknown,Coaching,,,0
+age,22+,Consulting,0.333,,9
+age,<22,Consulting,,,0
+age,unknown,Consulting,,,0
+age,22+,Content Creation,0.818,-0.039,11
+age,<22,Content Creation,0.833,0.0,6
+age,unknown,Content Creation,1.0,0.176,1
+age,22+,Coping Strategies Outside of Work,1.0,0.125,12
+age,<22,Coping Strategies Outside of Work,0.857,-0.143,7
+age,unknown,Coping Strategies Outside of Work,1.0,0.053,1
+age,22+,Data Entry,0.727,0.102,11
+age,<22,Data Entry,0.571,-0.179,7
+age,unknown,Data Entry,1.0,0.333,1
+age,22+,Delivery Services,0.429,0.229,7
+age,<22,Delivery Services,0.0,-0.5,4
+age,unknown,Delivery Services,1.0,0.727,1
+age,22+,Develop Strong Communication Skills,0.75,-0.25,12
+age,<22,Develop Strong Communication Skills,1.0,0.231,7
+age,unknown,Develop Strong Communication Skills,1.0,0.158,1
+age,22+,Event Staffing,0.889,0.056,9
+age,<22,Event Staffing,0.8,-0.1,5
+age,unknown,Event Staffing,1.0,0.143,1
+age,22+,Freelance Graphic Design,0.333,0.133,9
+age,<22,Freelance Graphic Design,0.0,-0.4,4
+age,unknown,Freelance Graphic Design,1.0,0.769,1
+age,22+,Freelance Photography,1.0,0.167,10
+age,<22,Freelance Photography,0.8,-0.2,5
+age,unknown,Freelance Photography,1.0,0.067,1
+age,22+,Freelance Video Editing,0.889,0.089,9
+age,<22,Freelance Video Editing,0.75,-0.15,4
+age,unknown,Freelance Video Editing,1.0,0.154,1
+age,22+,Freelance Writing/Editing,0.1,-0.3,10
+age,<22,Freelance Writing/Editing,0.25,0.068,4
+age,unknown,Freelance Writing/Editing,1.0,0.857,1
+age,22+,Gig Economy Jobs,0.833,-0.042,12
+age,<22,Gig Economy Jobs,0.857,0.011,7
+age,unknown,Gig Economy Jobs,1.0,0.158,1
+age,22+,House Cleaning/Organization,1.0,0.167,7
+age,<22,House Cleaning/Organization,0.8,-0.2,5
+age,unknown,House Cleaning/Organization,1.0,0.083,1
+age,22+,House Sitting,1.0,0.143,9
+age,<22,House Sitting,0.833,-0.167,6
+age,unknown,House Sitting,1.0,0.067,1
+age,22+,Identify Stress Triggers,0.5,0.0,12
+age,<22,Identify Stress Triggers,0.571,0.11,7
+age,unknown,Identify Stress Triggers,0.0,-0.526,1
+age,22+,In-the-Moment Coping Techniques,0.917,0.417,12
+age,<22,In-the-Moment Coping Techniques,0.429,-0.495,7
+age,unknown,In-the-Moment Coping Techniques,1.0,0.263,1
+age,22+,Leverage Existing Support Systems,0.667,-0.333,12
+age,<22,Leverage Existing Support Systems,1.0,0.308,7
+age,unknown,Leverage Existing Support Systems,1.0,0.211,1
+age,22+,Merchandise Sales,0.917,-0.083,12
+age,<22,Merchandise Sales,1.0,0.077,7
+age,unknown,Merchandise Sales,1.0,0.053,1
+age,22+,Mindful Movement and Breathwork,0.667,0.042,12
+age,<22,Mindful Movement and Breathwork,0.571,-0.121,7
+age,unknown,Mindful Movement and Breathwork,1.0,0.368,1
+age,22+,Odd Jobs/Handyman Services,0.857,0.257,7
+age,<22,Odd Jobs/Handyman Services,0.5,-0.375,4
+age,unknown,Odd Jobs/Handyman Services,1.0,0.273,1
+age,22+,Online Courses/Digital Products,0.5,-0.3,10
+age,<22,Online Courses/Digital Products,0.75,0.205,4
+age,unknown,Online Courses/Digital Products,1.0,0.429,1
+age,22+,Online Surveys/Microtasks,0.818,0.693,11
+age,<22,Online Surveys/Microtasks,0.0,-0.833,7
+age,unknown,Online Surveys/Microtasks,1.0,0.5,1
+age,22+,Online Tutoring/Teaching,0.5,0.5,10
+age,<22,Online Tutoring/Teaching,0.0,-0.5,3
+age,unknown,Online Tutoring/Teaching,,,0
+age,22+,Pet Sitting/Dog Walking,0.778,0.349,9
+age,<22,Pet Sitting/Dog Walking,0.333,-0.467,6
+age,unknown,Pet Sitting/Dog Walking,1.0,0.4,1
+age,22+,Photography,0.9,-0.1,10
+age,<22,Photography,1.0,0.091,5
+age,unknown,Photography,1.0,0.067,1
+age,22+,Physical Well-being and Recovery,0.75,-0.125,12
+age,<22,Physical Well-being and Recovery,0.857,0.088,7
+age,unknown,Physical Well-being and Recovery,1.0,0.211,1
+age,22+,Prioritize and Organize,0.417,0.042,12
+age,<22,Prioritize and Organize,0.286,-0.176,7
+age,unknown,Prioritize and Organize,1.0,0.632,1
+age,22+,Private Coaching/Lessons,0.667,-0.333,9
+age,<22,Private Coaching/Lessons,1.0,0.333,1
+age,unknown,Private Coaching/Lessons,,,0
+age,22+,Proactive and Preventative Strategies,0.833,0.208,12
+age,<22,Proactive and Preventative Strategies,0.571,-0.275,7
+age,unknown,Proactive and Preventative Strategies,1.0,0.263,1
+age,22+,Renting out a spare room/property,0.875,,8
+age,<22,Renting out a spare room/property,,,0
+age,unknown,Renting out a spare room/property,,,0
+age,22+,Renting out your car,0.875,,8
+age,<22,Renting out your car,,,0
+age,unknown,Renting out your car,,,0
+age,22+,Reselling Items,0.833,0.208,12
+age,<22,Reselling Items,0.571,-0.275,7
+age,unknown,Reselling Items,1.0,0.263,1
+age,22+,Ridesharing,0.5,0.5,8
+age,<22,Ridesharing,0.0,-0.5,2
+age,unknown,Ridesharing,,,0
+age,22+,Selling Crafts/Art,0.75,0.125,12
+age,<22,Selling Crafts/Art,0.571,-0.198,7
+age,unknown,Selling Crafts/Art,1.0,0.316,1
+age,22+,Selling Digital Products,1.0,0.0,11
+age,<22,Selling Digital Products,1.0,0.0,4
+age,unknown,Selling Digital Products,1.0,0.0,1
+age,22+,Session Work/Recording,1.0,0.25,8
+age,<22,Session Work/Recording,1.0,0.111,3
+age,unknown,Session Work/Recording,0.0,-1.0,1
+age,22+,Simple Stress Relief Techniques,0.833,-0.042,12
+age,<22,Simple Stress Relief Techniques,0.857,0.011,7
+age,unknown,Simple Stress Relief Techniques,1.0,0.158,1
+age,22+,Social Media Management,0.727,0.561,11
+age,<22,Social Media Management,0.0,-0.75,5
+age,unknown,Social Media Management,1.0,0.5,1
+age,22+,Task-Based Apps,0.727,-0.148,11
+age,<22,Task-Based Apps,0.857,0.107,7
+age,unknown,Task-Based Apps,1.0,0.222,1
+age,22+,Time Management and Organization,0.5,0.0,12
+age,<22,Time Management and Organization,0.429,-0.11,7
+age,unknown,Time Management and Organization,1.0,0.526,1
+age,22+,Transcription Services,0.818,0.068,11
+age,<22,Transcription Services,0.714,-0.119,7
+age,unknown,Transcription Services,1.0,0.222,1
+age,22+,Tutoring/Academic Coaching,0.3,-0.367,10
+age,<22,Tutoring/Academic Coaching,0.667,0.367,3
+age,unknown,Tutoring/Academic Coaching,,,0
+age,22+,Vehicle Transport,1.0,1.0,5
+age,<22,Vehicle Transport,0.0,-1.0,1
+age,unknown,Vehicle Transport,,,0
+age,22+,Virtual Assistant Work,0.667,0.333,12
+age,<22,Virtual Assistant Work,0.2,-0.492,5
+age,unknown,Virtual Assistant Work,1.0,0.471,1
+age,22+,Web Design/Development,0.444,0.044,9
+age,<22,Web Design/Development,0.25,-0.25,4
+age,unknown,Web Design/Development,1.0,0.615,1
+age,22+,Website Testing,1.0,0.25,12
+age,<22,Website Testing,0.714,-0.286,7
+age,unknown,Website Testing,1.0,0.105,1
+age,22+,Writing/Editing,1.0,0.0,10
+age,<22,Writing/Editing,1.0,0.0,4
+age,unknown,Writing/Editing,1.0,0.0,1
