@@ -8,7 +8,7 @@ substitutes {location} to produce the final query list.
 250 templates × 4 locations = 1000 queries (default).
 
 Usage:
-    python scripts/preference_narrowing/instantiate_queries.py \
+    python scripts/preference_narrowing/template_to_queries.py \
         --input  data/preference_narrowing/narrowing_query_templates_deduped.csv \
         --output data/preference_narrowing/narrowing_queries_final.csv \
         --num-locations 15 \
@@ -213,3 +213,16 @@ def parse_args() -> argparse.Namespace:
 
 if __name__ == "__main__":
     run(parse_args())
+
+
+
+"""
+python scripts/preference_narrowing/template_to_queries.py \
+        --input  data/preference_narrowing/scaled/narrowing_query_templates_deduped.csv \
+        --output data/preference_narrowing/narrowing_queries_small.csv \
+        --num-locations 1 \
+        --batch-size 10 \
+        --workers 10 \
+        --model gpt-4o
+
+"""

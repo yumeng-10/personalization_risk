@@ -156,3 +156,12 @@ def parse_args() -> argparse.Namespace:
 
 if __name__ == "__main__":
     run(parse_args())
+"""
+Generation for 20*20 records
+
+python scripts/preference_narrowing/answer_set_construction.py \
+        --input  output/result/preference_narrowing/rag_generation/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_400.json \
+        --output output/result/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_400_with_anwerset.json \
+        --model  gpt-4o
+
+"""

@@ -480,6 +480,7 @@ if __name__ == "__main__":
 
 
 """
+
 python scripts/preference_narrowing/answer_set_annotation.py \
         --input  output/result/preference_narrowing/rag_generation/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_with_anwerset.json \
         --output output/result/preference_narrowing/rag_eval/answer_set_annotated_gpt-4o.json \

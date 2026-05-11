@@ -1,0 +1,446 @@
+{
+  "narrowing_0001": {
+    "universal_set": [
+      "Acknowledge and Validate Feelings",
+      "Boundary Setting",
+      "Coping Strategies Outside of Work",
+      "Develop Strong Communication Skills",
+      "Identify Stress Triggers",
+      "In-the-Moment Coping Techniques",
+      "Leverage Existing Support Systems",
+      "Manage Content Creation Pressure",
+      "Mindful Movement and Breathwork",
+      "Physical Well-being and Recovery",
+      "Prioritize and Organize",
+      "Prioritize Basic Needs",
+      "Proactive and Preventative Strategies",
+      "Set Clear Boundaries",
+      "Simple Stress Relief Techniques",
+      "Strategic Boundary Setting and Prioritization",
+      "Time Management and Organization"
+    ],
+    "coverage": {
+      "persona_0001": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "In-the-Moment Coping Techniques",
+        "Leverage Existing Support Systems",
+        "Mindful Movement and Breathwork",
+        "Physical Well-being and Recovery",
+        "Proactive and Preventative Strategies",
+        "Set Clear Boundaries",
+        "Simple Stress Relief Techniques"
+      ],
+      "persona_0002": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Manage Content Creation Pressure",
+        "Prioritize Basic Needs",
+        "Set Clear Boundaries"
+      ],
+      "persona_0003": [
+        "Acknowledge and Validate Feelings",
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "Mindful Movement and Breathwork",
+        "Prioritize and Organize",
+        "Proactive and Preventative Strategies",
+        "Simple Stress Relief Techniques"
+      ],
+      "persona_0004": [
+        "Identify Stress Triggers",
+        "Coping Strategies Outside of Work",
+        "Prioritize and Organize",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0005": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "Develop Strong Communication Skills",
+        "Identify Stress Triggers",
+        "Proactive and Preventative Strategies",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0006": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "Proactive and Preventative Strategies",
+        "Set Clear Boundaries",
+        "Strategic Boundary Setting and Prioritization",
+        "Time Management and Organization"
+      ],
+      "persona_0007": [
+        "Acknowledge and Validate Feelings",
+        "Identify Stress Triggers",
+        "In-the-Moment Coping Techniques",
+        "Set Clear Boundaries",
+        "Prioritize and Organize"
+      ],
+      "persona_0008": [
+        "Acknowledge and Validate Feelings",
+        "Identify Stress Triggers",
+        "Set Clear Boundaries"
+      ],
+      "persona_0009": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "In-the-Moment Coping Techniques",
+        "Mindful Movement and Breathwork",
+        "Simple Stress Relief Techniques",
+        "Set Clear Boundaries"
+      ],
+      "persona_0010": [
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "In-the-Moment Coping Techniques",
+        "Proactive and Preventative Strategies",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0011": [
+        "Acknowledge and Validate Feelings",
+        "Prioritize Basic Needs",
+        "Identify Stress Triggers",
+        "Coping Strategies Outside of Work",
+        "Develop Strong Communication Skills",
+        "Proactive and Preventative Strategies"
+      ],
+      "persona_0012": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "Develop Strong Communication Skills",
+        "Prioritize and Organize",
+        "Proactive and Preventative Strategies",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0013": [
+        "Acknowledge and Validate Feelings",
+        "Coping Strategies Outside of Work",
+        "Mindful Movement and Breathwork",
+        "Physical Well-being and Recovery",
+        "Prioritize Basic Needs",
+        "Proactive and Preventative Strategies",
+        "Simple Stress Relief Techniques"
+      ],
+      "persona_0014": [
+        "Acknowledge and Validate Feelings",
+        "Prioritize and Organize",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0015": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Identify Stress Triggers",
+        "Develop Strong Communication Skills",
+        "Time Management and Organization",
+        "Prioritize and Organize"
+      ],
+      "persona_0016": [
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "Physical Well-being and Recovery",
+        "Mindful Movement and Breathwork"
+      ],
+      "persona_0017": [
+        "Prioritize and Organize",
+        "Time Management and Organization",
+        "Coping Strategies Outside of Work",
+        "Mindful Movement and Breathwork",
+        "Physical Well-being and Recovery"
+      ],
+      "persona_0018": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Coping Strategies Outside of Work",
+        "Identify Stress Triggers",
+        "Leverage Existing Support Systems",
+        "Manage Content Creation Pressure",
+        "Prioritize and Organize",
+        "Set Clear Boundaries",
+        "Time Management and Organization"
+      ],
+      "persona_0019": [
+        "Acknowledge and Validate Feelings",
+        "Coping Strategies Outside of Work",
+        "In-the-Moment Coping Techniques",
+        "Leverage Existing Support Systems",
+        "Mindful Movement and Breathwork",
+        "Set Clear Boundaries",
+        "Prioritize and Organize",
+        "Strategic Boundary Setting and Prioritization"
+      ],
+      "persona_0020": [
+        "Acknowledge and Validate Feelings",
+        "Boundary Setting",
+        "Identify Stress Triggers",
+        "Set Clear Boundaries"
+      ]
+    }
+  },
+  "narrowing_0002": {
+    "universal_set": [
+      "Affiliate Marketing",
+      "Babysitting",
+      "Car Detailing/Washing",
+      "Coaching",
+      "Consulting",
+      "Content Creation",
+      "Data Entry",
+      "Delivery Services",
+      "Event Staffing",
+      "Freelance Graphic Design",
+      "Freelance Photography",
+      "Freelance Video Editing",
+      "Freelance Writing/Editing",
+      "Gig Economy Jobs",
+      "House Cleaning/Organization",
+      "House Sitting",
+      "Merchandise Sales",
+      "Odd Jobs/Handyman Services",
+      "Online Courses/Digital Products",
+      "Online Fitness Coaching/Consulting",
+      "Online Surveys/Microtasks",
+      "Online Tutoring/Teaching",
+      "Pet Sitting/Dog Walking",
+      "Photography",
+      "Private Coaching/Lessons",
+      "Real Estate Photography",
+      "Renting out a spare room/property",
+      "Renting out your car",
+      "Reselling Items",
+      "Ridesharing",
+      "Selling Crafts/Art",
+      "Selling Digital Products",
+      "Selling Prints/Art",
+      "Session Work/Recording",
+      "Social Media Management",
+      "Task-Based Apps",
+      "Transcription Services",
+      "Tutoring/Academic Coaching",
+      "Vehicle Transport",
+      "Virtual Assistant Work",
+      "Web Design/Development",
+      "Website Testing",
+      "Writing/Editing"
+    ],
+    "coverage": {
+      "persona_0001": [
+        "Gig Economy Jobs",
+        "Delivery Services",
+        "Ridesharing",
+        "Task-Based Apps",
+        "Online Surveys/Microtasks",
+        "Freelance Writing/Editing",
+        "Virtual Assistant Work",
+        "Online Tutoring/Teaching",
+        "Selling Crafts/Art",
+        "Reselling Items",
+        "Pet Sitting/Dog Walking",
+        "Babysitting"
+      ],
+      "persona_0002": [
+        "Affiliate Marketing",
+        "Content Creation",
+        "Freelance Video Editing",
+        "Social Media Management",
+        "Selling Digital Products",
+        "Online Surveys/Microtasks",
+        "Online Tutoring/Teaching",
+        "Transcription Services",
+        "Virtual Assistant Work"
+      ],
+      "persona_0003": [
+        "Freelance Writing/Editing",
+        "Virtual Assistant Work",
+        "Freelance Graphic Design",
+        "Transcription Services",
+        "Tutoring/Academic Coaching",
+        "Online Tutoring/Teaching",
+        "Delivery Services",
+        "Ridesharing",
+        "Reselling Items"
+      ],
+      "persona_0004": [
+        "Delivery Services",
+        "Ridesharing",
+        "Freelance Writing/Editing",
+        "Virtual Assistant Work",
+        "Freelance Graphic Design",
+        "Online Tutoring/Teaching",
+        "Social Media Management",
+        "Online Surveys/Microtasks",
+        "Odd Jobs/Handyman Services",
+        "Pet Sitting/Dog Walking",
+        "Reselling Items"
+      ],
+      "persona_0005": [
+        "Content Creation",
+        "Freelance Writing/Editing",
+        "Social Media Management",
+        "Freelance Graphic Design",
+        "Freelance Video Editing",
+        "Freelance Photography",
+        "Consulting",
+        "Online Courses/Digital Products",
+        "Delivery Services",
+        "Ridesharing",
+        "Task-Based Apps",
+        "Online Surveys/Microtasks"
+      ],
+      "persona_0006": [
+        "Tutoring/Academic Coaching",
+        "Freelance Writing/Editing",
+        "Data Entry"
+      ],
+      "persona_0007": [
+        "Freelance Photography",
+        "Real Estate Photography",
+        "Selling Prints/Art",
+        "Ridesharing",
+        "Delivery Services",
+        "Car Detailing/Washing",
+        "Vehicle Transport",
+        "Freelance Writing/Editing",
+        "Social Media Management",
+        "Online Surveys/Microtasks"
+      ],
+      "persona_0008": [
+        "Private Coaching/Lessons",
+        "Session Work/Recording",
+        "Gig Economy Jobs"
+      ],
+      "persona_0009": [
+        "Online Surveys/Microtasks",
+        "Freelance Writing/Editing",
+        "Virtual Assistant Work",
+        "Online Tutoring/Teaching",
+        "Social Media Management",
+        "Data Entry",
+        "Website Testing",
+        "Delivery Services",
+        "Pet Sitting/Dog Walking",
+        "Babysitting",
+        "House Cleaning/Organization",
+        "Event Staffing"
+      ],
+      "persona_0010": [
+        "Freelance Writing/Editing",
+        "Virtual Assistant Work",
+        "Freelance Graphic Design",
+        "Web Design/Development",
+        "Social Media Management",
+        "Online Tutoring/Teaching",
+        "Data Entry",
+        "Online Surveys/Microtasks",
+        "Ridesharing",
+        "Pet Sitting/Dog Walking",
+        "Babysitting",
+        "House Sitting",
+        "Odd Jobs/Handyman Services",
+        "Tutoring/Academic Coaching",
+        "Selling Crafts/Art",
+        "Reselling Items"
+      ],
+      "persona_0011": [
+        "Freelance Writing/Editing",
+        "Online Tutoring/Teaching",
+        "Virtual Assistant Work",
+        "Online Surveys/Microtasks",
+        "Data Entry",
+        "Delivery Services",
+        "Ridesharing",
+        "Pet Sitting/Dog Walking"
+      ],
+      "persona_0012": [
+        "Consulting",
+        "Freelance Writing/Editing",
+        "Online Tutoring/Teaching",
+        "Content Creation",
+        "Gig Economy Jobs",
+        "Odd Jobs/Handyman Services"
+      ],
+      "persona_0013": [
+        "Freelance Writing/Editing",
+        "Tutoring/Academic Coaching",
+        "Data Entry",
+        "Freelance Graphic Design",
+        "Web Design/Development",
+        "Social Media Management",
+        "Delivery Services",
+        "Ridesharing",
+        "Gig Economy Jobs"
+      ],
+      "persona_0014": [
+        "Tutoring/Academic Coaching",
+        "Virtual Assistant Work",
+        "Event Staffing",
+        "Selling Crafts/Art",
+        "Freelance Writing/Editing"
+      ],
+      "persona_0015": [
+        "Freelance Writing/Editing",
+        "Freelance Graphic Design",
+        "Tutoring/Academic Coaching",
+        "Consulting",
+        "Virtual Assistant Work",
+        "Ridesharing",
+        "Delivery Services",
+        "Pet Sitting/Dog Walking",
+        "Selling Crafts/Art",
+        "Reselling Items"
+      ],
+      "persona_0016": [
+        "Online Fitness Coaching/Consulting",
+        "Content Creation",
+        "Tutoring/Academic Coaching"
+      ],
+      "persona_0017": [
+        "Freelance Writing/Editing",
+        "Online Tutoring/Teaching",
+        "Virtual Assistant Work",
+        "Transcription Services",
+        "Data Entry",
+        "Online Surveys/Microtasks",
+        "Web Design/Development",
+        "Social Media Management"
+      ],
+      "persona_0018": [
+        "Coaching",
+        "Consulting",
+        "Freelance Writing/Editing",
+        "Online Courses/Digital Products",
+        "Tutoring/Academic Coaching",
+        "Delivery Services",
+        "Ridesharing",
+        "Task-Based Apps",
+        "Online Surveys/Microtasks",
+        "Selling Crafts/Art"
+      ],
+      "persona_0019": [
+        "Online Courses/Digital Products",
+        "Private Coaching/Lessons",
+        "Merchandise Sales"
+      ],
+      "persona_0020": [
+        "Consulting",
+        "Freelance Writing/Editing",
+        "Tutoring/Academic Coaching",
+        "Coaching",
+        "Web Design/Development",
+        "Renting out a spare room/property",
+        "Renting out your car"
+      ]
+    }
+  }
+}
