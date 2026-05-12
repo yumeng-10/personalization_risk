@@ -226,6 +226,7 @@ def route_retrieval(
     gen_client,
     router_model: str,
     question: str,
+    personalization_prompt: str,
     domain: str,
 ) -> dict[str, str]:
     request = InferenceRequest(
@@ -244,7 +245,8 @@ def route_retrieval(
             ),
             Message(
                 role="user",
-                content=f"Domain: {domain}\nQuestion: {question}",
+                # content=f"Domain: {domain}\nQuestion: {question}",
+                content=f"{personalization_prompt}\n{question}",
             ),
         ],
     )
@@ -509,6 +511,7 @@ def run(args: argparse.Namespace) -> None:
             gen_client=router_client,
             router_model=args.router_model,
             question=question,
+            personalization_prompt=personalization_prompt,
             domain=domain,
         )
         retrieved_memories: list[dict[str, Any]] = []
@@ -619,5 +622,18 @@ python scripts/rag/rag_generation_only.py \
   --top-k 3 \
   --start-index 0 \
   --limit 50 \
-  --out output/result/preference_narrowing/rag_generation/rag_generation_persona50xquery100_preference_narrowing_gpt5.4_mini_200.json   
+  --out output/result/preference_narrowing/rag_generation/rag_generation_persona50xquery100_preference_narrowing_gpt5.4_mini_200.json
+
+
+
+python scripts/rag/rag_generation_only.py \
+  --dataset data/preference_narrowing/assembled_persona50xquery100_preference_narrowing_sorted.json \
+  --candidate-model gpt-5.4-mini \
+  --router-model gpt-5.4-mini \
+  --provider openai \
+  --thinking-budget 256 \
+  --top-k 3 \
+  --start-index 0 \
+  --limit 20 \
+  --out output/result/preference_narrowing/rag_generation/rag_generation_persona50xquery100_preference_narrowing_gpt5.4_mini_20.json   
 """
