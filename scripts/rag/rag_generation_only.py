@@ -56,6 +56,8 @@ def _provider_for_model(model: str) -> str:
         return "google"
     if name.startswith("claude"):
         return "anthropic"
+    if name.startswith("xlab") or name.startswith("qwen") or name.startswith("deepseek"):
+        return "xlab"
     return "openai"
 
 
@@ -336,7 +338,7 @@ def generate_candidate_response(
         model=model,
         config=GenerationConfig(
             temperature=0.2,
-            max_tokens=700,
+            max_tokens=1600,
             thinking_budget=thinking_budget,
         ),
         messages=[
@@ -358,7 +360,7 @@ def generate_non_personalized_response(
         model=model,
         config=GenerationConfig(
             temperature=0.2,
-            max_tokens=700,
+            max_tokens=1600,
             thinking_budget=thinking_budget,
         ),
         messages=[
@@ -416,6 +418,15 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Skip generating the non-personalized baseline response.",
     )
+    parser.add_argument(
+        "--provider",
+        default=None,
+        help=(
+            "Force all generation calls (router + candidate) to use this provider "
+            "(e.g. 'xlab', 'openai', 'google'). "
+            "Overrides the auto-detection based on model name."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -444,8 +455,13 @@ def run(args: argparse.Namespace) -> None:
 
     openai_api_key = os.getenv("OPENAI_API_KEY")
     embed_client = OpenAI(api_key=openai_api_key)
-    router_client = DEFAULT_REGISTRY.get_client(_provider_for_model(args.router_model))
-    candidate_client = DEFAULT_REGISTRY.get_client(_provider_for_model(args.candidate_model))
+    provider_override = args.provider
+    router_client = DEFAULT_REGISTRY.get_client(
+        provider_override if provider_override else _provider_for_model(args.router_model)
+    )
+    candidate_client = DEFAULT_REGISTRY.get_client(
+        provider_override if provider_override else _provider_for_model(args.candidate_model)
+    )
 
     vector_store = build_vector_store(
         records=selected_records,
@@ -593,4 +609,15 @@ python scripts/rag_generation_only.py \
   --start-index 0 \
   --limit 400 \
   --out output/result/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_400.json
+
+python scripts/rag/rag_generation_only.py \
+  --dataset data/preference_narrowing/assembled_persona50xquery100_preference_narrowing_sorted.json \
+  --candidate-model gpt-5.4-mini \
+  --router-model gpt-5.4-mini \
+  --provider xlab \
+  --thinking-budget 256 \
+  --top-k 3 \
+  --start-index 0 \
+  --limit 50 \
+  --out output/result/preference_narrowing/rag_generation/rag_generation_persona50xquery100_preference_narrowing_gpt5.4_mini_200.json   
 """

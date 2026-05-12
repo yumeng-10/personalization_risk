@@ -227,14 +227,16 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
     for record_idx, (persona_idx, query_idx) in enumerate(pair_indices, start=1):
         persona = deepcopy(selected_personas[persona_idx])
         query = selected_queries[query_idx]
-        persona["preference"] = query.get("preference", "")
-        new_conversation = {
-            "focal_attribute": "preference",
-            "turns": query.get("memory", []),
-            "turn_count": len(query.get("memory", []))
-        }
-        persona["historical_conversations"]["conversations"].append(new_conversation)
-        persona["historical_conversations"]["conversation_count"] = len(persona["historical_conversations"]["conversations"])
+        preference_val = query.get("preference", "").strip()
+        if preference_val:
+            persona["preference"] = preference_val
+            new_conversation = {
+                "focal_attribute": "preference",
+                "turns": query.get("memory", []),
+                "turn_count": len(query.get("memory", []))
+            }
+            persona["historical_conversations"]["conversations"].append(new_conversation)
+            persona["historical_conversations"]["conversation_count"] = len(persona["historical_conversations"]["conversations"])
         selected_profile = {
             field: persona.get(field)
             for field in PERSONALIZATION_FIELDS
@@ -261,7 +263,7 @@ def cmd_assemble_irrelevant_personalization(args: argparse.Namespace, risk_type:
                 },
                 "personalization_prompt": personalization_prompt,
                 "query": {
-                    "question": query.get("query", ""),
+                    "question": query.get("question", ""),
                     "subject": query.get("subject", ""),
                     "choices": query.get("choices", []),
                     "answer": query.get("answer", ""),
@@ -708,7 +710,7 @@ PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   
 PYTHONPATH=src python -m personalization_risk.cli assemble-preference-narrowing \
   --persona-file data/persona_seed/50_sampled_enriched_balanced_profiles.json \
-  --query-file data/preference_narrowing/narrowing_queries_final.csv \
+  --query-file data/preference_narrowing/narrowing_queries_100.csv \
   --pairing-mode cartesian \
   --persona-n 50 \
   --query-n 100 \

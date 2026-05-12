@@ -8,6 +8,7 @@ from personalization_risk.inference.bedrock_client import BedrockClient
 from personalization_risk.inference.google_client import GoogleClient
 from personalization_risk.inference.openai_client import OpenAIClient
 from personalization_risk.inference.placeholder_client import PlaceholderClient
+from personalization_risk.inference.xlab_client import XlabClient
 
 ClientFactory = Callable[[], InferenceClient]
 
@@ -20,6 +21,7 @@ class InferenceRegistry:
             "google": lambda: GoogleClient(api_key=os.getenv("GOOGLE_API_KEY")),
             "anthropic": lambda: PlaceholderClient("anthropic"),
             "azure_openai": lambda: PlaceholderClient("azure_openai"),
+            "xlab": lambda: XlabClient(),
         }
 
     def register(self, provider: str, factory: ClientFactory) -> None:
