@@ -627,13 +627,16 @@ python scripts/rag/rag_generation_only.py \
 
 
 python scripts/rag/rag_generation_only.py \
-  --dataset data/preference_narrowing/assembled_persona50xquery100_preference_narrowing_sorted.json \
+  --dataset data/irrelevant_personalization/assembled_seed1000_irrelevant_personalization.json \
   --candidate-model gpt-5.4-mini \
   --router-model gpt-5.4-mini \
-  --provider openai \
+  --provider xlab \
   --thinking-budget 256 \
   --top-k 3 \
   --start-index 0 \
-  --limit 20 \
-  --out output/result/preference_narrowing/rag_generation/rag_generation_persona50xquery100_preference_narrowing_gpt5.4_mini_20.json   
-"""
+  --limit 50 \
+  --out output/result/irrelevant_personalization/rag_generation/rag_generation_seed1000_irrelevant_personalization_gpt5.4_mini_200.json   
+
+  
+  
+  """

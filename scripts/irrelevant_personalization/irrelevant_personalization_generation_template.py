@@ -12,11 +12,7 @@ personal context when answering a factual question).
 When N exceeds the built-in pool (15 per domain), the script calls the Claude API
 to synthesize additional pairs, using the built-in ones as few-shot examples.
 
-Usage:
-    python scripts/irrelevant_personalization/irrelevant_personalization_generation_template.py 10
-    python scripts/irrelevant_personalization/irrelevant_personalization_generation_template.py 50 \\
-        --api-key $ANTHROPIC_API_KEY \\
-        --output data/irrelevant_personalization/irrelevant_personalization_templates_50.json
+
 """
 
 import json
@@ -25,6 +21,18 @@ import random
 import re
 import os
 import sys
+import concurrent.futures
+
+try:
+    from tqdm import tqdm
+except ImportError:
+    class tqdm:  # no-op fallback if tqdm is not installed
+        def __init__(self, iterable=None, **_): self._it = iterable
+        def __iter__(self): return iter(self._it) if self._it is not None else iter([])
+        def __enter__(self): return self
+        def __exit__(self, *_): pass
+        def update(self, _=1): pass
+        def close(self): pass
 
 try:
     from dotenv import load_dotenv
@@ -477,7 +485,7 @@ def expand_pairs_via_openai(domain_name, existing_pairs, n_needed, api_key, mode
 # Core generation
 # ─────────────────────────────────────────────────────────────────────────────
 
-def get_pair_pool(domain_name, domain_data, n, api_key, provider, model, verbose):
+def get_pair_pool(domain_name, domain_data, n, api_key, provider, model, verbose, workers=4):
     """Return a pool of at least n pairs for a domain, calling the API if needed."""
     pool = list(domain_data["pairs"])
 
@@ -502,22 +510,29 @@ def get_pair_pool(domain_name, domain_data, n, api_key, provider, model, verbose
 
     BATCH_SIZE = 10
     total_needed = n_needed + max(3, n_needed // 3)
+    batch_sizes = []
     remaining = total_needed
     while remaining > 0:
-        batch = min(BATCH_SIZE, remaining)
-        new_pairs = expand_fn(
-            domain_name, pool, batch, api_key, model=model, verbose=verbose
-        )
-        pool.extend(new_pairs)
-        remaining -= batch
-        if len(pool) >= n:
-            break
+        batch_sizes.append(min(BATCH_SIZE, remaining))
+        remaining -= batch_sizes[-1]
+
+    # Use the initial pool as a read-only few-shot snapshot for all concurrent batches.
+    snapshot = list(pool)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(workers, len(batch_sizes))) as ex:
+        futures = [
+            ex.submit(expand_fn, domain_name, snapshot, b, api_key, model=model, verbose=verbose)
+            for b in batch_sizes
+        ]
+        with tqdm(total=len(futures), desc=f"{domain_name} batches", unit="batch", leave=False) as bar:
+            for f in concurrent.futures.as_completed(futures):
+                pool.extend(f.result())
+                bar.update()
 
     return pool
 
 
-def generate_outputs(domain_name, domain_data, n, api_key, provider, model, rng, verbose):
-    pool = get_pair_pool(domain_name, domain_data, n, api_key, provider, model, verbose)
+def generate_outputs(domain_name, domain_data, n, api_key, provider, model, rng, verbose, workers=4):
+    pool = get_pair_pool(domain_name, domain_data, n, api_key, provider, model, verbose, workers=workers)
 
     pref_templates  = domain_data["preference_templates"]
     query_templates = domain_data["query_templates"]
@@ -593,6 +608,8 @@ Examples:
                         help="Output JSON file (default: irrelevant_personalization_templates.json)")
     parser.add_argument("--seed",      type=int,  default=42,
                         help="Random seed for reproducibility (default: 42)")
+    parser.add_argument("--workers",   type=int,  default=4,
+                        help="Max concurrent API requests (default: 4)")
     parser.add_argument("--verbose",   action="store_true",
                         help="Print progress to stderr")
     args = parser.parse_args()
@@ -609,18 +626,28 @@ Examples:
             file=sys.stderr,
         )
 
-    rng = random.Random(args.seed)
+    domain_items = list(DOMAIN_DATA.items())
 
-    all_outputs = []
-    for domain_name, domain_data in DOMAIN_DATA.items():
+    def process_domain(idx_and_item):
+        idx, (domain_name, domain_data) = idx_and_item
+        # Each domain gets its own seeded rng so results are reproducible
+        # regardless of which domains run concurrently.
+        domain_rng = random.Random(args.seed + idx)
         if args.verbose:
             print(f"[{domain_name}] generating {args.N} pairs...", file=sys.stderr)
-        outputs = generate_outputs(
+        return generate_outputs(
             domain_name, domain_data, args.N,
             api_key, args.provider, args.model,
-            rng, args.verbose,
+            domain_rng, args.verbose, workers=args.workers,
         )
-        all_outputs.extend(outputs)
+
+    all_outputs = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(args.workers, len(domain_items))) as ex:
+        for outputs in tqdm(
+            ex.map(process_domain, enumerate(domain_items)),
+            total=len(domain_items), desc="domains", unit="domain",
+        ):
+            all_outputs.extend(outputs)
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(all_outputs, f, ensure_ascii=False, indent=2)
@@ -638,7 +665,9 @@ python scripts/irrelevant_personalization/irrelevant_personalization_generation_
     --model gpt-5.1 \
     --output data/irrelevant_personalization/irrelevant_personalization_templates_150.json
 
-python scripts/irrelevant_personalization/irrelevant_personalization_generation_template.py 50 \
+python scripts/irrelevant_personalization/irrelevant_personalization_generation_template.py 100 \
     --model gpt-5.1 \
-    --output data/irrelevant_personalization/irrelevant_personalization_templates_500.json
+    --provider xlab \
+    --workers 4 \
+    --output data/irrelevant_personalization/irrelevant_personalization_templates_1000.json
 """
