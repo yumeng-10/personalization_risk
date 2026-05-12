@@ -23,9 +23,14 @@ from pathlib import Path
 
 # ── paths ──────────────────────────────────────────────────────────────────────
 BASE = Path(__file__).resolve().parent.parent
-RESULT_FILE = BASE / "output/result/sycophantic_bias/rag_eval_seed20x10_sycophantic_bias_gemini-2.5-flash_gpt4o_1.json"
-ASSEMBLED_FILE = BASE / "data/sycophantic_bias/assembled_seed20x10_sycophantic_bias.json"
-OUT_DIR = BASE / "output/figures/sycophantic_bias"
+# RESULT_FILE = BASE / "output/result/sycophantic_bias/rag_eval_seed20x10_sycophantic_bias_gemini-2.5-flash_gpt4o_1.json"
+# ASSEMBLED_FILE = BASE / "data/sycophantic_bias/assembled_seed20x10_sycophantic_bias.json"
+# OUT_DIR = BASE / "output/figures/sycophantic_bias"
+
+RESULT_FILE = BASE / "output/result/sycophantic_bias/rag_eval_seed20_sycophantic_bias_framing_gemini-2.5-flash_gpt4o_1.json"
+ASSEMBLED_FILE = BASE / "data/sycophantic_bias/assembled_seed20x20_sycophantic_bias_framing.json"
+OUT_DIR = BASE / "output/figures/sycophantic_bias_framing"
+
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── load data ──────────────────────────────────────────────────────────────────
