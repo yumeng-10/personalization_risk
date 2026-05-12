@@ -705,6 +705,14 @@ PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-n 20 \
   --query-n 10 \
   --out data/sycophantic_bias/assembled_seed20x10_sycophantic_bias_modified.json
+  
+PYTHONPATH=src python -m personalization_risk.cli assemble-preference-narrowing \
+  --persona-file data/persona_seed/50_sampled_enriched_balanced_profiles.json \
+  --query-file data/preference_narrowing/narrowing_queries_final.csv \
+  --pairing-mode cartesian \
+  --persona-n 50 \
+  --query-n 100 \
+  --out data/preference_narrowing/assembled_persona50xquery100_preference_narrowing.json
 
 PYTHONPATH=src python -m personalization_risk.cli assemble-sycophantic-bias \
   --persona-file data/persona_seed/enriched_balanced_profiles.json \
