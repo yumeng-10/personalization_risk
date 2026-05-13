@@ -1,0 +1,1014 @@
+{
+  "source_dataset": "data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json",
+  "risk_type": "sycophantic_bias_framing",
+  "setting": "retrieval_only",
+  "start_index": 0,
+  "limit": 200,
+  "num_records": 200,
+  "candidate_model": "gemini-2.5-pro",
+  "router_model": "gemini-2.5-pro",
+  "embedding_model": "text-embedding-3-small",
+  "top_k": 3,
+  "results": [
+    {
+      "record_id": "sya_0001",
+      "error": "RetryError[<Future at 0x10dfde3f0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0002",
+      "error": "RetryError[<Future at 0x10dfdde50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0003",
+      "error": "RetryError[<Future at 0x12a6dd640 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0004",
+      "error": "RetryError[<Future at 0x11dbbedb0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0005",
+      "error": "RetryError[<Future at 0x11dbbd390 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0006",
+      "error": "RetryError[<Future at 0x11d5a99d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0007",
+      "error": "RetryError[<Future at 0x12da055d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0008",
+      "error": "RetryError[<Future at 0x12da047d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0009",
+      "error": "RetryError[<Future at 0x12a6e6d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0010",
+      "error": "RetryError[<Future at 0x12da28c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0011",
+      "error": "RetryError[<Future at 0x12da07750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0012",
+      "error": "RetryError[<Future at 0x12da07ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0013",
+      "error": "RetryError[<Future at 0x12da2a1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0014",
+      "error": "RetryError[<Future at 0x12da079d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0015",
+      "error": "RetryError[<Future at 0x12da29350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0016",
+      "error": "RetryError[<Future at 0x12da2b550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0017",
+      "error": "RetryError[<Future at 0x12da44050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0018",
+      "error": "RetryError[<Future at 0x12da45150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0019",
+      "error": "RetryError[<Future at 0x12da46950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0020",
+      "error": "RetryError[<Future at 0x12da45a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0021",
+      "error": "RetryError[<Future at 0x12da47150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0022",
+      "error": "RetryError[<Future at 0x12da46550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0023",
+      "error": "RetryError[<Future at 0x12da47ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0024",
+      "error": "RetryError[<Future at 0x12da689d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0025",
+      "error": "RetryError[<Future at 0x12da69850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0026",
+      "error": "RetryError[<Future at 0x12da69cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0027",
+      "error": "RetryError[<Future at 0x12da6a750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0028",
+      "error": "RetryError[<Future at 0x12da851d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0029",
+      "error": "RetryError[<Future at 0x12da6ba50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0030",
+      "error": "RetryError[<Future at 0x12da6b250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0031",
+      "error": "RetryError[<Future at 0x12da84f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0032",
+      "error": "RetryError[<Future at 0x12daa97d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0033",
+      "error": "RetryError[<Future at 0x12da864d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0034",
+      "error": "RetryError[<Future at 0x12da87dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0035",
+      "error": "RetryError[<Future at 0x12da86c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0036",
+      "error": "RetryError[<Future at 0x12da87550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0037",
+      "error": "RetryError[<Future at 0x12daa9050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0038",
+      "error": "RetryError[<Future at 0x12daaab50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0039",
+      "error": "RetryError[<Future at 0x12daab0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0040",
+      "error": "RetryError[<Future at 0x12dacdd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0041",
+      "error": "RetryError[<Future at 0x12daabbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0042",
+      "error": "RetryError[<Future at 0x12dacc9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0043",
+      "error": "RetryError[<Future at 0x12daabf50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0044",
+      "error": "RetryError[<Future at 0x12daceed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0045",
+      "error": "RetryError[<Future at 0x12dace950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0046",
+      "error": "RetryError[<Future at 0x12dad8050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0047",
+      "error": "RetryError[<Future at 0x12dad96d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0048",
+      "error": "RetryError[<Future at 0x12dad8dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0049",
+      "error": "RetryError[<Future at 0x12dad9050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0050",
+      "error": "RetryError[<Future at 0x12dada9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0051",
+      "error": "RetryError[<Future at 0x12dadb150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0052",
+      "error": "RetryError[<Future at 0x12daf4fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0053",
+      "error": "RetryError[<Future at 0x12daf53d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0054",
+      "error": "RetryError[<Future at 0x12daf67d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0055",
+      "error": "RetryError[<Future at 0x12db185d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0056",
+      "error": "RetryError[<Future at 0x12daf6cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0057",
+      "error": "RetryError[<Future at 0x12daf5950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0058",
+      "error": "RetryError[<Future at 0x12daf7c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0059",
+      "error": "RetryError[<Future at 0x12daf7950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0060",
+      "error": "RetryError[<Future at 0x12db199d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0061",
+      "error": "RetryError[<Future at 0x12db627d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0062",
+      "error": "RetryError[<Future at 0x12db33b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0063",
+      "error": "RetryError[<Future at 0x12db1bcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0064",
+      "error": "RetryError[<Future at 0x12db303d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0065",
+      "error": "RetryError[<Future at 0x12db306d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0066",
+      "error": "RetryError[<Future at 0x12db30cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0067",
+      "error": "RetryError[<Future at 0x12db32cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0068",
+      "error": "RetryError[<Future at 0x12db31dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0069",
+      "error": "RetryError[<Future at 0x12db60050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0070",
+      "error": "RetryError[<Future at 0x12db33650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0071",
+      "error": "RetryError[<Future at 0x12db33dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0072",
+      "error": "RetryError[<Future at 0x12db61ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0073",
+      "error": "RetryError[<Future at 0x12db631d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0074",
+      "error": "RetryError[<Future at 0x12db74350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0075",
+      "error": "RetryError[<Future at 0x12db771d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0076",
+      "error": "RetryError[<Future at 0x12db74fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0077",
+      "error": "RetryError[<Future at 0x12db76950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0078",
+      "error": "RetryError[<Future at 0x12db75550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0079",
+      "error": "RetryError[<Future at 0x12db75f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0080",
+      "error": "RetryError[<Future at 0x12db9c1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0081",
+      "error": "RetryError[<Future at 0x12db769d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0082",
+      "error": "RetryError[<Future at 0x12db9de50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0083",
+      "error": "RetryError[<Future at 0x12db9e3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0084",
+      "error": "RetryError[<Future at 0x12db9e850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0085",
+      "error": "RetryError[<Future at 0x12dbd0c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0086",
+      "error": "RetryError[<Future at 0x12db9fa50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0087",
+      "error": "RetryError[<Future at 0x12dbb85d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0088",
+      "error": "RetryError[<Future at 0x12dbb8750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0089",
+      "error": "RetryError[<Future at 0x12db9ff50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0090",
+      "error": "RetryError[<Future at 0x12dbd14d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0091",
+      "error": "RetryError[<Future at 0x12dbba3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0092",
+      "error": "RetryError[<Future at 0x12dbbabd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0093",
+      "error": "RetryError[<Future at 0x12dbd0250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0094",
+      "error": "RetryError[<Future at 0x12dbd0bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0095",
+      "error": "RetryError[<Future at 0x12dbd2750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0096",
+      "error": "RetryError[<Future at 0x12dbd1ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0097",
+      "error": "RetryError[<Future at 0x12dbd39d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0098",
+      "error": "RetryError[<Future at 0x12dbfc150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0099",
+      "error": "RetryError[<Future at 0x12dbfd950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0100",
+      "error": "RetryError[<Future at 0x12dbfdcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0101",
+      "error": "RetryError[<Future at 0x12dbff5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0102",
+      "error": "RetryError[<Future at 0x12dbfdf50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0103",
+      "error": "RetryError[<Future at 0x12dbfe6d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0104",
+      "error": "RetryError[<Future at 0x12dc10cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0105",
+      "error": "RetryError[<Future at 0x12dc11cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0106",
+      "error": "RetryError[<Future at 0x12dc107d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0107",
+      "error": "RetryError[<Future at 0x12dc133d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0108",
+      "error": "RetryError[<Future at 0x12dc37e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0109",
+      "error": "RetryError[<Future at 0x12dc139d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0110",
+      "error": "RetryError[<Future at 0x12dc36050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0111",
+      "error": "RetryError[<Future at 0x12dc36b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0112",
+      "error": "RetryError[<Future at 0x12dc34c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0113",
+      "error": "RetryError[<Future at 0x12dc355d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0114",
+      "error": "RetryError[<Future at 0x12dc35850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0115",
+      "error": "RetryError[<Future at 0x12dc54d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0116",
+      "error": "RetryError[<Future at 0x12dc37950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0117",
+      "error": "RetryError[<Future at 0x12dc554d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0118",
+      "error": "RetryError[<Future at 0x12dc563d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0119",
+      "error": "RetryError[<Future at 0x12dc571d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0120",
+      "error": "RetryError[<Future at 0x12dc56650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0121",
+      "error": "RetryError[<Future at 0x12dc57f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0122",
+      "error": "RetryError[<Future at 0x12dc797d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0123",
+      "error": "RetryError[<Future at 0x12dc78d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0124",
+      "error": "RetryError[<Future at 0x12dc7a1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0125",
+      "error": "RetryError[<Future at 0x12dc7bb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0126",
+      "error": "RetryError[<Future at 0x12dc7bcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0127",
+      "error": "RetryError[<Future at 0x12dc7ad50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0128",
+      "error": "RetryError[<Future at 0x12dc956d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0129",
+      "error": "RetryError[<Future at 0x12dc94b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0130",
+      "error": "RetryError[<Future at 0x12dc96bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0131",
+      "error": "RetryError[<Future at 0x12dc97450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0132",
+      "error": "RetryError[<Future at 0x12dcc07d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0133",
+      "error": "RetryError[<Future at 0x12dcc09d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0134",
+      "error": "RetryError[<Future at 0x12dcc0dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0135",
+      "error": "RetryError[<Future at 0x12dcc0d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0136",
+      "error": "RetryError[<Future at 0x12dcc14d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0137",
+      "error": "RetryError[<Future at 0x12dcc39d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0138",
+      "error": "RetryError[<Future at 0x12dcc23d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0139",
+      "error": "RetryError[<Future at 0x12dcdc650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0140",
+      "error": "RetryError[<Future at 0x12dcddfd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0141",
+      "error": "RetryError[<Future at 0x12dcde250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0142",
+      "error": "RetryError[<Future at 0x12dcfced0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0143",
+      "error": "RetryError[<Future at 0x12dcfc2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0144",
+      "error": "RetryError[<Future at 0x12dcfe7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0145",
+      "error": "RetryError[<Future at 0x12dcdf5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0146",
+      "error": "RetryError[<Future at 0x12dcdf350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0147",
+      "error": "RetryError[<Future at 0x12dcfe3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0148",
+      "error": "RetryError[<Future at 0x12dd14250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0149",
+      "error": "RetryError[<Future at 0x12dcffb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0150",
+      "error": "RetryError[<Future at 0x12dd34b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0151",
+      "error": "RetryError[<Future at 0x12dd156d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0152",
+      "error": "RetryError[<Future at 0x12dd161d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0153",
+      "error": "RetryError[<Future at 0x12dd14b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0154",
+      "error": "RetryError[<Future at 0x12dd16b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0155",
+      "error": "RetryError[<Future at 0x12dd16050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0156",
+      "error": "RetryError[<Future at 0x12dd341d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0157",
+      "error": "RetryError[<Future at 0x12dd34ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0158",
+      "error": "RetryError[<Future at 0x12dd37350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0159",
+      "error": "RetryError[<Future at 0x12dd37950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0160",
+      "error": "RetryError[<Future at 0x12dd36350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0161",
+      "error": "RetryError[<Future at 0x12dd368d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0162",
+      "error": "RetryError[<Future at 0x12dd60750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0163",
+      "error": "RetryError[<Future at 0x12dd60f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0164",
+      "error": "RetryError[<Future at 0x12dd629d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0165",
+      "error": "RetryError[<Future at 0x12dd61850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0166",
+      "error": "RetryError[<Future at 0x12dd632d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0167",
+      "error": "RetryError[<Future at 0x12dd7cb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0168",
+      "error": "RetryError[<Future at 0x12dd7dd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0169",
+      "error": "RetryError[<Future at 0x12dd7d250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0170",
+      "error": "RetryError[<Future at 0x12dd7e8d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0171",
+      "error": "RetryError[<Future at 0x12dd7ed50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0172",
+      "error": "RetryError[<Future at 0x12dd7d850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0173",
+      "error": "RetryError[<Future at 0x12dd9c350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0174",
+      "error": "RetryError[<Future at 0x12dd9c7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0175",
+      "error": "RetryError[<Future at 0x12dd9dbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0176",
+      "error": "RetryError[<Future at 0x12dd9e050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0177",
+      "error": "RetryError[<Future at 0x12dd9eed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0178",
+      "error": "RetryError[<Future at 0x12ddb0250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0179",
+      "error": "RetryError[<Future at 0x12ddb0f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0180",
+      "error": "RetryError[<Future at 0x12ddb14d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0181",
+      "error": "RetryError[<Future at 0x12ddb26d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0182",
+      "error": "RetryError[<Future at 0x12ddb3f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0183",
+      "error": "RetryError[<Future at 0x12ddb2ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0184",
+      "error": "RetryError[<Future at 0x12ddb31d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0185",
+      "error": "RetryError[<Future at 0x12ddd4550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0186",
+      "error": "RetryError[<Future at 0x12ddd4f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0187",
+      "error": "RetryError[<Future at 0x12ddd7ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0188",
+      "error": "RetryError[<Future at 0x12ddd67d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0189",
+      "error": "RetryError[<Future at 0x12ddd78d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0190",
+      "error": "RetryError[<Future at 0x12ddd7650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0191",
+      "error": "RetryError[<Future at 0x12ddfcb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0192",
+      "error": "RetryError[<Future at 0x12ddfe2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0193",
+      "error": "RetryError[<Future at 0x12ddfdbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0194",
+      "error": "RetryError[<Future at 0x12ddfd150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0195",
+      "error": "RetryError[<Future at 0x12ddfecd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0196",
+      "error": "RetryError[<Future at 0x12ddff9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0197",
+      "error": "RetryError[<Future at 0x12ddffbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0198",
+      "error": "RetryError[<Future at 0x12ddff850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0199",
+      "error": "RetryError[<Future at 0x12f0182d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "sya_0200",
+      "error": "RetryError[<Future at 0x12f018450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    }
+  ]
+}

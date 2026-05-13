@@ -49,3 +49,4 @@ conda-meta/
 tmp*.*
 /scripts/download_data.py
 /temp
+.cache/
