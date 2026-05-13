@@ -72,7 +72,7 @@ def load_local_env(path: str | Path = ".env") -> None:
             continue
         key, value = line.split("=", 1)
         key, value = key.strip(), value.strip().strip("'").strip('"')
-        if key and key not in os.environ:
+        if key:
             os.environ[key] = value
 
 

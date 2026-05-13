@@ -28,7 +28,7 @@ mkdir -p logs
 run() {
     local dataset="$1" dname="$2" setting="$3" model="$4" tag="$5"
     local provider="${6:-}" thinking="${7:-}"
-    local out="output/result/${dname}/${setting}/${setting}_${tag}_${LIMIT}.json"
+    local out="output/generate/${dname}/${setting}/${setting}_${tag}_${LIMIT}.json"
 
     if [[ -f "$out" ]]; then
         echo "[SKIP] $out"

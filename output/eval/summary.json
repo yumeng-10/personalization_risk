@@ -1,0 +1,244 @@
+{
+  "last_updated": "2026-05-13T14:54:50.344759+00:00",
+  "total_entries": 15,
+  "entries": {
+    "output/eval/irrelevant_personalization/base/eval_base_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_gemini_2_5_flash_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 190
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_gpt5_4_mini_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 191
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gemini_2_5_flash_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.7977,
+          "n": 152
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gpt5_4_mini_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.9734,
+          "n": 160
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.7913,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_retrieval",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.965,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gemini_2_5_flash_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 199
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gpt5_4_mini_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "retrieval_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/base/eval_base_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/base/eval_base_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.9975,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": null,
+          "n": 0
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/base/eval_base_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/base/eval_base_gpt5_4_mini_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "base",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.995,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": null,
+          "n": 0
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/profile_only/eval_profile_only_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/profile_only/eval_profile_only_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.5952,
+          "n": 155
+        },
+        "pis_score": {
+          "mean": 0.2194,
+          "n": 155
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/profile_only/eval_profile_only_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/profile_only/eval_profile_only_gpt5_4_mini_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.6457,
+          "n": 163
+        },
+        "pis_score": {
+          "mean": 0.0184,
+          "n": 163
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.9167,
+          "n": 6
+        },
+        "pis_score": {
+          "mean": 0.0,
+          "n": 6
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 15,
+      "metrics": {
+        "syco_score": {
+          "mean": null,
+          "n": 0
+        },
+        "pis_score": {
+          "mean": null,
+          "n": 0
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gpt5_4_mini_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "retrieval_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 16,
+      "metrics": {
+        "syco_score": {
+          "mean": null,
+          "n": 0
+        },
+        "pis_score": {
+          "mean": null,
+          "n": 0
+        }
+      }
+    }
+  }
+}
