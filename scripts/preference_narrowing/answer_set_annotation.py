@@ -30,6 +30,8 @@ from typing import Any
 from urllib import error as urllib_error
 from urllib import request as urllib_request
 
+import requests
+
 from openai import OpenAI
 from tqdm import tqdm
 
@@ -39,7 +41,7 @@ _REASONING_PREFIXES = ("gpt-5", "o1", "o3", "o4")
 
 
 class LLMClient:
-    """Thin wrapper around OpenAI and Gemini REST APIs."""
+    """Thin wrapper around OpenAI, Gemini, and XLab REST APIs."""
 
     def __init__(self, provider: str) -> None:
         self.provider = provider
@@ -49,6 +51,8 @@ class LLMClient:
     def complete(self, model: str, system: str, user: str, max_tokens: int = 2000) -> str:
         if self.provider == "google":
             return self._gemini(model, system, user, max_tokens)
+        if self.provider == "xlab":
+            return self._xlab(model, system, user, max_tokens)
         return self._openai_chat(model, system, user, max_tokens)
 
     def _openai_chat(self, model: str, system: str, user: str, max_tokens: int) -> str:
@@ -102,6 +106,31 @@ class LLMClient:
         parts = candidates[0].get("content", {}).get("parts", [])
         texts = [p.get("text", "") for p in parts if isinstance(p, dict) and not p.get("thought")]
         return "\n".join(t for t in texts if t) or "{}"
+
+    def _xlab(self, model: str, system: str, user: str, max_tokens: int) -> str:
+        api_key = os.getenv("XLAB_API_KEY", "")
+        url = os.getenv("XLAB_API_URL", "https://xlabapi.com/v1/chat/completions")
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "temperature": 0.0,
+            "max_tokens": max_tokens,
+        }
+        resp = requests.post(
+            url,
+            json=payload,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            timeout=600,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return data["choices"][0]["message"]["content"] or "{}"
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -291,6 +320,73 @@ def save_output(
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
 
 
+def save_deduped_universal_sets(
+    path: Path,
+    input_data: dict[str, Any],
+    dedup_cache: dict[str, dict[str, dict[str, str]]],
+) -> None:
+    """Write a copy of the input file with universal_answer_set replaced by deduped keys."""
+    updated_results: list[dict[str, Any]] = []
+    for rec in input_data.get("results", []):
+        qid = rec.get("query_id")
+        updated = dict(rec)
+        updated["universal_answer_set"] = sorted(dedup_cache.get(qid, {}).keys())
+        updated_results.append(updated)
+
+    payload = dict(input_data)
+    payload["results"] = updated_results
+    payload["num_records"] = len(updated_results)
+    payload["dedup_source"] = "universal_answer_set"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+def load_dedup_cache_from_payload(payload: dict[str, Any]) -> dict[str, dict[str, dict[str, str]]]:
+    """Normalize supported cache-like payloads into {query_id: {answer: meta}}.
+
+    Supported inputs:
+    - a direct cache mapping: {query_id: {answer: {definition, example}}}
+    - an annotated output file with `results` and `annotated_answer_set`
+    - a deduped copy with `results` and `universal_answer_set`
+    """
+    if not isinstance(payload, dict):
+        return {}
+
+    if "results" not in payload:
+        normalized: dict[str, dict[str, dict[str, str]]] = {}
+        for qid, answer_map in payload.items():
+            if not isinstance(answer_map, dict):
+                continue
+            normalized[qid] = {}
+            for answer, meta in answer_map.items():
+                if isinstance(meta, dict):
+                    normalized[qid][str(answer)] = {
+                        "definition": str(meta.get("definition", "")),
+                        "example": str(meta.get("example", "")),
+                    }
+        return normalized
+
+    normalized: dict[str, dict[str, dict[str, str]]] = {}
+    for rec in payload.get("results", []):
+        qid = rec.get("query_id")
+        if not qid:
+            continue
+        if isinstance(rec.get("annotated_answer_set"), dict):
+            normalized[qid] = {}
+            for answer, meta in rec["annotated_answer_set"].items():
+                if isinstance(meta, dict):
+                    normalized[qid][str(answer)] = {
+                        "definition": str(meta.get("definition", "")),
+                        "example": str(meta.get("example", "")),
+                    }
+        elif isinstance(rec.get("universal_answer_set"), list):
+            normalized[qid] = {
+                str(answer): {"definition": "", "example": ""}
+                for answer in rec["universal_answer_set"]
+            }
+    return normalized
+
+
 # ─────────────────────────────── main pipeline ───────────────────────────────
 
 def run(args: argparse.Namespace) -> None:
@@ -331,9 +427,20 @@ def run(args: argparse.Namespace) -> None:
     client = LLMClient(provider)
 
     # ── Phase 1: Deduplicate per unique query_id ──────────────────────────
+    # Load dedup cache if provided so we can skip queries already deduped
+    dedup_cache: dict[str, dict[str, dict[str, str]]] = {}
+    if args.dedup_cache and args.dedup_cache.exists():
+        try:
+            dedup_cache = load_dedup_cache_from_payload(json.loads(args.dedup_cache.read_text()))
+            print(f"Loaded dedup cache from {args.dedup_cache} ({len(dedup_cache)} queries)")
+        except Exception as exc:
+            print(f"WARNING: could not load dedup cache ({exc}); will recompute.", file=sys.stderr)
+
     unique_queries: dict[str, dict] = {}
     for rec in todo:
         qid = rec["query_id"]
+        if qid in dedup_cache:
+            continue
         if qid not in unique_queries:
             unique_queries[qid] = {
                 "question": rec["question"],
@@ -341,8 +448,6 @@ def run(args: argparse.Namespace) -> None:
             }
 
     print(f"\nPhase 1: Deduplicating {len(unique_queries)} unique query answer sets …")
-    dedup_cache: dict[str, dict[str, dict[str, str]]] = {}
-
     def _dedup_one(qid: str, info: dict) -> tuple[str, dict]:
         result = dedup_answer_set(client, args.model, info["question"], info["answer_set"])
         return qid, result
@@ -363,6 +468,18 @@ def run(args: argparse.Namespace) -> None:
                     tqdm.write(f"  ERROR deduplicating {qid}: {exc}", file=sys.stderr)
                     dedup_cache[qid] = {}
                 pbar.update(1)
+
+    # Save deduped universal sets and optional dedup cache file
+    if args.dedup_output:
+        save_deduped_universal_sets(args.dedup_output, input_data, dedup_cache)
+        print(f"\nWrote deduped universal sets to {args.dedup_output}")
+    if args.dedup_cache_out:
+        try:
+            args.dedup_cache_out.parent.mkdir(parents=True, exist_ok=True)
+            args.dedup_cache_out.write_text(json.dumps(dedup_cache, indent=2, ensure_ascii=False))
+            print(f"Wrote dedup cache to {args.dedup_cache_out}")
+        except Exception as exc:
+            print(f"WARNING: failed to write dedup cache: {exc}", file=sys.stderr)
 
     # ── Phase 2: Score usefulness per record ─────────────────────────────
     print(f"\nPhase 2: Scoring usefulness for {len(todo)} records …")
@@ -458,13 +575,32 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--provider",
         default=None,
-        choices=["openai", "google"],
+        choices=["openai", "google", "xlab"],
         help="Inference provider (auto-detected from model name when omitted)",
     )
     parser.add_argument(
         "--persona-data",
         default=DEFAULT_PERSONA_DATA,
         help="Path relative to repo root for the enriched persona dataset",
+    )
+    parser.add_argument(
+        "--dedup-output",
+        type=Path,
+        default=None,
+        help="Optional output path for a copy of the input file with deduped universal_answer_set values",
+    )
+    parser.add_argument(
+        "--dedup-cache",
+        dest="dedup_cache",
+        type=Path,
+        default=None,
+        help="Optional input cache path; existing query_id entries will be reused and skipped in Phase 1",
+    )
+    parser.add_argument(
+        "--dedup-cache-out",
+        type=Path,
+        default=None,
+        help="Optional output path for saving the normalized dedup cache as query_id -> canonical answers",
     )
     parser.add_argument(
         "--num-workers",
@@ -486,4 +622,29 @@ python scripts/preference_narrowing/answer_set_annotation.py \
         --output output/result/preference_narrowing/rag_eval/answer_set_annotated_gpt-4o.json \
         --model  gpt-4o \
         --num-workers 2
+        
+python scripts/preference_narrowing/answer_set_annotation.py \
+  --input output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset.json \
+  --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_anwerset_annotated.json \
+  --dedup-output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup.json \
+  --model  gpt-5.1 \
+  --provider xlab \
+  --num-workers 3
+  
+python scripts/preference_narrowing/answer_set_annotation.py \
+  --input output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset.json \
+  --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_anwerset_annotated.json \
+  --dedup-cache output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup.json \
+  --dedup-output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup.json \
+  --provider xlab \
+  --model gpt-5.1 \
+  --num-workers 4
+  
+python scripts/preference_narrowing/answer_set_annotation.py \
+  --input output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset.json \
+  --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_anwerset_annotated.json \
+  --dedup-cache output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup.json \
+  --provider xlab \
+  --model gpt-5.1 \
+  --num-workers 4
 """

@@ -18,7 +18,9 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
+
+import requests
 
 from openai import OpenAI
 
@@ -60,8 +62,44 @@ Example output:
 """
 
 
+def _call_chat_completion(
+    client: Optional[OpenAI],
+    provider: str,
+    model: str,
+    messages: list[dict],
+) -> str:
+    """Call chat completion for supported providers and return raw text content.
+
+    - For `openai` we call the installed OpenAI client.
+    - For `xlab` we POST to `XLAB_API_URL` with `XLAB_API_KEY` in the Authorization header.
+
+    The helper assumes an OpenAI-like response shape (`choices[0].message.content`).
+    """
+    if provider == "openai":
+        completion = client.chat.completions.create(
+            model=model,
+            temperature=0.0,
+            messages=messages,
+        )
+        return completion.choices[0].message.content or "[]"
+
+    # XLab HTTP path (best-effort; expects OpenAI-compatible response shape)
+    url = os.environ.get("XLAB_API_URL", "https://xlabapi.com/v1/chat/completions")
+    api_key = os.environ.get("XLAB_API_KEY", "")
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    payload = {"model": model, "messages": messages, "temperature": 0.0}
+    resp = requests.post(url, json=payload, headers=headers, timeout=60)
+    resp.raise_for_status()
+    data = resp.json()
+    try:
+        return data["choices"][0]["message"]["content"]
+    except Exception:
+        return json.dumps(data)
+
+
 def extract_universal_answer_set(
-    client: OpenAI,
+    client: Optional[OpenAI],
+    provider: str,
     model: str,
     question: str,
     responses: list[str],
@@ -76,15 +114,11 @@ def extract_universal_answer_set(
         f"{numbered}\n\n"
         "Extract the universal answer set as a JSON array of short key phrases."
     )
-    completion = client.chat.completions.create(
-        model=model,
-        temperature=0.0,
-        messages=[
-            {"role": "system", "content": EXTRACT_SYSTEM},
-            {"role": "user", "content": user_content},
-        ],
-    )
-    raw = completion.choices[0].message.content or "[]"
+    messages = [
+        {"role": "system", "content": EXTRACT_SYSTEM},
+        {"role": "user", "content": user_content},
+    ]
+    raw = _call_chat_completion(client=client, provider=provider, model=model, messages=messages)
     # Parse first JSON array found in response
     match = re.search(r"\[.*\]", raw, re.DOTALL)
     if not match:
@@ -109,15 +143,22 @@ def run(args: argparse.Namespace) -> None:
     for idx, record in enumerate(records):
         by_query[record["query_id"]].append(idx)
 
-    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    # Create OpenAI client only when using provider 'openai'
+    client: Optional[OpenAI]
+    if args.provider == "openai":
+        client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+    else:
+        client = None
 
     answer_sets: dict[str, list[str]] = {}
     for query_id, indices in by_query.items():
         question = records[indices[0]]["question"]
-        responses = [records[i]["candidate_response"] for i in indices]
+        # responses = [records[i]["candidate_response"] for i in indices]
+        responses = [records[i]["response"] for i in indices]
         print(f"Processing query_id={query_id} ({len(responses)} responses) …")
         answer_sets[query_id] = extract_universal_answer_set(
             client=client,
+            provider=args.provider,
             model=args.model,
             question=question,
             responses=responses,
@@ -151,6 +192,7 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument("--model", default="gpt-4o", help="OpenAI model for extraction")
+    parser.add_argument("--provider", default="openai", help="Model provider: 'openai' or 'xlab'")
     return parser.parse_args()
 
 
@@ -160,8 +202,8 @@ if __name__ == "__main__":
 Generation for 20*20 records
 
 python scripts/preference_narrowing/answer_set_construction.py \
-        --input  output/result/preference_narrowing/rag_generation/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_400.json \
-        --output output/result/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_400_with_anwerset.json \
-        --model  gpt-4o
-
+    --input  output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000.json \
+    --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset.json \
+    --model  gpt-5.1 \
+    --provider xlab
 """

@@ -10,11 +10,12 @@ Resumable: if the output file already exists, records already annotated
 are skipped automatically.
 
 Usage:
-    python scripts/preference_narrowing/response_coverage_annotation.py \\
-        --input  output/result/preference_narrowing/rag_generation/rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_with_anwerset.json \\
-        --output output/result/preference_narrowing/rag_eval/response_coverage.json \\
-        --model  gpt-4o \\
-        --num-workers 4
+python scripts/preference_narrowing/response_coverage_annotation.py \
+    --input  output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup_with_base.json \
+    --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_response_coverage.json \
+    --model  gpt-5.1 \
+    --num-workers 3 \
+    --provider xlab
 """
 from __future__ import annotations
 
@@ -28,6 +29,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
+import requests
+
 from openai import OpenAI
 from tqdm import tqdm
 
@@ -39,10 +42,14 @@ _REASONING_PREFIXES = ("gpt-5", "o1", "o3", "o4")
 
 
 class LLMClient:
-    def __init__(self) -> None:
-        self._openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    def __init__(self, provider: str) -> None:
+        self.provider = provider
+        if provider == "openai":
+            self._openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     def complete(self, model: str, system: str, user: str, max_tokens: int = 1000) -> str:
+        if self.provider == "xlab":
+            return self._xlab(model, system, user, max_tokens)
         is_reasoning = model.lower().startswith(_REASONING_PREFIXES)
         kwargs: dict[str, Any] = {
             "model": model,
@@ -62,6 +69,31 @@ class LLMClient:
 
 
 # ─────────────────────────────── prompts ───────────────────────────────
+
+    def _xlab(self, model: str, system: str, user: str, max_tokens: int) -> str:
+        api_key = os.getenv("XLAB_API_KEY", "")
+        url = os.getenv("XLAB_API_URL", "https://xlabapi.com/v1/chat/completions")
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "temperature": 0.0,
+            "max_tokens": max_tokens,
+        }
+        resp = requests.post(
+            url,
+            json=payload,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            timeout=600,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return data["choices"][0]["message"]["content"] or "{}"
 
 COVERAGE_SYSTEM = """\
 You are an expert evaluator. You will receive:
@@ -181,8 +213,9 @@ def run(args: argparse.Namespace) -> None:
         print("Nothing to do.")
         return
 
-    client = LLMClient()
-    print(f"Using model: {args.model}")
+    provider = args.provider or "openai"
+    print(f"Using provider: {provider}, model: {args.model}")
+    client = LLMClient(provider)
 
     new_results: list[dict[str, Any]] = []
     new_results_lock = threading.Lock()
@@ -268,6 +301,12 @@ def parse_args() -> argparse.Namespace:
         "--model",
         default="gpt-4o",
         help="OpenAI model to use for classification",
+    )
+    parser.add_argument(
+        "--provider",
+        default="openai",
+        choices=["openai", "xlab"],
+        help="Inference provider to use",
     )
     parser.add_argument(
         "--num-workers",

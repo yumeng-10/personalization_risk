@@ -87,6 +87,40 @@ def _provider_for_model(model: str) -> str:
     return "openai"
 
 
+def load_existing_output(out_path: Path) -> dict[str, dict[str, Any]]:
+    """Read existing output JSON; return {record_id: result} for records with a response (errors are retried)."""
+    if not out_path.exists():
+        return {}
+    try:
+        data = json.loads(out_path.read_text(encoding="utf-8"))
+        return {
+            str(r["record_id"]): r
+            for r in data.get("results", [])
+            if "record_id" in r and "response" in r
+        }
+    except Exception:
+        return {}
+
+
+def write_output(path: Path, meta: dict[str, Any], results: list[dict[str, Any] | None]) -> None:
+    """Overwrite the output JSON file with current results."""
+    with path.open("w", encoding="utf-8") as f:
+        f.write("{\n")
+        for k, v in meta.items():
+            f.write(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)},\n")
+        f.write('  "results": [\n')
+        first = True
+        for result in results:
+            if result is None:
+                continue
+            row_json = json.dumps(result, ensure_ascii=False, indent=2)
+            if not first:
+                f.write(",\n")
+            f.write("    " + row_json.replace("\n", "\n    "))
+            first = False
+        f.write("\n  ]\n}\n")
+
+
 def chunked(items: list, size: int) -> list[list]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
@@ -113,11 +147,11 @@ def parse_json_object(text: str) -> dict[str, Any]:
 
 
 class _Progress:
-    def __init__(self, total: int) -> None:
+    def __init__(self, total: int, initial: int = 0) -> None:
         self.total = total
-        self.n = 0
+        self.n = initial
         self._lock = threading.Lock()
-        print(f"0/{total}")
+        print(f"{initial}/{total}")
 
     def update(self, n: int = 1) -> None:
         with self._lock:
@@ -520,7 +554,12 @@ def run(args: argparse.Namespace) -> None:
         )
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    out_file = args.out.open("w", encoding="utf-8")
+
+    # Resume: load already-completed results from existing output file.
+    done_by_id = load_existing_output(args.out)
+    if done_by_id:
+        print(f"Resuming: {len(done_by_id)} records already done, "
+              f"{len(selected) - len(done_by_id)} remaining.")
 
     meta: dict[str, Any] = {
         "source_dataset": str(args.dataset),
@@ -536,18 +575,23 @@ def run(args: argparse.Namespace) -> None:
         meta["embedding_model"] = args.embedding_model
         meta["top_k"] = args.top_k
 
-    out_file.write("{\n")
-    for k, v in meta.items():
-        out_file.write(f"  {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)},\n")
-    out_file.write('  "results": [\n')
-
-    progress = (
-        tqdm(total=len(selected), desc=f"generate [{args.setting}]", unit="rec")
-        if tqdm else _Progress(len(selected))
-    )
-
     risk_type_fallback = payload.get("risk_type", "unknown")
+
+    # Pre-fill results array with already-done records; skip them in futures.
     results: list[dict[str, Any] | None] = [None] * len(selected)
+    remaining: list[tuple[int, dict[str, Any]]] = []
+    for i, record in enumerate(selected):
+        rid = str(record.get("record_id", f"index_{i}"))
+        if rid in done_by_id:
+            results[i] = done_by_id[rid]
+        else:
+            remaining.append((i, record))
+
+    n_done_initial = len(done_by_id)
+    progress = (
+        tqdm(total=len(selected), initial=n_done_initial, desc=f"generate [{args.setting}]", unit="rec")
+        if tqdm else _Progress(len(selected), initial=n_done_initial)
+    )
 
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         futures = {
@@ -566,7 +610,7 @@ def run(args: argparse.Namespace) -> None:
                 args.thinking_budget,
                 risk_type_fallback,
             ): i
-            for i, record in enumerate(selected)
+            for i, record in remaining
         }
         for fut in as_completed(futures):
             idx = futures[fut]
@@ -581,23 +625,11 @@ def run(args: argparse.Namespace) -> None:
                     "setting": args.setting,
                 }
             progress.update(1)
+            write_output(args.out, meta, results)
 
     progress.close()
 
-    n_written = 0
-    first = True
-    for result in results:
-        if result is None:
-            continue
-        row_json = json.dumps(result, ensure_ascii=False, indent=2)
-        if not first:
-            out_file.write(",\n")
-        out_file.write("    " + row_json.replace("\n", "\n    "))
-        first = False
-        n_written += 1
-
-    out_file.write("\n  ]\n}\n")
-    out_file.close()
+    n_written = sum(1 for r in results if r is not None)
     print(f"Done. Wrote {n_written} records to {args.out}")
 
 
@@ -667,3 +699,4 @@ python scripts/generator/generate.py \
   --limit 200 \
   --out output/result/sycophantic_bias/profile_retrieval/profile_retrieval_gemini25flash_200.json
 """
+
