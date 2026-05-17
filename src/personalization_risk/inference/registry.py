@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from collections.abc import Callable
 
+from personalization_risk.inference.anthropic_client import AnthropicClient
 from personalization_risk.inference.base import InferenceClient
 from personalization_risk.inference.bedrock_client import BedrockClient
 from personalization_risk.inference.google_client import GoogleClient
@@ -20,7 +21,7 @@ class InferenceRegistry:
             "openai": lambda: OpenAIClient(api_key=os.getenv("OPENAI_API_KEY")),
             "bedrock": lambda: BedrockClient(region_name=os.getenv("AWS_REGION")),
             "google": lambda: GoogleClient(api_key=os.getenv("GOOGLE_API_KEY")),
-            "anthropic": lambda: PlaceholderClient("anthropic"),
+            "anthropic": lambda: AnthropicClient(api_key=os.getenv("ANTHROPIC_API_KEY")),
             "azure_openai": lambda: PlaceholderClient("azure_openai"),
             "xlab": lambda: XlabClient(),
             "vllm": lambda: VllmClient(),

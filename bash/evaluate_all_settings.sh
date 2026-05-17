@@ -25,8 +25,8 @@ DATASETS=(
 MODEL_TAGS=(
     "gpt5_4_mini"
     "gpt5_4"
-    "claude_3_7_sonnet"
-    "claude_3_5_haiku"
+    "claude_sonnet_4_6"
+    "claude_haiku_4_5"
     "gemini_2_5_flash"
     "gemini_2_5_pro"
 )
@@ -46,7 +46,7 @@ eval_job() {
     local args=(
         --input "$in_file"
         --judge-model "$JUDGE_MODEL"
-        --workers 1
+        --workers 4
         --out "$out_file"
     )
     [[ -n "$JUDGE_PROVIDER" ]] && args+=(--judge-provider "$JUDGE_PROVIDER")
@@ -85,7 +85,7 @@ echo ""
 
 run_model_group "logs/eval_xlab.log"      "gpt5_4_mini" "gpt5_4"               &
 PID_XLAB=$!
-run_model_group "logs/eval_anthropic.log" "claude_3_7_sonnet" "claude_3_5_haiku" &
+run_model_group "logs/eval_anthropic.log" "claude_sonnet_4_6" "claude_haiku_4_5" &
 PID_ANTHROPIC=$!
 run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro"    &
 PID_GOOGLE=$!

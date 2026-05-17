@@ -34,6 +34,7 @@ import os
 import re
 import sys
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
@@ -41,6 +42,7 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+import google.genai as _google_genai
 from openai import OpenAI
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -201,6 +203,47 @@ def _build_history_texts(record: dict[str, Any]) -> list[tuple[str, dict[str, An
     return out
 
 
+class _GoogleEmbedClient:
+    """OpenAI-compatible wrapper for Google embeddings via the google-genai SDK."""
+
+    def __init__(self, api_key: str) -> None:
+        self.embeddings = self._Embeddings(_google_genai.Client(api_key=api_key))
+
+    class _Embeddings:
+        def __init__(self, client) -> None:
+            self._client = client
+
+        def create(self, model: str, input: list[str]):  # noqa: A002
+            class _Item:
+                def __init__(self, embedding: list[float]) -> None:
+                    self.embedding = embedding
+
+            class _Resp:
+                def __init__(self, data: list) -> None:
+                    self.data = data
+
+            # google.genai SDK only embeds one text per call; parallelize to avoid hangs
+            # on large batches (e.g. 800+ texts during vector store construction).
+            # max_workers=4 + manual retry avoids 502/503 from Google on large batches.
+            def _embed_one(text: str) -> list[float]:
+                for attempt in range(5):
+                    try:
+                        res = self._client.models.embed_content(model=model, contents=text)
+                        return res.embeddings[0].values
+                    except Exception as e:
+                        if attempt == 4:
+                            raise
+                        wait = 2 ** attempt
+                        logger.warning("embed_content failed (attempt %d/5): %s — retrying in %ds", attempt + 1, e, wait)
+                        time.sleep(wait)
+                raise RuntimeError("unreachable")
+
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                vectors = list(pool.map(_embed_one, input))
+
+            return _Resp([_Item(v) for v in vectors])
+
+
 def embed_texts(client: OpenAI, model: str, texts: list[str], batch_size: int = 64) -> list[list[float]]:
     embeddings: list[list[float]] = []
     for batch in chunked(texts, batch_size):
@@ -231,6 +274,7 @@ def build_vector_store(
     if not raw:
         return {}
 
+    print(f"Embedding {len(raw)} history texts...")
     embeddings = embed_texts(embed_client, embedding_model, [r[2] for r in raw])
     store: dict[str, list[MemoryDoc]] = {}
     for (doc_id, persona_id, text, meta), emb in zip(raw, embeddings):
@@ -393,7 +437,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--candidate-model", default="gpt-4o-mini")
     parser.add_argument("--router-model", default="gpt-4o-mini", help="Router model (retrieval settings only).")
-    parser.add_argument("--embedding-model", default="text-embedding-3-small")
+    parser.add_argument("--embedding-model", default=None, help="Embedding model; defaults to text-embedding-3-small (openai) or gemini-embedding-001 (google).")
+    parser.add_argument("--embed-provider", default=None, choices=["openai", "google"], help="Force embedding provider (openai | google). Auto-detected from candidate model if omitted.")
     parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--limit", type=int, default=100)
@@ -412,7 +457,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--workers",
         type=int,
-        default=8,
+        default=4,
         help="Number of parallel inference threads (default: 8).",
     )
     return parser.parse_args()
@@ -540,13 +585,24 @@ def run(args: argparse.Namespace) -> None:
     candidate_client = DEFAULT_REGISTRY.get_client(provider)
 
     router_client = None
-    embed_client: OpenAI | None = None
+    embed_client = None
     vector_store: dict[str, list[MemoryDoc]] = {}
 
     if needs_retrieval:
         router_provider = args.provider or _provider_for_model(args.router_model)
         router_client = DEFAULT_REGISTRY.get_client(router_provider)
-        embed_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        embed_provider = args.embed_provider or args.provider or _provider_for_model(args.candidate_model)
+        # Anthropic has no embedding API; fall back to Google if key is available, else OpenAI.
+        if embed_provider == "anthropic":
+            embed_provider = "google" if os.getenv("GOOGLE_API_KEY") else "openai"
+        if embed_provider == "google":
+            embed_client = _GoogleEmbedClient(api_key=os.getenv("GOOGLE_API_KEY"))
+            if args.embedding_model is None:
+                args.embedding_model = "gemini-embedding-001"
+        else:
+            embed_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+            if args.embedding_model is None:
+                args.embedding_model = "text-embedding-3-small"
         vector_store = build_vector_store(
             records=selected,
             embed_client=embed_client,
@@ -624,6 +680,7 @@ def run(args: argparse.Namespace) -> None:
                     "error": str(exc),
                     "setting": args.setting,
                 }
+            _flush_results()
             progress.update(1)
             write_output(args.out, meta, results)
 
@@ -690,13 +747,22 @@ VLLM_BASE_URL=http://localhost:8000/v1 python scripts/generator/generate.py \
   --out output/result/irrelevant_personalization/base/base_llama31_8b_200.json
 
 # gemini
-python scripts/generator/generate.py \
+/Users/alexwang/miniconda3/envs/personalization_risk/bin/python scripts/generator/generate.py \
   --dataset data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json \
   --setting profile_retrieval \
-  --candidate-model gemini-2.5-flash \
-  --router-model gemini-2.5-flash \
+  --candidate-model gemini-2.5-pro \
+  --router-model gemini-2.5-pro \
   --thinking-budget 256 \
   --limit 200 \
-  --out output/result/sycophantic_bias/profile_retrieval/profile_retrieval_gemini25flash_200.json
+  --out output/result/sycophantic_bias/profile_retrieval/profile_retrieval_gemini25pro_200.json \
+  --embedding-model gemini-embedding-001
+
+/Users/alexwang/miniconda3/envs/personalization_risk/bin/python scripts/generator/generate.py \
+  --dataset data/irrelevant_personalization/assembled_seed1000_irrelevant_personalization.json \
+  --setting profile_retrieval \
+  --candidate-model claude-haiku-4-5-20251001 \
+  --router-model claude-haiku-4-5-20251001 \
+  --limit 200 \
+  --out output/generate/irrelevant_personalization/profile_retrieval/profile_retrieval_claude_haiku_4_5_200.json
 """
 

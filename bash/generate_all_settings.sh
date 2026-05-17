@@ -7,6 +7,12 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
+# Activate the project conda environment so google-genai and other deps are available.
+CONDA_BASE="$(conda info --base 2>/dev/null || echo "$HOME/miniconda3")"
+# shellcheck source=/dev/null
+source "${CONDA_BASE}/etc/profile.d/conda.sh"
+conda activate personalization_risk
+
 LIMIT=200
 SCRIPT="scripts/generator/generate.py"
 
@@ -76,8 +82,8 @@ XLAB_MODELS=(
     "gpt-5.4|gpt5_4|xlab|"
 )
 ANTHROPIC_MODELS=(
-    "claude-3-7-sonnet-20250219|claude_3_7_sonnet||"
-    "claude-3-5-haiku-20241022|claude_3_5_haiku||"
+    "claude-sonnet-4-6|claude_sonnet_4_6||"
+    "claude-haiku-4-5-20251001|claude_haiku_4_5||"
 )
 GOOGLE_MODELS=(
     "gemini-2.5-flash|gemini_2_5_flash||1000"
@@ -89,8 +95,8 @@ echo ""
 
 run_group "logs/run_xlab.log"      "${XLAB_MODELS[@]}"      &
 PID_XLAB=$!
-# run_group "logs/run_anthropic.log" "${ANTHROPIC_MODELS[@]}" &
-# PID_ANTHROPIC=$!
+run_group "logs/run_anthropic.log" "${ANTHROPIC_MODELS[@]}" &
+PID_ANTHROPIC=$!
 run_group "logs/run_google.log"    "${GOOGLE_MODELS[@]}"    &
 PID_GOOGLE=$!
 
