@@ -88,6 +88,7 @@ ANTHROPIC_MODELS=(
 GOOGLE_MODELS=(
     "gemini-2.5-flash|gemini_2_5_flash||1000"
     "gemini-2.5-pro|gemini_2_5_pro||1000"
+    'gemini-2.5-flash-lite|gemini_2_5_flash_lite||'
 )
 
 echo "Starting parallel provider groups. Logs: logs/run_xlab.log  logs/run_anthropic.log  logs/run_google.log"

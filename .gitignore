@@ -50,3 +50,4 @@ tmp*.*
 /scripts/download_data.py
 /temp
 .cache/
+.claude

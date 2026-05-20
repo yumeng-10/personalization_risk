@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-15T07:12:41.307103+00:00",
-  "total_entries": 48,
+  "last_updated": "2026-05-20T06:00:24.491683+00:00",
+  "total_entries": 56,
   "entries": {
     "output/eval/irrelevant_personalization/base/eval_base_claude_haiku_4_5_200.json": {
       "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_claude_haiku_4_5_200.json",
@@ -767,6 +767,134 @@
         "irp_score": {
           "mean": 0.1562,
           "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_gemini_2_5_flash_lite_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 132
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_gemini_2_5_flash_lite_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.4763,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.5162,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/base/eval_base_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/base/eval_base_gemini_2_5_flash_lite_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.9975,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": null,
+          "n": 0
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/profile_only/eval_profile_only_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/profile_only/eval_profile_only_gemini_2_5_flash_lite_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.2412,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.765,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.38,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.53,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 1.0,
+          "n": 82
+        },
+        "pis_score": {
+          "mean": 0.0,
+          "n": 82
         }
       }
     }

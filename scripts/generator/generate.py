@@ -692,7 +692,6 @@ def run(args: argparse.Namespace) -> None:
                     "error": str(exc),
                     "setting": args.setting,
                 }
-            _flush_results()
             progress.update(1)
             write_output(args.out, meta, results)
 

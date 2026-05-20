@@ -105,7 +105,7 @@ class GoogleClient(InferenceClient):
         )
 
         try:
-            with request.urlopen(req) as resp:
+            with request.urlopen(req, timeout=120) as resp:
                 raw_body = resp.read().decode("utf-8")
         except error.HTTPError as exc:
             body = exc.read().decode("utf-8", errors="replace")

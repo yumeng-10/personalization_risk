@@ -8,8 +8,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 LIMIT=200
-JUDGE_MODEL="gpt-5.1"
-JUDGE_PROVIDER="xlab"          # empty = auto-detect; set to "xlab" to use xlab endpoint
+JUDGE_MODEL="gpt-4o"
+JUDGE_PROVIDER="openai"          # empty = auto-detect; set to "xlab" to use xlab endpoint
 SCRIPT="scripts/evaluator/evaluator.py"
 
 SETTINGS=(base profile_only retrieval_only profile_retrieval)
@@ -29,6 +29,7 @@ MODEL_TAGS=(
     "claude_haiku_4_5"
     "gemini_2_5_flash"
     "gemini_2_5_pro"
+    "gemini_2_5_flash_lite"
 )
 
 # eval <dataset_dir> <risk_type> <setting> <model_tag>
@@ -87,7 +88,7 @@ run_model_group "logs/eval_xlab.log"      "gpt5_4_mini" "gpt5_4"               &
 PID_XLAB=$!
 run_model_group "logs/eval_anthropic.log" "claude_sonnet_4_6" "claude_haiku_4_5" &
 PID_ANTHROPIC=$!
-run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro"    &
+run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro" "gemini_2_5_flash_lite" &
 PID_GOOGLE=$!
 
 EXIT=0
