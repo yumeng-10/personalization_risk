@@ -474,6 +474,8 @@ def process_record(
     router_client: Any,
     embed_client: Any,
     vector_store: dict[str, list[MemoryDoc]],
+    base_cache: dict[str, tuple[str, str | None]],
+    base_cache_lock: threading.Lock,
     candidate_model: str,
     router_model: str,
     embedding_model: str,
@@ -500,7 +502,13 @@ def process_record(
     }
 
     if setting == "base":
-        resp, thinking = generate_base(candidate_client, candidate_model, question, thinking_budget)
+        query_key = str(record.get("query_id", record.get("record_id", "unknown")))
+        with base_cache_lock:
+            cached = base_cache.get(query_key)
+            if cached is None:
+                cached = generate_base(candidate_client, candidate_model, question, thinking_budget)
+                base_cache[query_key] = cached
+        resp, thinking = cached
         result["response"] = resp
         result["thinking"] = thinking
 
@@ -587,6 +595,8 @@ def run(args: argparse.Namespace) -> None:
     router_client = None
     embed_client = None
     vector_store: dict[str, list[MemoryDoc]] = {}
+    base_cache: dict[str, tuple[str, str | None]] = {}
+    base_cache_lock = threading.Lock()
 
     if needs_retrieval:
         router_provider = args.provider or _provider_for_model(args.router_model)
@@ -659,6 +669,8 @@ def run(args: argparse.Namespace) -> None:
                 router_client,
                 embed_client,
                 vector_store,
+                base_cache,
+                base_cache_lock,
                 args.candidate_model,
                 args.router_model,
                 args.embedding_model,

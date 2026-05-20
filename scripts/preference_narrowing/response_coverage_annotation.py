@@ -1,13 +1,26 @@
 """
 For each result record, classify which elements of the universal_answer_set
-are covered by the candidate_response and the non_personalized_response.
+are covered by the response.
 
-The script calls GPT-4o once per (record, response) pair and asks it to
+The script calls GPT-5.1 once per record and asks it to
 return a subset of the answer-set labels that the response substantively
 addresses.
 
 Resumable: if the output file already exists, records already annotated
 are skipped automatically.
+
+Input format:
+{
+  "results": [
+    {
+      "record_id": "...",
+      "question": "...",
+      "universal_answer_set": ["...", "..."],
+      "response": "..."
+    },
+    ...
+  ]
+}
 
 Usage:
 python scripts/preference_narrowing/response_coverage_annotation.py \
@@ -225,11 +238,8 @@ def run(args: argparse.Namespace) -> None:
         question = rec["question"]
         answer_set = rec["universal_answer_set"]
 
-        candidate_covered = classify_response(
-            client, args.model, question, answer_set, rec["candidate_response"]
-        )
-        non_personalized_covered = classify_response(
-            client, args.model, question, answer_set, rec["non_personalized_response"]
+        covered = classify_response(
+            client, args.model, question, answer_set, rec["response"]
         )
 
         return {
@@ -238,10 +248,8 @@ def run(args: argparse.Namespace) -> None:
             "query_id": rec["query_id"],
             "question": question,
             "universal_answer_set": answer_set,
-            "candidate_response_coverage": candidate_covered,
-            "candidate_response": rec["candidate_response"],
-            "non_personalized_response_coverage": non_personalized_covered,
-            "non_personalized_response": rec["non_personalized_response"],
+            "response_coverage": covered,
+            "response": rec["response"],
         }
 
     with ThreadPoolExecutor(max_workers=args.num_workers) as pool:
@@ -260,8 +268,7 @@ def run(args: argparse.Namespace) -> None:
                                 str(args.input), args.model,
                             )
                     tqdm.write(
-                        f"  [{rid}] candidate={len(row['candidate_response_coverage'])} "
-                        f"non_personalized={len(row['non_personalized_response_coverage'])} "
+                        f"  [{rid}] covered={len(row['response_coverage'])} "
                         f"/ {len(row['universal_answer_set'])} categories"
                     )
                 except Exception as exc:
@@ -285,11 +292,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--input",
         type=Path,
-        default=Path(
-            "output/result/preference_narrowing/rag_generation/"
-            "rag_generation_enriched_seed20_narrowing20_preference_narrowing_gemini_with_anwerset.json"
-        ),
-        help="Input JSON file with universal_answer_set, candidate_response, non_personalized_response",
+        default=Path("input.json"),
+        help="Input JSON file with universal_answer_set and response",
     )
     parser.add_argument(
         "--output",
