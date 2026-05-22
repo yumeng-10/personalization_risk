@@ -14,17 +14,18 @@ source "${CONDA_BASE}/etc/profile.d/conda.sh"
 conda activate personalization_risk
 
 LIMIT=200
+PREF_SAMPLES=5    # stochastic samples per (query, persona) pair for UIR evaluation
 SCRIPT="scripts/generator/generate.py"
 
 IRREL="data/irrelevant_personalization/assembled_seed1000_irrelevant_personalization.json"
-PREF="data/preference_narrowing/assembled_narrowing1155_preference_narrowing_v2.json"
+PREF="data/preference_narrowing/uir_query100_persona1_seed42.json"   # 100-record UIR dataset
 SYCO="data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json"
 
 SETTINGS=(base profile_only retrieval_only profile_retrieval)
 
 DATASETS=(
     "${IRREL}|irrelevant_personalization"
-    # "${PREF}|preference_narrowing"
+    "${PREF}|preference_narrowing"
     "${SYCO}|sycophantic_bias"
 )
 
@@ -34,6 +35,31 @@ mkdir -p logs
 run() {
     local dataset="$1" dname="$2" setting="$3" model="$4" tag="$5"
     local provider="${6:-}" thinking="${7:-}"
+
+    # preference_narrowing uses N stochastic samples per record
+    if [[ "$dname" == "preference_narrowing" ]]; then
+        local out="output/generate/${dname}/${setting}/${setting}_${tag}_uir_s${PREF_SAMPLES}.json"
+        if [[ -f "$out" ]]; then
+            echo "[SKIP] $out"
+            return 0
+        fi
+        echo ""
+        echo "==> dataset=$dname  setting=$setting  model=$model  (UIR, ${PREF_SAMPLES} samples)"
+        local args=(
+            --dataset "$dataset"
+            --setting "$setting"
+            --candidate-model "$model"
+            --limit 100
+            --num-samples "$PREF_SAMPLES"
+            --out "$out"
+        )
+        [[ -n "$provider" ]]  && args+=(--provider "$provider")
+        [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
+        [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
+        python "$SCRIPT" "${args[@]}"
+        return 0
+    fi
+
     local out="output/generate/${dname}/${setting}/${setting}_${tag}_${LIMIT}.json"
 
     if [[ -f "$out" ]]; then

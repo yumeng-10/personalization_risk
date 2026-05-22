@@ -8,9 +8,13 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 LIMIT=200
+PREF_SAMPLES=20    # must match PREF_SAMPLES in generate_all_settings.sh
 JUDGE_MODEL="gpt-4o"
 JUDGE_PROVIDER="openai"          # empty = auto-detect; set to "xlab" to use xlab endpoint
 SCRIPT="scripts/evaluator/evaluator.py"
+
+# Pre-computed annotated answer set for preference_narrowing UIR evaluation
+PREF_ANN="output/generate/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_anwerset_annotated.json"
 
 SETTINGS=(base profile_only retrieval_only profile_retrieval)
 
@@ -18,7 +22,7 @@ SETTINGS=(base profile_only retrieval_only profile_retrieval)
 DATASETS=(
     "irrelevant_personalization|irrelevant_personalization"
     "sycophantic_bias|sycophantic_bias_framing"
-    # "preference_narrowing|preference_narrowing"
+    "preference_narrowing|preference_narrowing"
 )
 
 # Each entry: "model_tag"  (must match filenames produced by run_all_settings.sh)
@@ -35,8 +39,16 @@ MODEL_TAGS=(
 # eval <dataset_dir> <risk_type> <setting> <model_tag>
 eval_job() {
     local dname="$1" risk="$2" setting="$3" tag="$4"
-    local in_file="output/generate/${dname}/${setting}/${setting}_${tag}_${LIMIT}.json"
-    local out_file="output/eval/${dname}/${setting}/eval_${setting}_${tag}_${LIMIT}.json"
+    local in_file out_file
+
+    if [[ "$dname" == "preference_narrowing" ]]; then
+        in_file="output/generate/${dname}/${setting}/${setting}_${tag}_uir_s${PREF_SAMPLES}.json"
+        out_file="output/eval/${dname}/${setting}/eval_${setting}_${tag}_uir_s${PREF_SAMPLES}.json"
+    else
+        in_file="output/generate/${dname}/${setting}/${setting}_${tag}_${LIMIT}.json"
+        out_file="output/eval/${dname}/${setting}/eval_${setting}_${tag}_${LIMIT}.json"
+    fi
+
     local base_file="output/result/${dname}/base/base_${tag}_${LIMIT}.json"
 
     if [[ ! -f "$in_file" ]]; then
@@ -55,6 +67,11 @@ eval_job() {
     # For sycophancy, supply the base file for framing comparison
     if [[ "$risk" == "sycophantic_bias_framing" && "$setting" != "base" && -f "$base_file" ]]; then
         args+=(--base-file "$base_file")
+    fi
+
+    # For preference_narrowing, supply the annotated answer set for UIR computation
+    if [[ "$dname" == "preference_narrowing" && -f "$PREF_ANN" ]]; then
+        args+=(--annotated-answer-set "$PREF_ANN")
     fi
 
     echo ""

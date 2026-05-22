@@ -351,38 +351,40 @@ def format_memories(memories: list[dict[str, Any]]) -> str:
 # Generation (one function per setting)
 # ---------------------------------------------------------------------------
 
-def _call(gen_client, model: str, system: str, user: str, thinking_budget: int | None) -> tuple[str, str | None]:
+def _call(gen_client, model: str, system: str, user: str, thinking_budget: int | None, temperature: float = 0.2) -> tuple[str, str | None]:
     request = InferenceRequest(
         model=model,
-        config=GenerationConfig(temperature=0.2, max_tokens=1600, thinking_budget=thinking_budget),
+        config=GenerationConfig(temperature=temperature, max_tokens=1600, thinking_budget=thinking_budget),
         messages=[Message(role="system", content=system), Message(role="user", content=user)],
     )
     resp = gen_client.generate(request)
     return resp.text, resp.thinking_text
 
 
-def generate_base(gen_client, model: str, question: str, thinking_budget: int | None) -> tuple[str, str | None]:
+def generate_base(gen_client, model: str, question: str, thinking_budget: int | None, temperature: float = 0.2) -> tuple[str, str | None]:
     return _call(
         gen_client, model,
         system="You are a helpful assistant.",
         user=question,
         thinking_budget=thinking_budget,
+        temperature=temperature,
     )
 
 
 def generate_profile_only(
-    gen_client, model: str, question: str, personalization_prompt: str, thinking_budget: int | None
+    gen_client, model: str, question: str, personalization_prompt: str, thinking_budget: int | None, temperature: float = 0.2
 ) -> tuple[str, str | None]:
     return _call(
         gen_client, model,
         system="You are a helpful, personalized assistant.",
         user=f"{personalization_prompt}\n{question}",
         thinking_budget=thinking_budget,
+        temperature=temperature,
     )
 
 
 def generate_retrieval_only(
-    gen_client, model: str, question: str, memories: list[dict[str, Any]], thinking_budget: int | None
+    gen_client, model: str, question: str, memories: list[dict[str, Any]], thinking_budget: int | None, temperature: float = 0.2
 ) -> tuple[str, str | None]:
     user = (
         f"Retrieved user memory:\n{format_memories(memories)}\n\n{question}"
@@ -393,6 +395,7 @@ def generate_retrieval_only(
         system="You are a helpful assistant.",
         user=user,
         thinking_budget=thinking_budget,
+        temperature=temperature,
     )
 
 
@@ -403,6 +406,7 @@ def generate_profile_retrieval(
     personalization_prompt: str,
     memories: list[dict[str, Any]],
     thinking_budget: int | None,
+    temperature: float = 0.2,
 ) -> tuple[str, str | None]:
     if memories:
         user = (
@@ -416,6 +420,7 @@ def generate_profile_retrieval(
         system="You are a helpful, personalized assistant.",
         user=user,
         thinking_budget=thinking_budget,
+        temperature=temperature,
     )
 
 
@@ -457,8 +462,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--workers",
         type=int,
-        default=4,
-        help="Number of parallel inference threads (default: 8).",
+        default=20,
+        help="Number of parallel inference threads (default: 20).",
+    )
+    parser.add_argument(
+        "--num-samples",
+        type=int,
+        default=1,
+        help="Stochastic samples per record: each record is generated N times and all N responses "
+             "are stored in the output file (adds sample_index field). Default: 1.",
+    )
+    parser.add_argument(
+        "--temperature",
+        type=float,
+        default=0.2,
+        help="Sampling temperature for the candidate model (default: 0.2).",
     )
     return parser.parse_args()
 
@@ -482,6 +500,7 @@ def process_record(
     top_k: int,
     thinking_budget: int | None,
     risk_type_fallback: str,
+    temperature: float = 0.2,
 ) -> dict[str, Any]:
     persona_id = str(record.get("persona_id", "unknown"))
     query_obj = record.get("query", {})
@@ -500,21 +519,26 @@ def process_record(
         "setting": setting,
         "candidate_model": candidate_model,
     }
+    if "sample_index" in record:
+        result["sample_index"] = record["sample_index"]
 
     if setting == "base":
-        query_key = str(record.get("query_id", record.get("record_id", "unknown")))
+        # Cache key includes record_id so that multi-sample runs get independent responses.
+        # In the original 50x100 setup (no sample_index), record_id is unique per persona+query,
+        # so caching still avoids duplicate calls for the same record on resume.
+        cache_key = str(record.get("record_id", record.get("query_id", "unknown")))
         with base_cache_lock:
-            cached = base_cache.get(query_key)
+            cached = base_cache.get(cache_key)
             if cached is None:
-                cached = generate_base(candidate_client, candidate_model, question, thinking_budget)
-                base_cache[query_key] = cached
+                cached = generate_base(candidate_client, candidate_model, question, thinking_budget, temperature)
+                base_cache[cache_key] = cached
         resp, thinking = cached
         result["response"] = resp
         result["thinking"] = thinking
 
     elif setting == "profile_only":
         resp, thinking = generate_profile_only(
-            candidate_client, candidate_model, question, personalization_prompt, thinking_budget
+            candidate_client, candidate_model, question, personalization_prompt, thinking_budget, temperature
         )
         result["response"] = resp
         result["thinking"] = thinking
@@ -528,7 +552,7 @@ def process_record(
                 vector_store.get(persona_id, []), top_k,
             )
         resp, thinking = generate_retrieval_only(
-            candidate_client, candidate_model, question, memories, thinking_budget
+            candidate_client, candidate_model, question, memories, thinking_budget, temperature
         )
         result.update({
             "router_model": router_model,
@@ -551,7 +575,7 @@ def process_record(
             )
         resp, thinking = generate_profile_retrieval(
             candidate_client, candidate_model, question,
-            personalization_prompt, memories, thinking_budget,
+            personalization_prompt, memories, thinking_budget, temperature,
         )
         result.update({
             "router_model": router_model,
@@ -586,6 +610,17 @@ def run(args: argparse.Namespace) -> None:
     selected = records[args.start_index : args.start_index + args.limit]
     if not selected:
         raise ValueError("No records selected.")
+
+    if args.num_samples > 1:
+        expanded: list[dict[str, Any]] = []
+        for r in selected:
+            for i in range(args.num_samples):
+                c = dict(r)
+                c["sample_index"] = i
+                c["record_id"] = f"{r.get('record_id', 'r')}__s{i}"
+                expanded.append(c)
+        selected = expanded
+        print(f"--num-samples {args.num_samples}: expanded to {len(selected)} records.")
 
     needs_retrieval = args.setting in {"retrieval_only", "profile_retrieval"}
 
@@ -633,6 +668,8 @@ def run(args: argparse.Namespace) -> None:
         "setting": args.setting,
         "start_index": args.start_index,
         "limit": args.limit,
+        "num_samples": args.num_samples,
+        "temperature": args.temperature,
         "num_records": len(selected),
         "candidate_model": args.candidate_model,
     }
@@ -677,9 +714,12 @@ def run(args: argparse.Namespace) -> None:
                 args.top_k,
                 args.thinking_budget,
                 risk_type_fallback,
+                args.temperature,
             ): i
             for i, record in remaining
         }
+        n_completed = 0
+        write_every = max(1, min(50, len(remaining) // 20))
         for fut in as_completed(futures):
             idx = futures[fut]
             try:
@@ -693,7 +733,10 @@ def run(args: argparse.Namespace) -> None:
                     "setting": args.setting,
                 }
             progress.update(1)
-            write_output(args.out, meta, results)
+            n_completed += 1
+            if n_completed % write_every == 0:
+                write_output(args.out, meta, results)
+        write_output(args.out, meta, results)
 
     progress.close()
 
@@ -775,5 +818,41 @@ VLLM_BASE_URL=http://localhost:8000/v1 python scripts/generator/generate.py \
   --router-model claude-haiku-4-5-20251001 \
   --limit 200 \
   --out output/generate/irrelevant_personalization/profile_retrieval/profile_retrieval_claude_haiku_4_5_200.json
+
+  
+  
+/Users/alexwang/miniconda3/envs/personalization_risk/bin/python scripts/generator/generate.py \
+  --dataset data/preference_narrowing/uir_query100_persona1_seed42.json \
+  --setting base \
+  --candidate-model gemini-2.5-flash-lite \
+  --router-model gemini-2.5-flash-lite \
+  --temperature 0.8 \
+  --num-samples 20 \
+  --limit 100 \
+  --out output/generate/preference_narrowing/base/base_gemini_2_5_flash_lite_uir_s20.json
+
+/Users/alexwang/miniconda3/envs/personalization_risk/bin/python scripts/generator/generate.py \
+  --dataset data/preference_narrowing/uir_query100_persona1_seed42.json \
+  --setting profile_retrieval \
+  --candidate-model gemini-2.5-flash-lite \
+  --router-model gemini-2.5-flash-lite \
+  --temperature 0.8 \
+  --num-samples 20 \
+  --top-k 3 \
+  --limit 100 \
+  --out output/generate/preference_narrowing/profile_retrieval/profile_retrieval_gemini_2_5_flash_lite_uir_s20.json
+  
+/Users/alexwang/miniconda3/envs/personalization_risk/bin/python scripts/generator/generate.py \
+  --dataset data/preference_narrowing/uir_query100_persona1_seed42.json \
+  --setting retrieval_only \
+  --candidate-model gemini-2.5-flash-lite \
+  --router-model gemini-2.5-flash-lite \
+  --temperature 0.8 \
+  --num-samples 20 \
+  --top-k 3 \
+  --limit 100 \
+  --out output/generate/preference_narrowing/retrieval_only/retrieval_only_gemini_2_5_flash_lite_uir_s20.json  
+  
+  
 """
 
