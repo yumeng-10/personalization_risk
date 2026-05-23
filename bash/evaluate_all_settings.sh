@@ -38,6 +38,8 @@ MODEL_TAGS=(
     "qwen3_8b"
     "qwen3_14b"
     "qwen3_32b"
+    "llama3_8b_instruct"
+    "llama3_70b_instruct"
 )
 
 # eval <dataset_dir> <risk_type> <setting> <model_tag>
@@ -113,12 +115,15 @@ run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro" "g
 PID_GOOGLE=$!
 run_model_group "logs/eval_qwen.log"      "qwen3_4b" "qwen3_8b" "qwen3_14b" "qwen3_32b" &
 PID_QWEN=$!
+run_model_group "logs/eval_llama.log"     "llama3_8b_instruct" "llama3_70b_instruct" &
+PID_LLAMA=$!
 
 EXIT=0
 wait "$PID_XLAB"      || { echo "[ERROR] xlab eval group failed";      EXIT=1; }
 wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic eval group failed"; EXIT=1; }
 wait "$PID_GOOGLE"    || { echo "[ERROR] google eval group failed";    EXIT=1; }
 wait "$PID_QWEN"      || { echo "[ERROR] qwen eval group failed";      EXIT=1; }
+wait "$PID_LLAMA"     || { echo "[ERROR] llama eval group failed";     EXIT=1; }
 
 echo ""
 echo "All evaluation groups done. Exit code: $EXIT"

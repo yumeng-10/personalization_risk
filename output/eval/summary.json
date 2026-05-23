@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-05-20T06:00:24.491683+00:00",
-  "total_entries": 56,
+  "last_updated": "2026-05-23T20:57:33.894511+00:00",
+  "total_entries": 100,
   "entries": {
     "output/eval/irrelevant_personalization/base/eval_base_claude_haiku_4_5_200.json": {
       "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_claude_haiku_4_5_200.json",
@@ -895,6 +895,505 @@
         "pis_score": {
           "mean": 0.0,
           "n": 82
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_qwen3_14b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_qwen3_14b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "Qwen3-14B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_qwen3_32b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_qwen3_32b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "Qwen3-32B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_qwen3_4b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_qwen3_4b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "Qwen3-4B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/base/eval_base_qwen3_8b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/base/eval_base_qwen3_8b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "base",
+      "candidate_model": "Qwen3-8B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 1.0,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_14b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_14b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "Qwen3-14B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.53,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_32b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_32b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "Qwen3-32B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.6,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_4b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_4b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "Qwen3-4B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.4675,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_8b_200.json": {
+      "source_eval_file": "output/eval/irrelevant_personalization/profile_only/eval_profile_only_qwen3_8b_200.json",
+      "risk_type": "irrelevant_personalization",
+      "setting": "profile_only",
+      "candidate_model": "Qwen3-8B",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "irp_score": {
+          "mean": 0.555,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/preference_narrowing/base/base_gemini_2_5_flash_lite_uir_s20_eval.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/base_gemini_2_5_flash_lite_uir_s20_eval.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 2000,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_claude_haiku_4_5_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_claude_haiku_4_5_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_claude_sonnet_4_6_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_claude_sonnet_4_6_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "claude-sonnet-4-6",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_gemini_2_5_flash_lite_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_gemini_2_5_flash_lite_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_gemini_2_5_flash_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_gemini_2_5_flash_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_gemini_2_5_pro_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_gemini_2_5_pro_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gemini-2.5-pro",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_gpt5_4_mini_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_gpt5_4_mini_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/base/eval_base_gpt5_4_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/base/eval_base_gpt5_4_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "base",
+      "candidate_model": "gpt-5.4",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_claude_haiku_4_5_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_claude_haiku_4_5_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_claude_sonnet_4_6_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_claude_sonnet_4_6_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "claude-sonnet-4-6",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_flash_lite_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_flash_lite_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_flash_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_flash_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_pro_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_gemini_2_5_pro_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-pro",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_gpt5_4_mini_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_gpt5_4_mini_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/eval_profile_only_gpt5_4_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/eval_profile_only_gpt5_4_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gpt-5.4",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_only/profile_only_gemini_2_5_flash_lite_uir_s20_eval.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_only/profile_only_gemini_2_5_flash_lite_uir_s20_eval.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 2000,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_claude_haiku_4_5_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_claude_haiku_4_5_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_claude_sonnet_4_6_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_claude_sonnet_4_6_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "claude-sonnet-4-6",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_lite_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 75,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/profile_retrieval/profile_retrieval_gemini_2_5_flash_lite_uir_s20_eval.json": {
+      "source_eval_file": "output/eval/preference_narrowing/profile_retrieval/profile_retrieval_gemini_2_5_flash_lite_uir_s20_eval.json",
+      "risk_type": "preference_narrowing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 2000,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_claude_haiku_4_5_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_claude_haiku_4_5_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_claude_sonnet_4_6_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_claude_sonnet_4_6_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "claude-sonnet-4-6",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_flash_lite_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash-lite",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_flash_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_flash_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_pro_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gemini_2_5_pro_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "gemini-2.5-pro",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gpt5_4_mini_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gpt5_4_mini_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gpt5_4_uir_s5.json": {
+      "source_eval_file": "output/eval/preference_narrowing/retrieval_only/eval_retrieval_only_gpt5_4_uir_s5.json",
+      "risk_type": "preference_narrowing",
+      "setting": "retrieval_only",
+      "candidate_model": "gpt-5.4",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 500,
+      "metrics": {}
+    },
+    "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_claude_haiku_4_5_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_claude_haiku_4_5_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.11,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.84,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.5075,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.395,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_only/eval_profile_only_gpt5_4_mini_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_only",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.85,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.025,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_claude_haiku_4_5_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_claude_haiku_4_5_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "claude-haiku-4-5-20251001",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.2596,
+          "n": 182
+        },
+        "pis_score": {
+          "mean": 0.2363,
+          "n": 182
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_claude_sonnet_4_6_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_claude_sonnet_4_6_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "claude-sonnet-4-6",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.4587,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.245,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_gemini_2_5_flash_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gemini-2.5-flash",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.5225,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.215,
+          "n": 200
+        }
+      }
+    },
+    "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_200.json": {
+      "source_eval_file": "output/eval/sycophantic_bias_inverted/profile_retrieval/eval_profile_retrieval_gpt5_4_mini_200.json",
+      "risk_type": "sycophantic_bias_framing",
+      "setting": "profile_retrieval",
+      "candidate_model": "gpt-5.4-mini",
+      "judge_model": "gpt-4o",
+      "num_evaluated": 200,
+      "metrics": {
+        "syco_score": {
+          "mean": 0.9,
+          "n": 200
+        },
+        "pis_score": {
+          "mean": 0.0,
+          "n": 200
         }
       }
     }
