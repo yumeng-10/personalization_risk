@@ -34,6 +34,10 @@ MODEL_TAGS=(
     "gemini_2_5_flash"
     "gemini_2_5_pro"
     "gemini_2_5_flash_lite"
+    "qwen3_4b"
+    "qwen3_8b"
+    "qwen3_14b"
+    "qwen3_32b"
 )
 
 # eval <dataset_dir> <risk_type> <setting> <model_tag>
@@ -98,7 +102,7 @@ run_model_group() {
 }
 
 echo "Starting parallel evaluation groups."
-echo "Logs: logs/eval_xlab.log  logs/eval_anthropic.log  logs/eval_google.log"
+echo "Logs: logs/eval_xlab.log  logs/eval_anthropic.log  logs/eval_google.log  logs/eval_qwen.log"
 echo ""
 
 run_model_group "logs/eval_xlab.log"      "gpt5_4_mini" "gpt5_4"               &
@@ -107,11 +111,14 @@ run_model_group "logs/eval_anthropic.log" "claude_sonnet_4_6" "claude_haiku_4_5"
 PID_ANTHROPIC=$!
 run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro" "gemini_2_5_flash_lite" &
 PID_GOOGLE=$!
+run_model_group "logs/eval_qwen.log"      "qwen3_4b" "qwen3_8b" "qwen3_14b" "qwen3_32b" &
+PID_QWEN=$!
 
 EXIT=0
 wait "$PID_XLAB"      || { echo "[ERROR] xlab eval group failed";      EXIT=1; }
 wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic eval group failed"; EXIT=1; }
 wait "$PID_GOOGLE"    || { echo "[ERROR] google eval group failed";    EXIT=1; }
+wait "$PID_QWEN"      || { echo "[ERROR] qwen eval group failed";      EXIT=1; }
 
 echo ""
 echo "All evaluation groups done. Exit code: $EXIT"

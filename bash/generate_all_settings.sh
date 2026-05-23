@@ -31,10 +31,10 @@ DATASETS=(
 
 mkdir -p logs
 
-# run <dataset_path> <dataset_dir> <setting> <model> <model_tag> [provider] [thinking_budget]
+# run <dataset_path> <dataset_dir> <setting> <model> <model_tag> [provider] [thinking_budget] [sglang_base_url]
 run() {
     local dataset="$1" dname="$2" setting="$3" model="$4" tag="$5"
-    local provider="${6:-}" thinking="${7:-}"
+    local provider="${6:-}" thinking="${7:-}" base_url="${8:-}"
 
     # preference_narrowing uses N stochastic samples per record
     if [[ "$dname" == "preference_narrowing" ]]; then
@@ -56,7 +56,11 @@ run() {
         [[ -n "$provider" ]]  && args+=(--provider "$provider")
         [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
         [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
-        python "$SCRIPT" "${args[@]}"
+        if [[ -n "$base_url" ]]; then
+            SGLANG_BASE_URL="$base_url" python "$SCRIPT" "${args[@]}"
+        else
+            python "$SCRIPT" "${args[@]}"
+        fi
         return 0
     fi
 
@@ -80,22 +84,26 @@ run() {
     [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
     [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
 
-    python "$SCRIPT" "${args[@]}"
+    if [[ -n "$base_url" ]]; then
+        SGLANG_BASE_URL="$base_url" python "$SCRIPT" "${args[@]}"
+    else
+        python "$SCRIPT" "${args[@]}"
+    fi
 }
 
 # run_group <log_file> "model_entry1" "model_entry2" ...
-# Each model_entry: "model_name|model_tag|provider|thinking_budget"
+# Each model_entry: "model_name|model_tag|provider|thinking_budget|sglang_base_url"
 run_group() {
     local log="$1"; shift
     local models=("$@")
 
     {
         for model_entry in "${models[@]}"; do
-            IFS='|' read -r model tag provider thinking <<< "$model_entry"
+            IFS='|' read -r model tag provider thinking base_url <<< "$model_entry"
             for dataset_entry in "${DATASETS[@]}"; do
                 IFS='|' read -r dpath dname <<< "$dataset_entry"
                 for setting in "${SETTINGS[@]}"; do
-                    run "$dpath" "$dname" "$setting" "$model" "$tag" "$provider" "$thinking"
+                    run "$dpath" "$dname" "$setting" "$model" "$tag" "$provider" "$thinking" "$base_url"
                 done
             done
         done
@@ -116,8 +124,16 @@ GOOGLE_MODELS=(
     "gemini-2.5-pro|gemini_2_5_pro||1000"
     'gemini-2.5-flash-lite|gemini_2_5_flash_lite||'
 )
+# Qwen models served via sglang on separate ports; each runs in its own parallel group.
+# Format: "model_name|model_tag|provider|thinking_budget|sglang_base_url"
+QWEN_MODELS=(
+    "Qwen3-4B|qwen3_4b|sglang||http://localhost:30000/v1"
+    "Qwen3-8B|qwen3_8b|sglang||http://localhost:30001/v1"
+    "Qwen3-14B|qwen3_14b|sglang||http://localhost:30002/v1"
+    "Qwen3-32B|qwen3_32b|sglang||http://localhost:30003/v1"
+)
 
-echo "Starting parallel provider groups. Logs: logs/run_openai.log  logs/run_anthropic.log  logs/run_google.log"
+echo "Starting parallel provider groups. Logs: logs/run_openai.log  logs/run_anthropic.log  logs/run_google.log  logs/run_qwen.log"
 echo ""
 
 run_group "logs/run_openai.log"    "${OPENAI_MODELS[@]}"    &
@@ -126,12 +142,15 @@ run_group "logs/run_anthropic.log" "${ANTHROPIC_MODELS[@]}" &
 PID_ANTHROPIC=$!
 run_group "logs/run_google.log"    "${GOOGLE_MODELS[@]}"    &
 PID_GOOGLE=$!
+run_group "logs/run_qwen.log"      "${QWEN_MODELS[@]}"      &
+PID_QWEN=$!
 
 # Wait for all groups and collect exit codes
 EXIT=0
 wait "$PID_OPENAI"    || { echo "[ERROR] openai group failed";    EXIT=1; }
 wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic group failed"; EXIT=1; }
 wait "$PID_GOOGLE"    || { echo "[ERROR] google group failed";    EXIT=1; }
+wait "$PID_QWEN"      || { echo "[ERROR] qwen group failed";      EXIT=1; }
 
 echo ""
 echo "All provider groups done. Exit code: $EXIT"
