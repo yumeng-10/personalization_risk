@@ -8,7 +8,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 LIMIT=200
-PREF_SAMPLES=20    # must match PREF_SAMPLES in generate_all_settings.sh
+PREF_SAMPLES=5    # must match PREF_SAMPLES in generate_all_settings.sh
 JUDGE_MODEL="gpt-4o"
 JUDGE_PROVIDER="openai"          # empty = auto-detect; set to "xlab" to use xlab endpoint
 SCRIPT="scripts/evaluator/evaluator.py"

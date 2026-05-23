@@ -1,0 +1,2516 @@
+{
+  "source_dataset": "data/preference_narrowing/uir_query100_persona1_seed42.json",
+  "risk_type": "preference_narrowing",
+  "setting": "retrieval_only",
+  "start_index": 0,
+  "limit": 100,
+  "num_samples": 5,
+  "temperature": 0.2,
+  "num_records": 500,
+  "candidate_model": "gemini-2.5-pro",
+  "router_model": "gemini-2.5-pro",
+  "embedding_model": "gemini-embedding-001",
+  "top_k": 3,
+  "results": [
+    {
+      "record_id": "uir_0001__s0",
+      "error": "RetryError[<Future at 0x111a7aad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0001__s1",
+      "error": "RetryError[<Future at 0x111a50e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0001__s2",
+      "error": "RetryError[<Future at 0x111a53650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0001__s3",
+      "error": "RetryError[<Future at 0x111a510d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0001__s4",
+      "error": "RetryError[<Future at 0x1113fbed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0002__s0",
+      "error": "RetryError[<Future at 0x1113f9ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0002__s1",
+      "error": "RetryError[<Future at 0x111a52250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0002__s2",
+      "error": "RetryError[<Future at 0x111a2f850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0002__s3",
+      "error": "RetryError[<Future at 0x111a2d4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0002__s4",
+      "error": "RetryError[<Future at 0x111a52ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0003__s0",
+      "error": "RetryError[<Future at 0x111a2c9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0003__s1",
+      "error": "RetryError[<Future at 0x111a79b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0003__s2",
+      "error": "RetryError[<Future at 0x1113fb450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0003__s3",
+      "error": "RetryError[<Future at 0x111a2e3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0003__s4",
+      "error": "RetryError[<Future at 0x111a78ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0004__s0",
+      "error": "RetryError[<Future at 0x1113fb3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0004__s1",
+      "error": "RetryError[<Future at 0x111a51250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0004__s2",
+      "error": "RetryError[<Future at 0x1113fa850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0004__s3",
+      "error": "RetryError[<Future at 0x111a504d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0004__s4",
+      "error": "RetryError[<Future at 0x111a2ea50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0005__s0",
+      "error": "RetryError[<Future at 0x111a953d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0005__s1",
+      "error": "RetryError[<Future at 0x111a947d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0005__s2",
+      "error": "RetryError[<Future at 0x111a7b4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0005__s3",
+      "error": "RetryError[<Future at 0x111aa56d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0005__s4",
+      "error": "RetryError[<Future at 0x111aa4ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0006__s0",
+      "error": "RetryError[<Future at 0x111a95ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0006__s1",
+      "error": "RetryError[<Future at 0x111a96cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0006__s2",
+      "error": "RetryError[<Future at 0x111aa4050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0006__s3",
+      "error": "RetryError[<Future at 0x111ac9950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0006__s4",
+      "error": "RetryError[<Future at 0x111aa6050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0007__s0",
+      "error": "RetryError[<Future at 0x111aa6bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0007__s1",
+      "error": "RetryError[<Future at 0x111a96b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0007__s2",
+      "error": "RetryError[<Future at 0x111ac83d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0007__s3",
+      "error": "RetryError[<Future at 0x111aa78d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0007__s4",
+      "error": "RetryError[<Future at 0x111aca450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0008__s0",
+      "error": "RetryError[<Future at 0x111ae8350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0008__s1",
+      "error": "RetryError[<Future at 0x111acac50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0008__s2",
+      "error": "RetryError[<Future at 0x111ac8d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0008__s3",
+      "error": "RetryError[<Future at 0x111ae93d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0008__s4",
+      "error": "RetryError[<Future at 0x111aa7e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0009__s0",
+      "error": "RetryError[<Future at 0x111aea050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0009__s1",
+      "error": "RetryError[<Future at 0x111aea350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0009__s2",
+      "error": "RetryError[<Future at 0x111aeb150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0009__s3",
+      "error": "RetryError[<Future at 0x111d24750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0009__s4",
+      "error": "RetryError[<Future at 0x111d25ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0010__s0",
+      "error": "RetryError[<Future at 0x111aebcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0010__s1",
+      "error": "RetryError[<Future at 0x111d01d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0010__s2",
+      "error": "RetryError[<Future at 0x111d01250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0010__s3",
+      "error": "RetryError[<Future at 0x111d03350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0010__s4",
+      "error": "RetryError[<Future at 0x111d006d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0011__s0",
+      "error": "RetryError[<Future at 0x111d24e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0011__s1",
+      "error": "RetryError[<Future at 0x111d452d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0011__s2",
+      "error": "RetryError[<Future at 0x111d268d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0011__s3",
+      "error": "RetryError[<Future at 0x111d028d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0011__s4",
+      "error": "RetryError[<Future at 0x111d26950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0012__s0",
+      "error": "RetryError[<Future at 0x111d27f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0012__s1",
+      "error": "RetryError[<Future at 0x111d445d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0012__s2",
+      "error": "RetryError[<Future at 0x111d45e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0012__s3",
+      "error": "RetryError[<Future at 0x111d475d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0012__s4",
+      "error": "RetryError[<Future at 0x111d02550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0013__s0",
+      "error": "RetryError[<Future at 0x111d5d550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0013__s1",
+      "error": "RetryError[<Future at 0x111d5c050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0013__s2",
+      "error": "RetryError[<Future at 0x111d5cb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0013__s3",
+      "error": "RetryError[<Future at 0x111d5d5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0013__s4",
+      "error": "RetryError[<Future at 0x111d47c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0014__s0",
+      "error": "RetryError[<Future at 0x111d804d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0014__s1",
+      "error": "RetryError[<Future at 0x111d5ecd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0014__s2",
+      "error": "RetryError[<Future at 0x111d5ed50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0014__s3",
+      "error": "RetryError[<Future at 0x111d80dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0014__s4",
+      "error": "RetryError[<Future at 0x111d818d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0015__s0",
+      "error": "RetryError[<Future at 0x111d82ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0015__s1",
+      "error": "RetryError[<Future at 0x11130a750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0015__s2",
+      "error": "RetryError[<Future at 0x10a697750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0015__s3",
+      "error": "RetryError[<Future at 0x111308c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0015__s4",
+      "error": "RetryError[<Future at 0x111308950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0016__s0",
+      "error": "RetryError[<Future at 0x111d243d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0016__s1",
+      "error": "RetryError[<Future at 0x111137a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0016__s2",
+      "error": "RetryError[<Future at 0x111d825d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0016__s3",
+      "error": "RetryError[<Future at 0x111136150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0016__s4",
+      "error": "RetryError[<Future at 0x1111369d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0017__s0",
+      "error": "RetryError[<Future at 0x110ec2ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0017__s1",
+      "error": "RetryError[<Future at 0x110ec04d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0017__s2",
+      "error": "RetryError[<Future at 0x1103ec7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0017__s3",
+      "error": "RetryError[<Future at 0x110aa68d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0017__s4",
+      "error": "RetryError[<Future at 0x110aa5bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0018__s0",
+      "error": "RetryError[<Future at 0x110aa7250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0018__s1",
+      "error": "RetryError[<Future at 0x110aa7550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0018__s2",
+      "error": "RetryError[<Future at 0x110937950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0018__s3",
+      "error": "RetryError[<Future at 0x110aa4ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0018__s4",
+      "error": "RetryError[<Future at 0x110936950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0019__s0",
+      "error": "RetryError[<Future at 0x110935ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0019__s1",
+      "error": "RetryError[<Future at 0x110935d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0019__s2",
+      "error": "RetryError[<Future at 0x110934a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0019__s3",
+      "error": "RetryError[<Future at 0x1103ed150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0019__s4",
+      "error": "RetryError[<Future at 0x1103ef1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0020__s0",
+      "error": "RetryError[<Future at 0x1103ec350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0020__s1",
+      "error": "RetryError[<Future at 0x1103ef550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0020__s2",
+      "error": "RetryError[<Future at 0x10fbfd450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0020__s3",
+      "error": "RetryError[<Future at 0x10fbfecd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0020__s4",
+      "error": "RetryError[<Future at 0x110934dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0021__s0",
+      "error": "RetryError[<Future at 0x10fbff0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0021__s1",
+      "error": "RetryError[<Future at 0x10fbfe250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0021__s2",
+      "error": "RetryError[<Future at 0x10fbfc1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0021__s3",
+      "error": "RetryError[<Future at 0x10fbff950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0021__s4",
+      "error": "RetryError[<Future at 0x10f69f4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0022__s0",
+      "error": "RetryError[<Future at 0x10fbfd650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0022__s1",
+      "error": "RetryError[<Future at 0x10f69ce50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0022__s2",
+      "error": "RetryError[<Future at 0x10f22fbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0022__s3",
+      "error": "RetryError[<Future at 0x10f69c6d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0022__s4",
+      "error": "RetryError[<Future at 0x10f69ef50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0023__s0",
+      "error": "RetryError[<Future at 0x10f22f4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0023__s1",
+      "error": "RetryError[<Future at 0x10f22fed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0023__s2",
+      "error": "RetryError[<Future at 0x10f22d7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0023__s3",
+      "error": "RetryError[<Future at 0x10f22c750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0023__s4",
+      "error": "RetryError[<Future at 0x10f22cc50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0024__s0",
+      "error": "RetryError[<Future at 0x10f07b5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0024__s1",
+      "error": "RetryError[<Future at 0x10f22ced0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0024__s2",
+      "error": "RetryError[<Future at 0x10f07afd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0024__s3",
+      "error": "RetryError[<Future at 0x10f69d4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0024__s4",
+      "error": "RetryError[<Future at 0x10f69c750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0025__s0",
+      "error": "RetryError[<Future at 0x10f07a6d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0025__s1",
+      "error": "RetryError[<Future at 0x10a770dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0025__s2",
+      "error": "RetryError[<Future at 0x10a7716d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0025__s3",
+      "error": "RetryError[<Future at 0x10a770450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0025__s4",
+      "error": "RetryError[<Future at 0x10a7723d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0026__s0",
+      "error": "RetryError[<Future at 0x10a74bed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0026__s1",
+      "error": "RetryError[<Future at 0x10a74b950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0026__s2",
+      "error": "RetryError[<Future at 0x10a74bd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0026__s3",
+      "error": "RetryError[<Future at 0x111d839d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0026__s4",
+      "error": "RetryError[<Future at 0x10a74a550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0027__s0",
+      "error": "RetryError[<Future at 0x110c7c7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0027__s1",
+      "error": "RetryError[<Future at 0x110c7eed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0027__s2",
+      "error": "RetryError[<Future at 0x110c7f850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0027__s3",
+      "error": "RetryError[<Future at 0x110c7e050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0027__s4",
+      "error": "RetryError[<Future at 0x110c7d150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0028__s0",
+      "error": "RetryError[<Future at 0x10ff80bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0028__s1",
+      "error": "RetryError[<Future at 0x10ff800d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0028__s2",
+      "error": "RetryError[<Future at 0x10ff81b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0028__s3",
+      "error": "RetryError[<Future at 0x10ff82450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0028__s4",
+      "error": "RetryError[<Future at 0x110c7f7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0029__s0",
+      "error": "RetryError[<Future at 0x10ff82b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0029__s1",
+      "error": "RetryError[<Future at 0x10ff817d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0029__s2",
+      "error": "RetryError[<Future at 0x1100d44d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0029__s3",
+      "error": "RetryError[<Future at 0x1100d4fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0029__s4",
+      "error": "RetryError[<Future at 0x10ff83bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0030__s0",
+      "error": "RetryError[<Future at 0x1100d5450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0030__s1",
+      "error": "RetryError[<Future at 0x1100d79d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0030__s2",
+      "error": "RetryError[<Future at 0x10fd6c3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0030__s3",
+      "error": "RetryError[<Future at 0x1100d61d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0030__s4",
+      "error": "RetryError[<Future at 0x10f7b6ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0031__s0",
+      "error": "RetryError[<Future at 0x1100d6c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0031__s1",
+      "error": "RetryError[<Future at 0x10f7b4a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0031__s2",
+      "error": "RetryError[<Future at 0x10f7b5750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0031__s3",
+      "error": "RetryError[<Future at 0x10f7b5f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0031__s4",
+      "error": "RetryError[<Future at 0x10fd6ded0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0032__s0",
+      "error": "RetryError[<Future at 0x10fd6c250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0032__s1",
+      "error": "RetryError[<Future at 0x10fd6c8d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0032__s2",
+      "error": "RetryError[<Future at 0x10ff80f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0032__s3",
+      "error": "RetryError[<Future at 0x1100d75d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0032__s4",
+      "error": "RetryError[<Future at 0x1100d7bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0033__s0",
+      "error": "RetryError[<Future at 0x110edc450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0033__s1",
+      "error": "RetryError[<Future at 0x10fd6ee50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0033__s2",
+      "error": "RetryError[<Future at 0x110ede650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0033__s3",
+      "error": "RetryError[<Future at 0x110edd050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0033__s4",
+      "error": "RetryError[<Future at 0x110edf0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0034__s0",
+      "error": "RetryError[<Future at 0x110edfcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0034__s1",
+      "error": "RetryError[<Future at 0x110eddb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0034__s2",
+      "error": "RetryError[<Future at 0x1105039d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0034__s3",
+      "error": "RetryError[<Future at 0x1105010d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0034__s4",
+      "error": "RetryError[<Future at 0x110502c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0035__s0",
+      "error": "RetryError[<Future at 0x110501ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0035__s1",
+      "error": "RetryError[<Future at 0x1105024d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0035__s2",
+      "error": "RetryError[<Future at 0x110edeb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0035__s3",
+      "error": "RetryError[<Future at 0x1107f8e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0035__s4",
+      "error": "RetryError[<Future at 0x1107fac50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0036__s0",
+      "error": "RetryError[<Future at 0x1107f93d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0036__s1",
+      "error": "RetryError[<Future at 0x110500d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0036__s2",
+      "error": "RetryError[<Future at 0x110501dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0036__s3",
+      "error": "RetryError[<Future at 0x110501e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0036__s4",
+      "error": "RetryError[<Future at 0x110edc650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0037__s0",
+      "error": "RetryError[<Future at 0x10facdbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0037__s1",
+      "error": "RetryError[<Future at 0x10facc8d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0037__s2",
+      "error": "RetryError[<Future at 0x10face650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0037__s3",
+      "error": "RetryError[<Future at 0x10facf1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0037__s4",
+      "error": "RetryError[<Future at 0x10feca550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0038__s0",
+      "error": "RetryError[<Future at 0x10facfcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0038__s1",
+      "error": "RetryError[<Future at 0x10fec89d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0038__s2",
+      "error": "RetryError[<Future at 0x111db23d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0038__s3",
+      "error": "RetryError[<Future at 0x10fec9a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0038__s4",
+      "error": "RetryError[<Future at 0x111db1850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0039__s0",
+      "error": "RetryError[<Future at 0x10fecb0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0039__s1",
+      "error": "RetryError[<Future at 0x111db02d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0039__s2",
+      "error": "RetryError[<Future at 0x111db0dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0039__s3",
+      "error": "RetryError[<Future at 0x111db3050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0039__s4",
+      "error": "RetryError[<Future at 0x111db36d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0040__s0",
+      "error": "RetryError[<Future at 0x111db0c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0040__s1",
+      "error": "RetryError[<Future at 0x111db06d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0040__s2",
+      "error": "RetryError[<Future at 0x111db1fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0040__s3",
+      "error": "RetryError[<Future at 0x111db28d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0040__s4",
+      "error": "RetryError[<Future at 0x111db3bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0041__s0",
+      "error": "RetryError[<Future at 0x111dd32d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0041__s1",
+      "error": "RetryError[<Future at 0x111df62d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0041__s2",
+      "error": "RetryError[<Future at 0x111dd1950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0041__s3",
+      "error": "RetryError[<Future at 0x111dd3d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0041__s4",
+      "error": "RetryError[<Future at 0x111df4950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0042__s0",
+      "error": "RetryError[<Future at 0x111df6ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0042__s1",
+      "error": "RetryError[<Future at 0x111df7f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0042__s2",
+      "error": "RetryError[<Future at 0x111e0d050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0042__s3",
+      "error": "RetryError[<Future at 0x111df77d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0042__s4",
+      "error": "RetryError[<Future at 0x111e28250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0043__s0",
+      "error": "RetryError[<Future at 0x111e0cdd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0043__s1",
+      "error": "RetryError[<Future at 0x111e0e0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0043__s2",
+      "error": "RetryError[<Future at 0x111e0efd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0043__s3",
+      "error": "RetryError[<Future at 0x111e2b150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0043__s4",
+      "error": "RetryError[<Future at 0x111e280d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0044__s0",
+      "error": "RetryError[<Future at 0x111e2add0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0044__s1",
+      "error": "RetryError[<Future at 0x111e0f0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0044__s2",
+      "error": "RetryError[<Future at 0x111df7bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0044__s3",
+      "error": "RetryError[<Future at 0x111e0f250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0044__s4",
+      "error": "RetryError[<Future at 0x111e0e550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0045__s0",
+      "error": "RetryError[<Future at 0x111e50fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0045__s1",
+      "error": "RetryError[<Future at 0x111e507d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0045__s2",
+      "error": "RetryError[<Future at 0x111e52350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0045__s3",
+      "error": "RetryError[<Future at 0x111e523d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0045__s4",
+      "error": "RetryError[<Future at 0x111e660d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0046__s0",
+      "error": "RetryError[<Future at 0x111e64dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0046__s1",
+      "error": "RetryError[<Future at 0x111e641d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0046__s2",
+      "error": "RetryError[<Future at 0x111e64950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0046__s3",
+      "error": "RetryError[<Future at 0x111e66b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0046__s4",
+      "error": "RetryError[<Future at 0x111e98850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0047__s0",
+      "error": "RetryError[<Future at 0x111e676d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0047__s1",
+      "error": "RetryError[<Future at 0x111e78d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0047__s2",
+      "error": "RetryError[<Future at 0x111e7a5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0047__s3",
+      "error": "RetryError[<Future at 0x111e78650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0047__s4",
+      "error": "RetryError[<Future at 0x111e98050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0048__s0",
+      "error": "RetryError[<Future at 0x111e98350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0048__s1",
+      "error": "RetryError[<Future at 0x111e66850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0048__s2",
+      "error": "RetryError[<Future at 0x111e67cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0048__s3",
+      "error": "RetryError[<Future at 0x111e66650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0048__s4",
+      "error": "RetryError[<Future at 0x111e7a750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0049__s0",
+      "error": "RetryError[<Future at 0x111e99dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0049__s1",
+      "error": "RetryError[<Future at 0x111e9a7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0049__s2",
+      "error": "RetryError[<Future at 0x111e9b850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0049__s3",
+      "error": "RetryError[<Future at 0x111ebf2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0049__s4",
+      "error": "RetryError[<Future at 0x111ebd050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0050__s0",
+      "error": "RetryError[<Future at 0x111ebd3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0050__s1",
+      "error": "RetryError[<Future at 0x111ebc450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0050__s2",
+      "error": "RetryError[<Future at 0x111ed6850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0050__s3",
+      "error": "RetryError[<Future at 0x111ed49d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0050__s4",
+      "error": "RetryError[<Future at 0x111ebfcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0051__s0",
+      "error": "RetryError[<Future at 0x111ed54d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0051__s1",
+      "error": "RetryError[<Future at 0x111eec350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0051__s2",
+      "error": "RetryError[<Future at 0x111eecb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0051__s3",
+      "error": "RetryError[<Future at 0x111eedcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0051__s4",
+      "error": "RetryError[<Future at 0x111eee0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0052__s0",
+      "error": "RetryError[<Future at 0x111eee650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0052__s1",
+      "error": "RetryError[<Future at 0x111e9bcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0052__s2",
+      "error": "RetryError[<Future at 0x111e9bd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0052__s3",
+      "error": "RetryError[<Future at 0x111ed7ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0052__s4",
+      "error": "RetryError[<Future at 0x111e9a850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0053__s0",
+      "error": "RetryError[<Future at 0x111eefbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0053__s1",
+      "error": "RetryError[<Future at 0x111f0ccd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0053__s2",
+      "error": "RetryError[<Future at 0x111f29bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0053__s3",
+      "error": "RetryError[<Future at 0x111f0c4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0053__s4",
+      "error": "RetryError[<Future at 0x111f0e850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0054__s0",
+      "error": "RetryError[<Future at 0x111f0f450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0054__s1",
+      "error": "RetryError[<Future at 0x111f29150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0054__s2",
+      "error": "RetryError[<Future at 0x111f28650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0054__s3",
+      "error": "RetryError[<Future at 0x111f2ab50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0054__s4",
+      "error": "RetryError[<Future at 0x111f44bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0055__s0",
+      "error": "RetryError[<Future at 0x111f2ba50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0055__s1",
+      "error": "RetryError[<Future at 0x111f44150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0055__s2",
+      "error": "RetryError[<Future at 0x111f46950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0055__s3",
+      "error": "RetryError[<Future at 0x111f5c550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0055__s4",
+      "error": "RetryError[<Future at 0x111f5c2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0056__s0",
+      "error": "RetryError[<Future at 0x111f5c950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0056__s1",
+      "error": "RetryError[<Future at 0x111f465d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0056__s2",
+      "error": "RetryError[<Future at 0x111f47e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0056__s3",
+      "error": "RetryError[<Future at 0x111f5cf50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0056__s4",
+      "error": "RetryError[<Future at 0x111f0c5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0057__s0",
+      "error": "RetryError[<Future at 0x111f819d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0057__s1",
+      "error": "RetryError[<Future at 0x111f93750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0057__s2",
+      "error": "RetryError[<Future at 0x111f5e050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0057__s3",
+      "error": "RetryError[<Future at 0x111f5f7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0057__s4",
+      "error": "RetryError[<Future at 0x111f81850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0058__s0",
+      "error": "RetryError[<Future at 0x111f80450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0058__s1",
+      "error": "RetryError[<Future at 0x111f831d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0058__s2",
+      "error": "RetryError[<Future at 0x111f80cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0058__s3",
+      "error": "RetryError[<Future at 0x111fb45d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0058__s4",
+      "error": "RetryError[<Future at 0x111f909d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0059__s0",
+      "error": "RetryError[<Future at 0x111f90850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0059__s1",
+      "error": "RetryError[<Future at 0x111f91a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0059__s2",
+      "error": "RetryError[<Future at 0x111f92dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0059__s3",
+      "error": "RetryError[<Future at 0x111fb62d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0059__s4",
+      "error": "RetryError[<Future at 0x111fb6850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0060__s0",
+      "error": "RetryError[<Future at 0x111fb5ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0060__s1",
+      "error": "RetryError[<Future at 0x111f90150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0060__s2",
+      "error": "RetryError[<Future at 0x111f903d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0060__s3",
+      "error": "RetryError[<Future at 0x111f83e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0060__s4",
+      "error": "RetryError[<Future at 0x111f814d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0061__s0",
+      "error": "RetryError[<Future at 0x111fb7d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0061__s1",
+      "error": "RetryError[<Future at 0x10fc39550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0061__s2",
+      "error": "RetryError[<Future at 0x11200b2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0061__s3",
+      "error": "RetryError[<Future at 0x111fe9cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0061__s4",
+      "error": "RetryError[<Future at 0x10fc3bd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0062__s0",
+      "error": "RetryError[<Future at 0x10fc3bbd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0062__s1",
+      "error": "RetryError[<Future at 0x10fc3b0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0062__s2",
+      "error": "RetryError[<Future at 0x10fc3a4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0062__s3",
+      "error": "RetryError[<Future at 0x111feb0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0062__s4",
+      "error": "RetryError[<Future at 0x10fc3bf50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0063__s0",
+      "error": "RetryError[<Future at 0x111febd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0063__s1",
+      "error": "RetryError[<Future at 0x112008f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0063__s2",
+      "error": "RetryError[<Future at 0x1120086d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0063__s3",
+      "error": "RetryError[<Future at 0x11200b6d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0063__s4",
+      "error": "RetryError[<Future at 0x11200bcd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0064__s0",
+      "error": "RetryError[<Future at 0x112020650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0064__s1",
+      "error": "RetryError[<Future at 0x112008ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0064__s2",
+      "error": "RetryError[<Future at 0x1120212d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0064__s3",
+      "error": "RetryError[<Future at 0x11200af50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0064__s4",
+      "error": "RetryError[<Future at 0x111fe9f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0065__s0",
+      "error": "RetryError[<Future at 0x112021250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0065__s1",
+      "error": "RetryError[<Future at 0x1120232d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0065__s2",
+      "error": "RetryError[<Future at 0x112064cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0065__s3",
+      "error": "RetryError[<Future at 0x11204e050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0065__s4",
+      "error": "RetryError[<Future at 0x11204d5d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0066__s0",
+      "error": "RetryError[<Future at 0x112064e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0066__s1",
+      "error": "RetryError[<Future at 0x11204c9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0066__s2",
+      "error": "RetryError[<Future at 0x11204f250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0066__s3",
+      "error": "RetryError[<Future at 0x112066c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0066__s4",
+      "error": "RetryError[<Future at 0x11204df50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0067__s0",
+      "error": "RetryError[<Future at 0x112023ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0067__s1",
+      "error": "RetryError[<Future at 0x112067ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0067__s2",
+      "error": "RetryError[<Future at 0x1120641d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0067__s3",
+      "error": "RetryError[<Future at 0x11205d7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0067__s4",
+      "error": "RetryError[<Future at 0x11205ced0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0068__s0",
+      "error": "RetryError[<Future at 0x11205da50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0068__s1",
+      "error": "RetryError[<Future at 0x11205d350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0068__s2",
+      "error": "RetryError[<Future at 0x11205ea50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0068__s3",
+      "error": "RetryError[<Future at 0x112022b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0068__s4",
+      "error": "RetryError[<Future at 0x11204e4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0069__s0",
+      "error": "RetryError[<Future at 0x11205c950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0069__s1",
+      "error": "RetryError[<Future at 0x1120a4950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0069__s2",
+      "error": "RetryError[<Future at 0x1120a5fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0069__s3",
+      "error": "RetryError[<Future at 0x1120a5850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0069__s4",
+      "error": "RetryError[<Future at 0x1120c53d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0070__s0",
+      "error": "RetryError[<Future at 0x1120a6f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0070__s1",
+      "error": "RetryError[<Future at 0x1120a73d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0070__s2",
+      "error": "RetryError[<Future at 0x1120c4b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0070__s3",
+      "error": "RetryError[<Future at 0x1120c6ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0070__s4",
+      "error": "RetryError[<Future at 0x1120c4bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0071__s0",
+      "error": "RetryError[<Future at 0x1120c4050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0071__s1",
+      "error": "RetryError[<Future at 0x1120e13d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0071__s2",
+      "error": "RetryError[<Future at 0x1120e2fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0071__s3",
+      "error": "RetryError[<Future at 0x1120e3450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0071__s4",
+      "error": "RetryError[<Future at 0x1120e2bd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0072__s0",
+      "error": "RetryError[<Future at 0x1120c63d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0072__s1",
+      "error": "RetryError[<Future at 0x1120a7750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0072__s2",
+      "error": "RetryError[<Future at 0x1120c61d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0072__s3",
+      "error": "RetryError[<Future at 0x1120e29d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0072__s4",
+      "error": "RetryError[<Future at 0x1120fc450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0073__s0",
+      "error": "RetryError[<Future at 0x1120fc3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0073__s1",
+      "error": "RetryError[<Future at 0x1120fcdd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0073__s2",
+      "error": "RetryError[<Future at 0x1120ff250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0073__s3",
+      "error": "RetryError[<Future at 0x1120ffe50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0073__s4",
+      "error": "RetryError[<Future at 0x11211f450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0074__s0",
+      "error": "RetryError[<Future at 0x11211df50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0074__s1",
+      "error": "RetryError[<Future at 0x11211c8d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0074__s2",
+      "error": "RetryError[<Future at 0x11213e3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0074__s3",
+      "error": "RetryError[<Future at 0x11211d3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0074__s4",
+      "error": "RetryError[<Future at 0x1120fdc50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0075__s0",
+      "error": "RetryError[<Future at 0x11213c0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0075__s1",
+      "error": "RetryError[<Future at 0x11211e950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0075__s2",
+      "error": "RetryError[<Future at 0x112150cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0075__s3",
+      "error": "RetryError[<Future at 0x1121502d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0075__s4",
+      "error": "RetryError[<Future at 0x1121505d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0076__s0",
+      "error": "RetryError[<Future at 0x11211f950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0076__s1",
+      "error": "RetryError[<Future at 0x112151ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0076__s2",
+      "error": "RetryError[<Future at 0x11211fad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0076__s3",
+      "error": "RetryError[<Future at 0x11213f850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0076__s4",
+      "error": "RetryError[<Future at 0x112151d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0077__s0",
+      "error": "RetryError[<Future at 0x112150f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0077__s1",
+      "error": "RetryError[<Future at 0x112152fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0077__s2",
+      "error": "RetryError[<Future at 0x112178ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0077__s3",
+      "error": "RetryError[<Future at 0x112179550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0077__s4",
+      "error": "RetryError[<Future at 0x112179ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0078__s0",
+      "error": "RetryError[<Future at 0x11217bc50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0078__s1",
+      "error": "RetryError[<Future at 0x112191e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0078__s2",
+      "error": "RetryError[<Future at 0x11217aa50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0078__s3",
+      "error": "RetryError[<Future at 0x112190950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0078__s4",
+      "error": "RetryError[<Future at 0x112191fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0079__s0",
+      "error": "RetryError[<Future at 0x112190fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0079__s1",
+      "error": "RetryError[<Future at 0x1121939d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0079__s2",
+      "error": "RetryError[<Future at 0x1121b1f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0079__s3",
+      "error": "RetryError[<Future at 0x1121b23d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0079__s4",
+      "error": "RetryError[<Future at 0x1121b3850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0080__s0",
+      "error": "RetryError[<Future at 0x1121b1250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0080__s1",
+      "error": "RetryError[<Future at 0x112192f50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0080__s2",
+      "error": "RetryError[<Future at 0x11217a650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0080__s3",
+      "error": "RetryError[<Future at 0x1121b1c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0080__s4",
+      "error": "RetryError[<Future at 0x1121b19d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0081__s0",
+      "error": "RetryError[<Future at 0x1121b32d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0081__s1",
+      "error": "RetryError[<Future at 0x1121d46d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0081__s2",
+      "error": "RetryError[<Future at 0x1121d68d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0081__s3",
+      "error": "RetryError[<Future at 0x1121d72d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0081__s4",
+      "error": "RetryError[<Future at 0x1121e8850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0082__s0",
+      "error": "RetryError[<Future at 0x1121eb7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0082__s1",
+      "error": "RetryError[<Future at 0x11220cd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0082__s2",
+      "error": "RetryError[<Future at 0x11220e550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0082__s3",
+      "error": "RetryError[<Future at 0x1121e9ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0082__s4",
+      "error": "RetryError[<Future at 0x1121d7cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0083__s0",
+      "error": "RetryError[<Future at 0x1121ea550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0083__s1",
+      "error": "RetryError[<Future at 0x11220c2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0083__s2",
+      "error": "RetryError[<Future at 0x11220d550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0083__s3",
+      "error": "RetryError[<Future at 0x11220f950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0083__s4",
+      "error": "RetryError[<Future at 0x112220dd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0084__s0",
+      "error": "RetryError[<Future at 0x1121e84d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0084__s1",
+      "error": "RetryError[<Future at 0x1121d4b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0084__s2",
+      "error": "RetryError[<Future at 0x1121ebe50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0084__s3",
+      "error": "RetryError[<Future at 0x11220f4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0084__s4",
+      "error": "RetryError[<Future at 0x1122210d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0085__s0",
+      "error": "RetryError[<Future at 0x112221c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0085__s1",
+      "error": "RetryError[<Future at 0x112222250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0085__s2",
+      "error": "RetryError[<Future at 0x11224c7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0085__s3",
+      "error": "RetryError[<Future at 0x11224d0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0085__s4",
+      "error": "RetryError[<Future at 0x11224dad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0086__s0",
+      "error": "RetryError[<Future at 0x11224f7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0086__s1",
+      "error": "RetryError[<Future at 0x112264450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0086__s2",
+      "error": "RetryError[<Future at 0x11224edd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0086__s3",
+      "error": "RetryError[<Future at 0x112265650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0086__s4",
+      "error": "RetryError[<Future at 0x112266e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0087__s0",
+      "error": "RetryError[<Future at 0x1122656d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0087__s1",
+      "error": "RetryError[<Future at 0x112278850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0087__s2",
+      "error": "RetryError[<Future at 0x1122785d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0087__s3",
+      "error": "RetryError[<Future at 0x112279fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0087__s4",
+      "error": "RetryError[<Future at 0x1122781d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0088__s0",
+      "error": "RetryError[<Future at 0x11227add0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0088__s1",
+      "error": "RetryError[<Future at 0x112264ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0088__s2",
+      "error": "RetryError[<Future at 0x1122660d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0088__s3",
+      "error": "RetryError[<Future at 0x112265b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0088__s4",
+      "error": "RetryError[<Future at 0x11227a950 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0089__s0",
+      "error": "RetryError[<Future at 0x1122a58d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0089__s1",
+      "error": "RetryError[<Future at 0x1122a4cd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0089__s2",
+      "error": "RetryError[<Future at 0x1122a6550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0089__s3",
+      "error": "RetryError[<Future at 0x1122a7850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0089__s4",
+      "error": "RetryError[<Future at 0x1122a6fd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0090__s0",
+      "error": "RetryError[<Future at 0x1122d8550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0090__s1",
+      "error": "RetryError[<Future at 0x1122bf1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0090__s2",
+      "error": "RetryError[<Future at 0x1122be3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0090__s3",
+      "error": "RetryError[<Future at 0x1122d9350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0090__s4",
+      "error": "RetryError[<Future at 0x1122bdd50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0091__s0",
+      "error": "RetryError[<Future at 0x1122bc4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0091__s1",
+      "error": "RetryError[<Future at 0x1122da150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0091__s2",
+      "error": "RetryError[<Future at 0x1122f82d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0091__s3",
+      "error": "RetryError[<Future at 0x1122db3d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0091__s4",
+      "error": "RetryError[<Future at 0x1122f8e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0092__s0",
+      "error": "RetryError[<Future at 0x1122a6c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0092__s1",
+      "error": "RetryError[<Future at 0x1122a6e50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0092__s2",
+      "error": "RetryError[<Future at 0x1122bed50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0092__s3",
+      "error": "RetryError[<Future at 0x1122d83d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0092__s4",
+      "error": "RetryError[<Future at 0x1122db7d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0093__s0",
+      "error": "RetryError[<Future at 0x1122f93d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0093__s1",
+      "error": "RetryError[<Future at 0x1123104d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0093__s2",
+      "error": "RetryError[<Future at 0x1122fb650 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0093__s3",
+      "error": "RetryError[<Future at 0x1123116d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0093__s4",
+      "error": "RetryError[<Future at 0x112310b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0094__s0",
+      "error": "RetryError[<Future at 0x112313ad0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0094__s1",
+      "error": "RetryError[<Future at 0x112313b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0094__s2",
+      "error": "RetryError[<Future at 0x112312350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0094__s3",
+      "error": "RetryError[<Future at 0x112334d50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0094__s4",
+      "error": "RetryError[<Future at 0x112348750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0095__s0",
+      "error": "RetryError[<Future at 0x112335b50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0095__s1",
+      "error": "RetryError[<Future at 0x1123369d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0095__s2",
+      "error": "RetryError[<Future at 0x112349550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0095__s3",
+      "error": "RetryError[<Future at 0x11234a850 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0095__s4",
+      "error": "RetryError[<Future at 0x11234a2d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0096__s0",
+      "error": "RetryError[<Future at 0x11234a6d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0096__s1",
+      "error": "RetryError[<Future at 0x112337750 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0096__s2",
+      "error": "RetryError[<Future at 0x112336250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0096__s3",
+      "error": "RetryError[<Future at 0x112336a50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0096__s4",
+      "error": "RetryError[<Future at 0x112349c50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0097__s0",
+      "error": "RetryError[<Future at 0x112349ed0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0097__s1",
+      "error": "RetryError[<Future at 0x11234bdd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0097__s2",
+      "error": "RetryError[<Future at 0x11237c1d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0097__s3",
+      "error": "RetryError[<Future at 0x11237c050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0097__s4",
+      "error": "RetryError[<Future at 0x11237c350 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0098__s0",
+      "error": "RetryError[<Future at 0x1123a1150 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0098__s1",
+      "error": "RetryError[<Future at 0x11237ce50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0098__s2",
+      "error": "RetryError[<Future at 0x11237d0d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0098__s3",
+      "error": "RetryError[<Future at 0x11237f9d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0098__s4",
+      "error": "RetryError[<Future at 0x11237c4d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0099__s0",
+      "error": "RetryError[<Future at 0x11237cdd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0099__s1",
+      "error": "RetryError[<Future at 0x1123a06d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0099__s2",
+      "error": "RetryError[<Future at 0x11237e450 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0099__s3",
+      "error": "RetryError[<Future at 0x1123a0050 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0099__s4",
+      "error": "RetryError[<Future at 0x11237fdd0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0100__s0",
+      "error": "RetryError[<Future at 0x11237fb50 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0100__s1",
+      "error": "RetryError[<Future at 0x1123a03d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0100__s2",
+      "error": "RetryError[<Future at 0x1123a0550 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0100__s3",
+      "error": "RetryError[<Future at 0x1123a0250 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    },
+    {
+      "record_id": "uir_0100__s4",
+      "error": "RetryError[<Future at 0x1123a08d0 state=finished raised RuntimeError>]",
+      "setting": "retrieval_only"
+    }
+  ]
+}

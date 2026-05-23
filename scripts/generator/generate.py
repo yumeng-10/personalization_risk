@@ -12,7 +12,7 @@ Three risk datasets:
   sycophantic_bias            data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json
 
 Supported providers (--provider):
-  openai, xlab, google, bedrock, vllm
+  openai, xlab, google, bedrock, sglang
 
 Example:
   python scripts/generator/generate.py \
@@ -450,7 +450,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--provider",
         default=None,
-        help="Force provider for all LLM calls (openai | xlab | google | bedrock | vllm). "
+        help="Force provider for all LLM calls (openai | xlab | google | bedrock | sglang). "
              "Auto-detected from model name if omitted.",
     )
     parser.add_argument(
@@ -791,12 +791,12 @@ python scripts/generator/generate.py \
   --limit 200 \
   --out output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt4o_mini_200.json
 
-# vllm (Llama / Qwen served locally on port 8000)
-VLLM_BASE_URL=http://localhost:8000/v1 python scripts/generator/generate.py \
+# sglang (Llama / Qwen served locally on port 30000)
+SGLANG_BASE_URL=http://localhost:30000/v1 python scripts/generator/generate.py \
   --dataset data/irrelevant_personalization/assembled_seed1000_irrelevant_personalization.json \
   --setting base \
   --candidate-model meta-llama/Llama-3.1-8B-Instruct \
-  --provider vllm \
+  --provider sglang \
   --limit 200 \
   --out output/result/irrelevant_personalization/base/base_llama31_8b_200.json
 

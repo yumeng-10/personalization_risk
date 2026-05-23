@@ -103,9 +103,9 @@ run_group() {
 }
 
 # ── Provider groups (run in parallel) ─────────────────────────────────────────
-XLAB_MODELS=(
-    "gpt-5.4-mini|gpt5_4_mini|xlab|"
-    "gpt-5.4|gpt5_4|xlab|"
+OPENAI_MODELS=(
+    "gpt-5.4-mini|gpt5_4_mini|openai|"
+    "gpt-5.4|gpt5_4|openai|"
 )
 ANTHROPIC_MODELS=(
     "claude-sonnet-4-6|claude_sonnet_4_6||"
@@ -117,11 +117,11 @@ GOOGLE_MODELS=(
     'gemini-2.5-flash-lite|gemini_2_5_flash_lite||'
 )
 
-echo "Starting parallel provider groups. Logs: logs/run_xlab.log  logs/run_anthropic.log  logs/run_google.log"
+echo "Starting parallel provider groups. Logs: logs/run_openai.log  logs/run_anthropic.log  logs/run_google.log"
 echo ""
 
-run_group "logs/run_xlab.log"      "${XLAB_MODELS[@]}"      &
-PID_XLAB=$!
+run_group "logs/run_openai.log"    "${OPENAI_MODELS[@]}"    &
+PID_OPENAI=$!
 run_group "logs/run_anthropic.log" "${ANTHROPIC_MODELS[@]}" &
 PID_ANTHROPIC=$!
 run_group "logs/run_google.log"    "${GOOGLE_MODELS[@]}"    &
@@ -129,7 +129,7 @@ PID_GOOGLE=$!
 
 # Wait for all groups and collect exit codes
 EXIT=0
-wait "$PID_XLAB"      || { echo "[ERROR] xlab group failed";      EXIT=1; }
+wait "$PID_OPENAI"    || { echo "[ERROR] openai group failed";    EXIT=1; }
 wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic group failed"; EXIT=1; }
 wait "$PID_GOOGLE"    || { echo "[ERROR] google group failed";    EXIT=1; }
 
