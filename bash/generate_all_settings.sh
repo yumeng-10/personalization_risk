@@ -54,7 +54,7 @@ run() {
             --out "$out"
         )
         [[ -n "$provider" ]]  && args+=(--provider "$provider")
-        [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
+        [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model" --embed-provider local --embedding-model models/all-MiniLM-L6-v2)
         [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
         if [[ -n "$base_url" ]]; then
             SGLANG_BASE_URL="$base_url" python "$SCRIPT" "${args[@]}"
@@ -81,7 +81,7 @@ run() {
         --out "$out"
     )
     [[ -n "$provider" ]]  && args+=(--provider "$provider")
-    [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
+    [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model" --embed-provider local --embedding-model models/all-MiniLM-L6-v2)
     [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
 
     if [[ -n "$base_url" ]]; then
