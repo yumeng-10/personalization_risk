@@ -22,7 +22,6 @@ PREF="data/preference_narrowing/uir_query100_persona1_seed42.json"   # 100-recor
 SYCO="data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json"
 
 SETTINGS=(base profile_only retrieval_only profile_retrieval)
-# SETTINGS=(base profile_only)
 
 DATASETS=(
     "${IRREL}|irrelevant_personalization"

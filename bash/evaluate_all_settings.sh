@@ -38,8 +38,8 @@ MODEL_TAGS=(
     "qwen3_8b"
     "qwen3_14b"
     "qwen3_32b"
-    "llama3_8b_instruct"
-    "llama3_70b_instruct"
+    "llama3_1_8b"
+    "llama3_1_70b"
 )
 
 # eval <dataset_dir> <risk_type> <setting> <model_tag>
@@ -55,7 +55,7 @@ eval_job() {
         out_file="output/eval/${dname}/${setting}/eval_${setting}_${tag}_${LIMIT}.json"
     fi
 
-    local base_file="output/result/${dname}/base/base_${tag}_${LIMIT}.json"
+    local base_file="output/generate/${dname}/base/base_${tag}_${LIMIT}.json"
 
     if [[ ! -f "$in_file" ]]; then
         echo "[MISSING] $in_file"
@@ -115,7 +115,7 @@ run_model_group "logs/eval_google.log"    "gemini_2_5_flash" "gemini_2_5_pro" "g
 PID_GOOGLE=$!
 run_model_group "logs/eval_qwen.log"      "qwen3_4b" "qwen3_8b" "qwen3_14b" "qwen3_32b" &
 PID_QWEN=$!
-run_model_group "logs/eval_llama.log"     "llama3_8b_instruct" "llama3_70b_instruct" &
+run_model_group "logs/eval_llama.log"     "llama3_1_8b" "llama3_1_70b" &
 PID_LLAMA=$!
 
 EXIT=0
