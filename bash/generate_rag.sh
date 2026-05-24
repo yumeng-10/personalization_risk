@@ -15,14 +15,14 @@ conda activate personalization_risk
 
 LIMIT=200
 PREF_SAMPLES=5    # stochastic samples per (query, persona) pair for UIR evaluation
-SCRIPT="scripts/generator/generate.py"
+SCRIPT="scripts/generator/generate_new.py"
 
 IRREL="data/irrelevant_personalization/assembled_seed1000_irrelevant_personalization.json"
 PREF="data/preference_narrowing/uir_query100_persona1_seed42.json"   # 100-record UIR dataset
 SYCO="data/sycophantic_bias/assembled_seed1000_sycophantic_bias_framing.json"
 
 # SETTINGS=(base profile_only retrieval_only profile_retrieval)
-SETTINGS=(base profile_only)
+SETTINGS=(retrieval_only profile_retrieval)
 DATASETS=(
     "${IRREL}|irrelevant_personalization"
     "${PREF}|preference_narrowing"
@@ -54,7 +54,7 @@ run() {
             --out "$out"
         )
         [[ -n "$provider" ]]  && args+=(--provider "$provider")
-        [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
+        [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model" --embed-provider local --embedding-model /yumeng/models/all-MiniLM-L6-v2)
         [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
         if [[ -n "$base_url" ]]; then
             SGLANG_BASE_URL="$base_url" python "$SCRIPT" "${args[@]}"
@@ -81,7 +81,7 @@ run() {
         --out "$out"
     )
     [[ -n "$provider" ]]  && args+=(--provider "$provider")
-    [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model")
+    [[ "$setting" == "retrieval_only" || "$setting" == "profile_retrieval" ]] && args+=(--router-model "$model" --embed-provider local --embedding-model /yumeng/models/all-MiniLM-L6-v2)
     [[ -n "$thinking" ]] && args+=(--thinking-budget "$thinking")
 
     if [[ -n "$base_url" ]]; then
@@ -143,24 +143,29 @@ echo ""
 # run_group "logs/run_google.log"    "${GOOGLE_MODELS[@]}"    &
 # PID_GOOGLE=$!
 # Each Qwen model gets its own parallel group (each is on a separate GPU/port)
-run_group "logs/run_qwen_4b.log"  "Qwen3-4B|qwen3_4b|sglang||http://localhost:30000/v1"  &
-PID_QWEN_4B=$!
-run_group "logs/run_qwen_8b.log"  "Qwen3-8B|qwen3_8b|sglang||http://localhost:30001/v1"  &
-PID_QWEN_8B=$!
-run_group "logs/run_qwen_14b.log" "Qwen3-14B|qwen3_14b|sglang||http://localhost:30002/v1" &
-PID_QWEN_14B=$!
-run_group "logs/run_qwen_32b.log" "Qwen3-32B|qwen3_32b|sglang||http://localhost:30003/v1" &
-PID_QWEN_32B=$!
+# run_group "logs/run_qwen_4b.log"  "Qwen3-4B|qwen3_4b|sglang||http://localhost:30000/v1"  &
+# PID_QWEN_4B=$!
+# run_group "logs/run_qwen_8b.log"  "Qwen3-8B|qwen3_8b|sglang||http://localhost:30001/v1"  &
+# PID_QWEN_8B=$!
+# run_group "logs/run_qwen_14b.log" "Qwen3-14B|qwen3_14b|sglang||http://localhost:30002/v1" &
+# PID_QWEN_14B=$!
+# run_group "logs/run_qwen_32b.log" "Qwen3-32B|qwen3_32b|sglang||http://localhost:30003/v1" &
+# PID_QWEN_32B=$!
+# run_group "logs/run_llama_8b.log"  "Llama-3.1-8B|llama3_1_8b|sglang||http://localhost:30004/v1"  &
+# PID_LLAMA_8B=$!
+run_group "logs/run_llama_70b.log" "Llama-3.1-70B|llama3_1_70b|sglang||http://localhost:30005/v1" &
+PID_LLAMA_70B=$!
 
 # Wait for all groups and collect exit codes
 EXIT=0
 # wait "$PID_OPENAI"    || { echo "[ERROR] openai group failed";    EXIT=1; }
 # wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic group failed"; EXIT=1; }
 # wait "$PID_GOOGLE"    || { echo "[ERROR] google group failed";    EXIT=1; }
-wait "$PID_QWEN_4B"   || { echo "[ERROR] qwen 4b group failed";  EXIT=1; }
-wait "$PID_QWEN_8B"   || { echo "[ERROR] qwen 8b group failed";  EXIT=1; }
-wait "$PID_QWEN_14B"  || { echo "[ERROR] qwen 14b group failed"; EXIT=1; }
-wait "$PID_QWEN_32B"  || { echo "[ERROR] qwen 32b group failed"; EXIT=1; }
+# wait "$PID_QWEN_4B"   || { echo "[ERROR] qwen 4b group failed";  EXIT=1; }
+# wait "$PID_QWEN_8B"   || { echo "[ERROR] qwen 8b group failed";  EXIT=1; }
+# wait "$PID_QWEN_14B"  || { echo "[ERROR] qwen 14b group failed"; EXIT=1; }
+# wait "$PID_QWEN_32B"  || { echo "[ERROR] qwen 32b group failed"; EXIT=1; }
+wait "$PID_LLAMA_70B" || { echo "[ERROR] llama 70b group failed"; EXIT=1; }
 
 echo ""
 echo "All provider groups done. Exit code: $EXIT"
