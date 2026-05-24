@@ -143,16 +143,16 @@ echo ""
 # run_group "logs/run_google.log"    "${GOOGLE_MODELS[@]}"    &
 # PID_GOOGLE=$!
 # Each Qwen model gets its own parallel group (each is on a separate GPU/port)
-# run_group "logs/run_qwen_4b.log"  "Qwen3-4B|qwen3_4b|sglang||http://localhost:30000/v1"  &
-# PID_QWEN_4B=$!
-# run_group "logs/run_qwen_8b.log"  "Qwen3-8B|qwen3_8b|sglang||http://localhost:30001/v1"  &
-# PID_QWEN_8B=$!
-# run_group "logs/run_qwen_14b.log" "Qwen3-14B|qwen3_14b|sglang||http://localhost:30002/v1" &
-# PID_QWEN_14B=$!
-# run_group "logs/run_qwen_32b.log" "Qwen3-32B|qwen3_32b|sglang||http://localhost:30003/v1" &
-# PID_QWEN_32B=$!
-# run_group "logs/run_llama_8b.log"  "Llama-3.1-8B|llama3_1_8b|sglang||http://localhost:30004/v1"  &
-# PID_LLAMA_8B=$!
+run_group "logs/run_qwen_4b.log"  "Qwen3-4B|qwen3_4b|sglang||http://localhost:30000/v1"  &
+PID_QWEN_4B=$!
+run_group "logs/run_qwen_8b.log"  "Qwen3-8B|qwen3_8b|sglang||http://localhost:30001/v1"  &
+PID_QWEN_8B=$!
+run_group "logs/run_qwen_14b.log" "Qwen3-14B|qwen3_14b|sglang||http://localhost:30002/v1" &
+PID_QWEN_14B=$!
+run_group "logs/run_qwen_32b.log" "Qwen3-32B|qwen3_32b|sglang||http://localhost:30003/v1" &
+PID_QWEN_32B=$!
+run_group "logs/run_llama_8b.log"  "Llama-3.1-8B|llama3_1_8b|sglang||http://localhost:30004/v1"  &
+PID_LLAMA_8B=$!
 run_group "logs/run_llama_70b.log" "Llama-3.1-70B|llama3_1_70b|sglang||http://localhost:30005/v1" &
 PID_LLAMA_70B=$!
 
@@ -161,10 +161,11 @@ EXIT=0
 # wait "$PID_OPENAI"    || { echo "[ERROR] openai group failed";    EXIT=1; }
 # wait "$PID_ANTHROPIC" || { echo "[ERROR] anthropic group failed"; EXIT=1; }
 # wait "$PID_GOOGLE"    || { echo "[ERROR] google group failed";    EXIT=1; }
-# wait "$PID_QWEN_4B"   || { echo "[ERROR] qwen 4b group failed";  EXIT=1; }
-# wait "$PID_QWEN_8B"   || { echo "[ERROR] qwen 8b group failed";  EXIT=1; }
-# wait "$PID_QWEN_14B"  || { echo "[ERROR] qwen 14b group failed"; EXIT=1; }
-# wait "$PID_QWEN_32B"  || { echo "[ERROR] qwen 32b group failed"; EXIT=1; }
+wait "$PID_QWEN_4B"   || { echo "[ERROR] qwen 4b group failed";  EXIT=1; }
+wait "$PID_QWEN_8B"   || { echo "[ERROR] qwen 8b group failed";  EXIT=1; }
+wait "$PID_QWEN_14B"  || { echo "[ERROR] qwen 14b group failed"; EXIT=1; }
+wait "$PID_QWEN_32B"  || { echo "[ERROR] qwen 32b group failed"; EXIT=1; }
+wait "$PID_LLAMA_8B"  || { echo "[ERROR] llama 8b group failed";  EXIT=1; }
 wait "$PID_LLAMA_70B" || { echo "[ERROR] llama 70b group failed"; EXIT=1; }
 
 echo ""
