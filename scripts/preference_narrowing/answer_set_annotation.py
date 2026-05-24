@@ -647,4 +647,12 @@ python scripts/preference_narrowing/answer_set_annotation.py \
   --provider xlab \
   --model gpt-5.1 \
   --num-workers 4
+  
+python scripts/preference_narrowing/answer_set_annotation.py \
+  --input output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset.json \
+  --output output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_anwerset_annotated.json \
+  --persona-data data/preference_narrowing/assembled_persona50xquery100_preference_narrowing.json \
+  --dedup-cache output/result/preference_narrowing/profile_retrieval/profile_retrieval_gpt5.4_mini_persona50xquery100_5000_with_anwerset_dedup.json \
+  --model gpt-5.1 \
+  --num-workers 3
 """
