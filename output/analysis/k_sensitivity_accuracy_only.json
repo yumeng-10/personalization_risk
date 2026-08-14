@@ -1,0 +1,489 @@
+{
+  "description": "Retrieval-depth (k) sensitivity ablation — forced retrieval, no router.",
+  "evaluated": false,
+  "judge_model": null,
+  "per_file_results": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 1,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/claude_haiku_4_5/k1_claude_haiku_4_5_20251001.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 3,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/claude_haiku_4_5/k3_claude_haiku_4_5_20251001.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 5,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/claude_haiku_4_5/k5_claude_haiku_4_5_20251001.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 7,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/claude_haiku_4_5/k7_claude_haiku_4_5_20251001.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 1,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gemini_2_5_flash/k1_gemini_2_5_flash.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 3,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gemini_2_5_flash/k3_gemini_2_5_flash.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 5,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gemini_2_5_flash/k5_gemini_2_5_flash.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 7,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gemini_2_5_flash/k7_gemini_2_5_flash.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 1,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gpt4_1_mini/k1_gpt_4_1_mini.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 3,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gpt4_1_mini/k3_gpt_4_1_mini.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 5,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gpt4_1_mini/k5_gpt_4_1_mini.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 7,
+      "risk_type": "irrelevant_personalization",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/irrelevant_personalization/gpt4_1_mini/k7_gpt_4_1_mini.json",
+      "personalized_acc": null,
+      "base_acc": null,
+      "acc_drop": null,
+      "n_scored": 0
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 1,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/claude_haiku_4_5/k1_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 3,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/claude_haiku_4_5/k3_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 5,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/claude_haiku_4_5/k5_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 7,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/claude_haiku_4_5/k7_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 1,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gemini_2_5_flash/k1_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 3,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gemini_2_5_flash/k3_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 5,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gemini_2_5_flash/k5_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 7,
+      "risk_type": "preference_narrowing",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gemini_2_5_flash/k7_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 1,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gpt4_1_mini/k1_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 3,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gpt4_1_mini/k3_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 5,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gpt4_1_mini/k5_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 7,
+      "risk_type": "preference_narrowing",
+      "n_records": 250,
+      "source_file": "output/generate/k_sensitivity/preference_narrowing/gpt4_1_mini/k7_gpt_4_1_mini.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 1,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/claude_haiku_4_5/k1_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 3,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/claude_haiku_4_5/k3_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 5,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/claude_haiku_4_5/k5_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 7,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/claude_haiku_4_5/k7_claude_haiku_4_5_20251001.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 1,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gemini_2_5_flash/k1_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 3,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gemini_2_5_flash/k3_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 5,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gemini_2_5_flash/k5_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 7,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gemini_2_5_flash/k7_gemini_2_5_flash.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 1,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gpt4_1_mini/k1_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 3,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gpt4_1_mini/k3_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 5,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gpt4_1_mini/k5_gpt_4_1_mini.json"
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 7,
+      "risk_type": "sycophantic_bias",
+      "n_records": 50,
+      "source_file": "output/generate/k_sensitivity/sycophantic_bias/gpt4_1_mini/k7_gpt_4_1_mini.json"
+    }
+  ],
+  "table": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 1,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 3,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 5,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "model_tag": "claude_haiku_4_5",
+      "k": 7,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 1,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 3,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 5,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "model_tag": "gemini_2_5_flash",
+      "k": 7,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 1,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 3,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 5,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "model_tag": "gpt4_1_mini",
+      "k": 7,
+      "irp_acc_drop": null,
+      "irp_pers_acc": null,
+      "irp_base_acc": null,
+      "irp_judge_score": null,
+      "uir": null,
+      "syco_score": null,
+      "syco_rate": null
+    }
+  ]
+}
