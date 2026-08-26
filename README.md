@@ -1,6 +1,6 @@
 # Personalization Risk Toolkit
 
-Scaffolded codebase for CS568-style experimentation on personalization risk with:
+
 - Data construction pipeline: query generation, user profile simulation, scenario construction.
 - Evaluation pipeline: LLM-as-a-judge with strict JSON rubric output.
 - Provider-agnostic inference layer: OpenAI (implemented), Amazon Bedrock (implemented), and reserved slots for additional providers (e.g., Gemini/other backends).
