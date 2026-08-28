@@ -1,4 +1,4 @@
-# Personalization Risk
+# PRISK: Evaluating the Hidden Costs of Personalization in Large Language Models
 
 Benchmark and evaluation pipeline for measuring **personalization-induced risks** in LLM assistants.
 
