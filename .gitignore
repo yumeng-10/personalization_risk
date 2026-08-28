@@ -53,3 +53,5 @@ tmp*.*
 .claude
 paper/
 models/
+refresh_credential.sh
+paper/
