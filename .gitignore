@@ -63,4 +63,4 @@ visualization/
 output/figures/sycophantic_bias/
 output/results_for_vis/
 scripts/rag/
-/download_data.py
+download_data.py
