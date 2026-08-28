@@ -55,3 +55,7 @@ paper/
 models/
 refresh_credential.sh
 paper/
+\[archived\]/
+*.pdf
+*.png
+bash/
