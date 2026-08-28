@@ -54,7 +54,7 @@ except ImportError:
     _HAS_TQDM = False
 
 # ---------------------------------------------------------------------------
-# Rubrics (mirrored from scripts/rag/rag.py)
+# Rubrics (originally from the retired scripts/rag/rag.py; this is now the source of truth)
 # ---------------------------------------------------------------------------
 
 IRRELEVANT_PERSONALIZATION_RUBRIC = """

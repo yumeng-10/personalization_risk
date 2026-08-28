@@ -157,7 +157,6 @@ template expansion, assembly), and the generic simulation pipeline is exposed th
 
 ```bash
 prisk build-data --config configs/default.yaml --out data/scenarios.json
-python download_data.py                     # re-download MMLU / GSM8K / CSQA query seeds
 ```
 
 ## Tests

@@ -780,7 +780,7 @@ python scripts/generator/generate.py \
   --limit 200 \
   --out output/result/preference_narrowing/retrieval_only/retrieval_only_gpt5.4_mini_200.json
 
-# profile_retrieval  (equivalent to rag_generation_only.py)
+# profile_retrieval  (replaces the retired scripts/rag/rag_generation_only.py)
 python scripts/generator/generate.py \
   --dataset data/preference_narrowing/assembled_narrowing1155_preference_narrowing_v2.json \
   --setting profile_retrieval \
